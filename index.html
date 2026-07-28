@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NiiveshNeeti | SEBI Registered Index Options Advisory</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Styles & fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     rel="stylesheet"
@@ -26,188 +24,104 @@
 
   <style>
     :root {
-      --color-bg: #fdfcfb;
+      --color-bg: #fffdf9;
       --color-surface: #ffffff;
-      --color-border: #e2e8f0;
-      --color-text: #0f172a;
-      --color-muted: #64748b;
-      --color-primary: #06b6d4;
-      --color-primary-alt: #22c55e;
-      --color-accent-pink: #fb7185;
-      --color-accent-purple: #a855f7;
-      --color-accent-yellow: #facc15;
+      --color-border: #f1e4ff;
+      --color-text: #1e1b3a;
+      --color-muted: #6b6485;
+      --color-primary: #ff6b6b;
+      --color-primary-alt: #ffa63d;
+      --color-accent-blue: #4d9fff;
+      --color-accent-pink: #ff5da2;
+      --color-accent-purple: #9b5de5;
+      --color-accent-teal: #17c3b2;
+      --color-accent-yellow: #ffd23f;
       --font-body: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
       --radius-lg: 1rem;
       --radius-xl: 1.5rem;
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
-      --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.18);
+      --shadow-soft: 0 16px 40px rgba(120, 60, 200, 0.10);
+      --shadow-strong: 0 30px 80px rgba(120, 60, 200, 0.22);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
 
     body {
       font-family: var(--font-body);
-      background: radial-gradient(circle at top left, #fdf2ff 0, #fdfcfb 40%, #ecfeff 100%);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(255,214,102,0.35) 0, transparent 42%),
+        radial-gradient(circle at 92% 12%, rgba(155,93,229,0.28) 0, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(77,159,255,0.22) 0, transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(255,93,162,0.25) 0, transparent 45%),
+        linear-gradient(180deg, #fffdf9 0%, #fef7ff 45%, #f4fbff 100%);
       color: var(--color-text);
       overflow-x: hidden;
       line-height: 1.6;
     }
 
-    ::-webkit-scrollbar {
-      width: 7px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #e5e7eb;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #94a3b8;
-      border-radius: 6px;
-    }
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #f3edff; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#ff6b6b,#9b5de5); border-radius: 6px; }
 
     .nav-link {
-      color: #334155;
+      color: #3a3560;
       font-weight: 700;
       font-size: 0.94rem;
       transition: color 0.2s ease, transform 0.2s ease;
       text-decoration: none;
     }
-
-    .nav-link:hover {
-      color: var(--color-primary);
-      transform: translateY(-1px);
-    }
+    .nav-link:hover { color: var(--color-accent-purple); transform: translateY(-1px); }
 
     .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #06b6d4, #22c55e);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 18px 38px rgba(34, 197, 94, 0.35);
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #ff6b6b, #ffa63d 45%, #ffd23f);
+      color: #fff; font-weight: 800; font-size: 0.95rem;
+      padding: 14px 28px; border-radius: 999px; text-decoration: none;
+      box-shadow: 0 18px 38px rgba(255, 107, 107, 0.35);
       transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-      border: none;
-      cursor: pointer;
+      border: none; cursor: pointer;
     }
-
-    .cta-btn:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 24px 48px rgba(34, 197, 94, 0.42);
-      opacity: 0.98;
-    }
+    .cta-btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 24px 48px rgba(255, 107, 107, 0.42); opacity: 0.98; }
 
     .secondary-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #0f172a;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 8px;
-      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-flex; align-items: center; gap: 8px; color: #1e1b3a; font-weight: 700;
+      text-decoration: none; padding: 12px 8px; transition: color 0.2s ease, transform 0.2s ease;
     }
-
-    .secondary-btn:hover {
-      color: var(--color-primary);
-      transform: translateX(3px);
-    }
+    .secondary-btn:hover { color: var(--color-accent-purple); transform: translateX(3px); }
 
     .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border: 1px solid rgba(15, 23, 42, 0.06);
-      background: rgba(255, 255, 255, 0.9);
-      color: #0f172a;
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+      border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.12em; border: 1px solid rgba(155,93,229,0.18);
+      background: linear-gradient(135deg, rgba(255,214,102,0.5), rgba(155,93,229,0.15));
+      color: #1e1b3a;
     }
 
-    .hero-pad {
-      padding-top: 5rem;
-      padding-bottom: 5.5rem;
-    }
+    .hero-pad { padding-top: 5rem; padding-bottom: 5.5rem; }
 
     .card {
       background: var(--color-surface);
       border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      border: 1px solid rgba(155,93,229,0.14);
       box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .card::before {
-      content: "";
-      position: absolute;
-      inset: -120% auto auto -56%;
-      width: 220px;
-      height: 260%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.5),
-        transparent
-      );
-      transform: rotate(18deg);
-      opacity: 0;
-      transition: opacity 0.4s ease, transform 1.1s ease;
-      pointer-events: none;
+      content: ""; position: absolute; inset: -120% auto auto -56%; width: 220px; height: 260%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: rotate(18deg); opacity: 0; transition: opacity 0.4s ease, transform 1.1s ease; pointer-events: none;
     }
-
-    .card:hover::before {
-      opacity: 1;
-      transform: translateX(640px) rotate(18deg);
-    }
+    .card:hover::before { opacity: 1; transform: translateX(640px) rotate(18deg); }
 
     .section-alt {
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.8),
-        rgba(248, 250, 252, 0.96)
-      );
+      background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(250,245,255,0.95));
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px) scale(0.98);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.from-left {
-      transform: translateX(-32px);
-    }
-
-    .reveal.from-right {
-      transform: translateX(32px);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal { opacity: 0; transform: translateY(26px) scale(0.98); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.from-left { transform: translateX(-32px); }
+    .reveal.from-right { transform: translateX(32px); }
+    .reveal.visible { opacity: 1; transform: none; }
 
     .delay-1 { transition-delay: 0.08s; }
     .delay-2 { transition-delay: 0.16s; }
@@ -217,431 +131,198 @@
     .delay-6 { transition-delay: 0.48s; }
 
     .icon-box {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      position: relative;
+      width: 54px; height: 54px; border-radius: 18px; display: flex; align-items: center;
+      justify-content: center; font-size: 22px; position: relative;
     }
+    .icon-box-gradient { background: linear-gradient(135deg, #ffe29f, #ffa99f); color: #1e1b3a; }
 
-    .icon-box-gradient {
-      background: radial-gradient(circle at top left, #cffafe, #fef3c7);
-      color: #0f172a;
-    }
-
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
     .icon-bob { animation: bob 3.8s ease-in-out infinite; }
 
     .ticker-card {
       border-radius: 20px;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.9),
-        rgba(248, 250, 252, 0.96)
-      );
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,245,255,0.9));
+      border: 1px solid rgba(155,93,229,0.18);
+      box-shadow: 0 10px 28px rgba(120,60,200,0.10);
     }
 
     .pricing-popular {
       border-radius: 26px;
-      background: radial-gradient(circle at top left, #ecfeff, #fefce8);
+      background: linear-gradient(160deg, #fff7e6, #ffe8f5);
       border: 2px solid var(--color-primary-alt);
       box-shadow: var(--shadow-strong);
       position: relative;
     }
 
-    /* HERO RIGHT: ADVANCED ADVISORY NOTIFICATION + CHART */
-    .hero-visual {
-      position: relative;
-      max-width: 420px;
-      width: 100%;
-      margin-left: auto;
-    }
+    .footer-link { color: #6b6485; text-decoration: none; transition: color 0.2s ease; }
+    .footer-link:hover { color: var(--color-accent-purple); }
 
-    .hero-glow {
-      position: absolute;
-      inset: -40px -80px auto auto;
-      background: radial-gradient(circle at top right, #f9a8d4 0, transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
-      filter: blur(40px);
-      z-index: 0;
-    }
+    .mobile-menu-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .mobile-menu-panel.open { max-height: 400px; }
 
-    .notif-shell {
-      position: relative;
-      border-radius: 28px;
-      background: radial-gradient(circle at top left, #ecfeff 0, #ffffff 45%, #fef9c3 100%);
-      padding: 22px 22px 18px;
-      box-shadow: var(--shadow-strong);
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      z-index: 2;
-    }
-
-    .notif-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .notif-title-group {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .notif-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 800;
-      color: #0f172a;
-    }
-
-    .notif-tag-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.35);
-      animation: pulseDot 1.8s ease-out infinite;
-    }
-
-    @keyframes pulseDot {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.9); opacity: 0; }
-    }
-
-    .notif-title {
-      font-weight: 900;
-      font-size: 1.02rem;
-      color: #0f172a;
-    }
-
-    .notif-badge {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 4px;
-      font-size: 10px;
-      color: #64748b;
-    }
-
-    .notif-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 800;
-      color: #0f172a;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px dashed rgba(148, 163, 184, 0.6);
-    }
-
-    .notif-pill-icon {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #22c55e;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 8px;
-    }
-
-    .notif-main {
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top, #f0f9ff 0, #ffffff 35%, #fefce8 100%);
-      padding: 14px 14px 12px;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .notif-stage-title {
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 4px;
-    }
-
-    .notif-stage-text {
-      font-size: 0.82rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    .notif-meta-list {
-      list-style: none;
-      margin-top: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      font-size: 0.8rem;
-      color: #0f172a;
-    }
-
-    .notif-meta-list li span {
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    .notif-chip-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    .notif-chip {
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background-color: rgba(255, 255, 255, 0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: #0f172a;
-      font-weight: 700;
-    }
-
-    .notif-chip i { font-size: 11px; }
-
-    .hero-chart {
-      position: relative;
-      border-radius: 16px;
-      background: linear-gradient(
-        135deg,
-        rgba(6, 182, 212, 0.07),
-        rgba(34, 197, 94, 0.08)
-      );
-      border: 1px dashed rgba(148, 163, 184, 0.6);
-      padding: 10px 10px 8px;
-      overflow: hidden;
-    }
-
-    .hero-chart-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 10px;
-      color: #64748b;
-    }
-
-    .hero-chart-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    .hero-chart-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #06b6d4;
-      box-shadow: 0 0 0 6px rgba(6, 182, 212, 0.4);
-      animation: pulseDot 2.3s ease-out infinite;
-    }
-
-    .hero-chart-svg {
-      width: 100%;
-      height: 80px;
-    }
-
-    .hero-chart-line {
-      fill: none;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke: url(#chartGradient);
-      stroke-dasharray: 260;
-      stroke-dashoffset: 260;
-      animation: lineGrow 6.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    @keyframes lineGrow {
-      0% { stroke-dashoffset: 260; }
-      30% { stroke-dashoffset: 180; }
-      65% { stroke-dashoffset: 60; }
-      100% { stroke-dashoffset: 0; }
-    }
-
-    .hero-chart-target-pill {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.95);
-      color: #fff;
-      font-size: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 700;
-      box-shadow: 0 10px 18px rgba(34, 197, 94, 0.4);
-      animation: targetPop 6.2s ease-in-out infinite;
-    }
-
-    @keyframes targetPop {
-      0%, 40% { transform: translateY(18px); opacity: 0; }
-      50%, 76% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(18px); opacity: 0; }
-    }
-
-    .notif-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .notif-step {
-      border-radius: 16px;
-      padding: 8px 9px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      font-size: 10px;
-      color: #475569;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .notif-step-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 800;
-      color: #0f172a;
-    }
-
-    .notif-step-icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #06b6d4;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 9px;
-    }
-
-    .notif-step[data-active="true"] {
-      border-color: var(--color-primary-alt);
-      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.6);
-      background: radial-gradient(circle at top, #ecfeff 0, #ffffff 60%);
-      color: #0f172a;
-    }
-
-    .notif-step[data-active="true"] .notif-step-icon {
-      background: #22c55e;
-      transform: scale(1.05);
-    }
-
-    .notif-stage-shell {
-      transition: transform 0.28s ease, opacity 0.28s ease;
-    }
-
-    .notif-stage-shell.stage-transition {
-      transform: translateY(-4px);
-      opacity: 0;
-    }
-
-    .notif-footnote {
-      font-size: 10px;
-      color: #64748b;
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .notif-footnote i { color: #9ca3af; }
-
-    @media (max-width: 1024px) {
-      .hero-visual { max-width: 360px; }
-      .notif-main { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      .hero-pad {
-        padding-top: 3.6rem;
-        padding-bottom: 4.2rem;
-      }
-      .hero-visual {
-        margin-top: 30px;
-        max-width: none;
-      }
-      .notif-shell { border-radius: 24px; }
-      .notif-main { padding: 12px; }
-    }
-
-    .footer-link {
-      color: #64748b;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .footer-link:hover { color: var(--color-primary-alt); }
-
-    /* mobile menu */
-    .mobile-menu-panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    .mobile-menu-panel.open {
-      max-height: 400px;
-    }
-
-    /* FAQ */
-    .faq-item summary {
-      cursor: pointer;
-      font-weight: 800;
-      color: #0f172a;
-      padding: 20px 24px;
-      list-style: none;
-    }
+    .faq-item summary { cursor: pointer; font-weight: 800; color: #1e1b3a; padding: 20px 24px; list-style: none; }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-body {
-      padding: 0 24px 20px;
-      color: #64748b;
-      font-size: 0.93rem;
-      line-height: 1.8;
+    .faq-body { padding: 0 24px 20px; color: #6b6485; font-size: 0.93rem; line-height: 1.8; }
+
+    /* ============ HERO RIGHT: PHONE MOCKUP TRADE ANIMATION ============ */
+    .hero-visual { position: relative; max-width: 380px; width: 100%; margin-left: auto; }
+    .hero-glow {
+      position: absolute; inset: -60px -60px auto auto; width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(255,163,63,0.35) 0, transparent 65%);
+      opacity: 0.9; pointer-events: none; filter: blur(30px); z-index: 0;
+    }
+    .hero-glow.two {
+      inset: auto -40px -60px auto; width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(77,159,255,0.3) 0, transparent 65%);
+    }
+
+    .phone-shell {
+      position: relative;
+      z-index: 2;
+      width: 300px;
+      margin: 0 auto;
+      border-radius: 42px;
+      background: linear-gradient(160deg, #241f45, #150f30);
+      padding: 14px;
+      box-shadow: var(--shadow-strong), 0 0 0 2px rgba(255,255,255,0.05) inset;
+    }
+    .phone-notch {
+      position: absolute;
+      top: 14px; left: 50%; transform: translateX(-50%);
+      width: 90px; height: 20px; background: #150f30;
+      border-radius: 0 0 14px 14px; z-index: 5;
+    }
+    .phone-screen {
+      position: relative;
+      background: linear-gradient(160deg, #fef7ff 0%, #f4fbff 60%, #fff7e6 100%);
+      border-radius: 30px;
+      overflow: hidden;
+      height: 560px;
+      padding-top: 40px;
+    }
+    .phone-statusbar {
+      position: absolute; top: 0; left: 0; right: 0; height: 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 18px; font-size: 11px; font-weight: 700; color: #1e1b3a; z-index: 4;
+    }
+    .app-header {
+      padding: 6px 18px 14px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .app-header-title { font-weight: 900; font-size: 0.95rem; color: #1e1b3a; }
+    .app-header-sub { font-size: 10px; color: #6b6485; font-weight: 700; }
+
+    .chip-row-mini { display:flex; gap:6px; padding: 0 18px 10px; }
+    .chip-mini {
+      font-size: 9.5px; font-weight: 800; padding: 4px 9px; border-radius: 999px;
+      background: rgba(155,93,229,0.10); color: #6b46c1;
+    }
+
+    .chart-panel {
+      margin: 0 14px 12px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #ffffff, #fbf7ff);
+      border: 1px solid rgba(155,93,229,0.14);
+      box-shadow: 0 10px 24px rgba(120,60,200,0.08);
+      padding: 12px 12px 6px;
+    }
+    .chart-panel-head {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;
+    }
+    .chart-symbol { font-size: 11px; font-weight: 900; color: #1e1b3a; }
+    .chart-price-row { display: flex; align-items: baseline; gap: 6px; }
+    #priceValue { font-size: 20px; font-weight: 900; color: #1e1b3a; transition: color 0.3s ease; }
+    #priceDelta { font-size: 11px; font-weight: 800; color: #17c3b2; }
+
+    .chart-svg-wrap { position: relative; height: 130px; }
+    .chart-svg-wrap svg { width: 100%; height: 100%; display: block; }
+    #priceArea { opacity: 0.18; }
+    #priceLine {
+      fill: none; stroke: url(#lineGrad); stroke-width: 2.6; stroke-linecap: round;
+      stroke-dasharray: 620; stroke-dashoffset: 620;
+    }
+    #priceDot {
+      r: 4.5; fill: #ff5da2; filter: drop-shadow(0 0 6px rgba(255,93,162,0.7));
+    }
+
+    .trade-plan-mini {
+      display: flex; justify-content: space-between; margin-top: 8px;
+      font-size: 9.5px; color: #6b6485; font-weight: 700;
+    }
+    .trade-plan-mini span b { color: #1e1b3a; }
+
+    .action-row { display: flex; gap: 10px; margin: 4px 14px 14px; }
+    .trade-btn {
+      flex: 1; border: none; border-radius: 14px; padding: 12px 0; font-weight: 900;
+      font-size: 12px; letter-spacing: 0.04em; color: #fff; cursor: default;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.2s ease;
+      position: relative; overflow: hidden;
+    }
+    .buy-btn { background: linear-gradient(135deg, #17c3b2, #4d9fff); box-shadow: 0 10px 20px rgba(23,195,178,0.35); }
+    .sell-btn { background: linear-gradient(135deg, #ff6b6b, #ff5da2); box-shadow: 0 10px 20px rgba(255,107,107,0.35); opacity: 0.45; }
+    .trade-btn.pressed { transform: scale(0.93); filter: brightness(1.15); }
+    .trade-btn.glow { box-shadow: 0 0 0 6px rgba(255,255,255,0.35), 0 10px 24px rgba(0,0,0,0.25); }
+
+    .ripple {
+      position: absolute; border-radius: 50%; background: rgba(255,255,255,0.55);
+      width: 10px; height: 10px; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(0);
+      pointer-events: none;
+    }
+    .ripple.animate { animation: rippleGrow 0.6s ease-out forwards; }
+    @keyframes rippleGrow { to { transform: translate(-50%,-50%) scale(14); opacity: 0; } }
+
+    /* Notification tray */
+    .notif-tray {
+      position: absolute; top: 46px; left: 10px; right: 10px; z-index: 30;
+      transform: translateY(-140%); opacity: 0;
+      transition: transform 0.55s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease;
+    }
+    .notif-tray.show { transform: translateY(0); opacity: 1; }
+    .notif-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      padding: 12px 14px;
+      box-shadow: 0 18px 40px rgba(30,20,60,0.28);
+      border: 1px solid rgba(155,93,229,0.15);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .notif-icon-badge {
+      width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px;
+    }
+    .notif-icon-badge.buy { background: linear-gradient(135deg,#17c3b2,#4d9fff); }
+    .notif-icon-badge.sell { background: linear-gradient(135deg,#ff6b6b,#ff5da2); }
+    .notif-card-title { font-size: 11.5px; font-weight: 900; color: #1e1b3a; margin-bottom: 2px; }
+    .notif-card-text { font-size: 10.5px; color: #4b4468; font-weight: 600; line-height: 1.4; }
+    .notif-card-time { font-size: 9px; color: #a49bc4; font-weight: 700; margin-left: auto; white-space: nowrap; }
+
+    .flow-caption {
+      position: absolute; bottom: 8px; left: 0; right: 0; text-align: center;
+      font-size: 9.5px; color: #6b6485; font-weight: 800; letter-spacing: 0.02em;
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .flow-caption.show { opacity: 1; }
+    .flow-caption .dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#17c3b2; margin-right:5px; animation: pulseDot2 1.4s ease-out infinite; }
+    @keyframes pulseDot2 { 0% { box-shadow: 0 0 0 0 rgba(23,195,178,0.5); } 100% { box-shadow: 0 0 0 7px rgba(23,195,178,0); } }
+
+    @media (max-width: 1024px) { .hero-visual { max-width: 320px; } }
+    @media (max-width: 768px) {
+      .hero-pad { padding-top: 3.6rem; padding-bottom: 4.2rem; }
+      .hero-visual { margin-top: 30px; max-width: none; }
+      .phone-shell { margin: 0 auto; }
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-purple-100">
     <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
       <a href="#home" target="_self" class="flex items-center gap-3">
         <img
           src="niiveshlogo.png"
           alt="NiiveshNeeti Logo"
           class="h-11 md:h-12 w-auto rounded-xl"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/f5f3ff/0f172a?text=NIIVESHNEETI';"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fef2ff/1e1b3a?text=NIIVESHNEETI';"
         />
       </a>
 
@@ -653,15 +334,12 @@
         <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn !py-3 !px-5">Contact Us</a>
       </nav>
 
-      <button
-        id="menuToggle"
-        class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 text-slate-700 bg-white shadow-sm"
-      >
+      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-purple-100 text-slate-700 bg-white shadow-sm">
         <i class="fa-solid fa-bars text-lg"></i>
       </button>
     </div>
 
-    <div id="mobileMenu" class="mobile-menu-panel md:hidden border-t border-slate-200 bg-white">
+    <div id="mobileMenu" class="mobile-menu-panel md:hidden border-t border-purple-100 bg-white">
       <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4">
         <a href="#services" target="_self" class="nav-link mobile-nav-link">Services</a>
         <a href="#pricing" target="_self" class="nav-link mobile-nav-link">Pricing</a>
@@ -678,58 +356,31 @@
       class="absolute inset-0 pointer-events-none"
       style="
         background:
-          radial-gradient(circle at 0% 0%, #f9a8d4 0, transparent 40%),
-          radial-gradient(circle at 100% 0%, #22c55e 0, transparent 40%),
-          radial-gradient(circle at 0% 100%, #38bdf8 0, transparent 40%);
-        opacity: 0.8;
+          radial-gradient(circle at 0% 0%, #ffd23f 0, transparent 40%),
+          radial-gradient(circle at 100% 0%, #9b5de5 0, transparent 40%),
+          radial-gradient(circle at 0% 100%, #4d9fff 0, transparent 40%),
+          radial-gradient(circle at 100% 100%, #ff5da2 0, transparent 40%);
+        opacity: 0.55;
       "
     ></div>
 
     <div class="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-2 gap-14 relative">
       <!-- LEFT -->
       <div class="reveal from-left">
-        <div class="badge-pill mb-4 bg-white/90">
+        <div class="badge-pill mb-4">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           SEBI Registered Research Analyst · Index Options Advisory
         </div>
 
-        <h1
-          style="
-            font-size: clamp(2.4rem, 5vw, 3.7rem);
-            font-weight: 900;
-            line-height: 1.05;
-            color: #0f172a;
-            margin-bottom: 1.1rem;
-          "
-        >
+        <h1 style="font-size: clamp(2.4rem, 5vw, 3.7rem); font-weight: 900; line-height: 1.05; color: #1e1b3a; margin-bottom: 1.1rem;">
           Research-Backed
-          <span
-            style="
-              background: linear-gradient(
-                90deg,
-                #06b6d4 0%,
-                #22c55e 40%,
-                #fb7185 80%
-              );
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-clip: text;
-            "
-          >
+          <span style="background: linear-gradient(90deg, #ff6b6b 0%, #ffa63d 30%, #9b5de5 65%, #4d9fff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             Index Options
           </span>
-          Advisory with <span style="color: #22c55e">Clear Neeti.</span>
+          Advisory with <span style="color: #17c3b2">Clear Neeti.</span>
         </h1>
 
-        <p
-          style="
-            font-size: 1.03rem;
-            color: #475569;
-            line-height: 1.85;
-            max-width: 640px;
-            margin-bottom: 1.5rem;
-          "
-        >
+        <p style="font-size: 1.03rem; color: #4b4468; line-height: 1.85; max-width: 640px; margin-bottom: 1.5rem;">
           NiiveshNeeti provides SEBI compliant index options advisory with
           research-based trade calls, defined entry–target–stoploss levels, and
           real-time trader support when Nifty, Bank Nifty and other indices move
@@ -737,15 +388,15 @@
         </p>
 
         <div class="flex flex-wrap gap-3 mb-7">
-          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-slate-200 shadow-sm">
-            <i class="fa-solid fa-bullseye text-emerald-500"></i>
+          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-purple-100 shadow-sm">
+            <i class="fa-solid fa-bullseye text-orange-500"></i>
             Daily index option trade calls
           </div>
-          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-slate-200 shadow-sm">
-            <i class="fa-solid fa-chart-line text-sky-500"></i>
+          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-purple-100 shadow-sm">
+            <i class="fa-solid fa-chart-line text-blue-500"></i>
             Entry, target & stoploss levels
           </div>
-          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-2 text-sm text-slate-700 bg-white/90 px-4 py-2.5 rounded-full border border-purple-100 shadow-sm">
             <i class="fa-solid fa-headset text-violet-500"></i>
             Real-time support for traders
           </div>
@@ -763,149 +414,94 @@
         </div>
 
         <div class="mt-6 text-xs text-slate-500 flex flex-wrap gap-4 items-center">
-          <span class="inline-flex items-center gap-2">
-            <i class="fa-solid fa-id-card-clip text-emerald-500"></i>
-            SEBI Reg. RA &nbsp; INH000016533
-          </span>
-          <span class="inline-flex items-center gap-2">
-            <i class="fa-solid fa-clock text-sky-500"></i>
-            Advisory only · No execution or PMS
-          </span>
-          <span class="inline-flex items-center gap-2">
-            <i class="fa-solid fa-arrow-trend-up text-fuchsia-500"></i>
-            Focus on structure, risk & psychology
-          </span>
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-id-card-clip text-emerald-500"></i>SEBI Reg. RA &nbsp; INH000016533</span>
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-clock text-sky-500"></i>Advisory only · No execution or PMS</span>
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-arrow-trend-up text-fuchsia-500"></i>Focus on structure, risk & psychology</span>
         </div>
       </div>
 
-      <!-- RIGHT HERO VISUAL -->
+      <!-- RIGHT HERO VISUAL: PHONE TRADE ANIMATION -->
       <div class="reveal from-right flex justify-center md:justify-end relative">
         <div class="hero-visual">
           <div class="hero-glow"></div>
+          <div class="hero-glow two"></div>
 
-          <div class="notif-shell">
-            <div class="notif-header">
-              <div class="notif-title-group">
-                <div class="notif-tag">
-                  <span class="notif-tag-dot"></span>
-                  Live Advisory Timeline
-                </div>
-                <div class="notif-title">Index Options Desk · Sample Flow</div>
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-statusbar">
+                <span id="clockTime">9:32</span>
+                <span><i class="fa-solid fa-signal"></i>&nbsp;&nbsp;<i class="fa-solid fa-wifi"></i>&nbsp;&nbsp;<i class="fa-solid fa-battery-three-quarters"></i></span>
               </div>
-              <div class="notif-badge">
-                <div class="notif-pill">
-                  <span class="notif-pill-icon">
-                    <i class="fa-solid fa-bolt"></i>
-                  </span>
-                  Real-Time
+
+              <div class="app-header">
+                <div>
+                  <div class="app-header-title">NiiveshNeeti Desk</div>
+                  <div class="app-header-sub">Nifty 50 Index Options</div>
                 </div>
-                <span>Alerts + Execution + Target</span>
+                <div class="icon-box" style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#ffd23f,#ff6b6b);">
+                  <i class="fa-solid fa-bolt" style="font-size:13px;color:#fff;"></i>
+                </div>
               </div>
-            </div>
 
-            <div class="notif-main">
-              <div class="notif-stage-shell" id="notifStageShell">
-                <div class="notif-stage-title" id="notifStageTitle">
-                  Advisory Alert: BUY NIFTY CE 24500
-                </div>
-                <div class="notif-stage-text" id="notifStageText">
-                  Notification received: <strong>BUY NIFTY CE 24500 @ 125</strong>,
-                  <strong>Target 202</strong>, <strong>Stoploss 104</strong>. Trader
-                  gets complete plan with levels and risk.
-                </div>
+              <div class="chip-row-mini">
+                <span class="chip-mini">NIFTY CE 24500</span>
+                <span class="chip-mini">Weekly Expiry</span>
+              </div>
 
-                <ul class="notif-meta-list">
-                  <li><span>Entry:</span> 24500 Call near 125 (±2 pts)</li>
-                  <li><span>Target:</span> 202 (partial booking allowed)</li>
-                  <li><span>Stoploss:</span> 104 (strict)</li>
-                </ul>
-
-                <div class="notif-chip-row">
-                  <div class="notif-chip">
-                    <i class="fa-solid fa-bell"></i>
-                    <span>Advisory notification released</span>
-                  </div>
-                  <div class="notif-chip">
-                    <i class="fa-solid fa-list-check"></i>
-                    <span>Trade plan with logic</span>
+              <div class="chart-panel">
+                <div class="chart-panel-head">
+                  <span class="chart-symbol">NIFTY 24500 CE</span>
+                  <div class="chart-price-row">
+                    <span id="priceValue">125.00</span>
+                    <span id="priceDelta">+0.0%</span>
                   </div>
                 </div>
-
-                <div class="notif-footnote">
-                  <i class="fa-solid fa-circle-info"></i>
-                  <span>
-                    Sample illustration only. Real trades follow the same structure:
-                    alert → execution → exit.
-                  </span>
+                <div class="chart-svg-wrap">
+                  <svg viewBox="0 0 300 130" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4d9fff" />
+                        <stop offset="45%" stop-color="#17c3b2" />
+                        <stop offset="100%" stop-color="#ff5da2" />
+                      </linearGradient>
+                      <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#9b5de5" stop-opacity="0.5" />
+                        <stop offset="100%" stop-color="#9b5de5" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path id="priceArea" fill="url(#areaGrad)" d=""></path>
+                    <path id="priceLine" d=""></path>
+                    <circle id="priceDot" cx="0" cy="0"></circle>
+                  </svg>
+                </div>
+                <div class="trade-plan-mini">
+                  <span>Entry: <b>125</b></span>
+                  <span>Target: <b>202</b></span>
+                  <span>SL: <b>104</b></span>
                 </div>
               </div>
 
-              <div class="hero-chart">
-                <div class="hero-chart-header">
-                  <div class="hero-chart-label">
-                    <span class="hero-chart-dot"></span>
-                    NIFTY CE 24500 Price Path
+              <div class="action-row">
+                <button class="trade-btn buy-btn" id="buyBtn">BUY</button>
+                <button class="trade-btn sell-btn" id="sellBtn">SELL</button>
+              </div>
+
+              <!-- Notification tray -->
+              <div class="notif-tray" id="notifTray">
+                <div class="notif-card">
+                  <div class="notif-icon-badge buy" id="notifIcon"><i class="fa-solid fa-bell"></i></div>
+                  <div style="flex:1;">
+                    <div style="display:flex;align-items:center;">
+                      <span class="notif-card-title" id="notifTitle">NiiveshNeeti Advisory</span>
+                      <span class="notif-card-time" id="notifTime">now</span>
+                    </div>
+                    <div class="notif-card-text" id="notifText">BUY NIFTY CE 24500 @ 125. Target 202, SL 104.</div>
                   </div>
-                  <span>Entry & target progression (illustration)</span>
-                </div>
-
-                <svg viewBox="0 0 120 40" class="hero-chart-svg" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#06b6d4" />
-                      <stop offset="40%" stop-color="#22c55e" />
-                      <stop offset="100%" stop-color="#fb7185" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    class="hero-chart-line"
-                    d="M5 30 L20 26 L32 22 L40 24 L52 18 L62 16 L74 19 L86 14 L98 10 L112 8"
-                  ></path>
-                </svg>
-
-                <div class="hero-chart-target-pill">
-                  <i class="fa-solid fa-flag-checkered"></i>
-                  Target 202 Reached
-                </div>
-              </div>
-            </div>
-
-            <div class="notif-timeline" id="notifTimeline">
-              <div class="notif-step" data-step="0" data-active="true">
-                <div class="notif-step-header">
-                  <span class="notif-step-icon">
-                    <i class="fa-solid fa-bell"></i>
-                  </span>
-                  Alert Shared
-                </div>
-                <div>
-                  Advisory sends notification with clear buy, target and stoploss.
                 </div>
               </div>
 
-              <div class="notif-step" data-step="1" data-active="false">
-                <div class="notif-step-header">
-                  <span class="notif-step-icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </span>
-                  Entry Executed
-                </div>
-                <div>
-                  Trader buys NIFTY CE 24500 near 125 following advisory levels.
-                </div>
-              </div>
-
-              <div class="notif-step" data-step="2" data-active="false">
-                <div class="notif-step-header">
-                  <span class="notif-step-icon">
-                    <i class="fa-solid fa-circle-check"></i>
-                  </span>
-                  Target Booked
-                </div>
-                <div>
-                  Price hits 202 zone, position squared off as per shared target.
-                </div>
-              </div>
+              <div class="flow-caption" id="flowCaption"><span class="dot"></span><span id="flowCaptionText">Watching live price…</span></div>
             </div>
           </div>
         </div>
@@ -914,42 +510,28 @@
   </section>
 
   <!-- INDEX CARDS -->
-  <section class="py-10 section-alt border-y border-slate-200/60">
+  <section class="py-10 section-alt border-y border-purple-100/60">
     <div class="max-w-7xl mx-auto px-5 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-5">
       <div class="ticker-card p-5 reveal delay-1 flex items-center justify-between">
         <div>
-          <div style="font-weight:800;font-size:1rem;color:#0f172a;">Nifty 50</div>
-          <div style="font-size:12px;color:#64748b;margin-top:3px;">
-            Core benchmark for index options strategies
-          </div>
+          <div style="font-weight:800;font-size:1rem;color:#1e1b3a;">Nifty 50</div>
+          <div style="font-size:12px;color:#6b6485;margin-top:3px;">Core benchmark for index options strategies</div>
         </div>
-        <div style="font-weight:900;font-size:1.15rem;color:#06b6d4;">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
+        <div style="font-weight:900;font-size:1.15rem;color:#4d9fff;"><i class="fa-solid fa-chart-line"></i></div>
       </div>
-
       <div class="ticker-card p-5 reveal delay-2 flex items-center justify-between">
         <div>
-          <div style="font-weight:800;font-size:1rem;color:#0f172a;">Bank Nifty</div>
-          <div style="font-size:12px;color:#64748b;margin-top:3px;">
-            High beta index with strong intraday moves
-          </div>
+          <div style="font-weight:800;font-size:1rem;color:#1e1b3a;">Bank Nifty</div>
+          <div style="font-size:12px;color:#6b6485;margin-top:3px;">High beta index with strong intraday moves</div>
         </div>
-        <div style="font-weight:900;font-size:1.15rem;color:#fb7185;">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
+        <div style="font-weight:900;font-size:1.15rem;color:#ff5da2;"><i class="fa-solid fa-bolt"></i></div>
       </div>
-
       <div class="ticker-card p-5 reveal delay-3 flex items-center justify-between">
         <div>
-          <div style="font-weight:800;font-size:1rem;color:#0f172a;">Other Indices</div>
-          <div style="font-size:12px;color:#64748b;margin-top:3px;">
-            Sensex & sector index opportunities
-          </div>
+          <div style="font-weight:800;font-size:1rem;color:#1e1b3a;">Other Indices</div>
+          <div style="font-size:12px;color:#6b6485;margin-top:3px;">Sensex & sector index opportunities</div>
         </div>
-        <div style="font-weight:900;font-size:1.15rem;color:#a855f7;">
-          <i class="fa-solid fa-globe"></i>
-        </div>
+        <div style="font-weight:900;font-size:1.15rem;color:#9b5de5;"><i class="fa-solid fa-globe"></i></div>
       </div>
     </div>
   </section>
@@ -958,120 +540,43 @@
   <section id="services" class="py-24">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #06b6d4;
-            margin-bottom: 8px;
-          "
-        >
-          Our Services
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          Index Options Advisory You Receive
-        </h2>
-        <p
-          style="
-            color: #64748b;
-            margin-top: 12px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.98rem;
-          "
-        >
-          NiiveshNeeti focuses on research-backed index options advisory, combining
-          levels, logic and risk control for intraday and expiry trades in Indian
-          indices.
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #ff6b6b; margin-bottom: 8px;">Our Services</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: #1e1b3a;">Index Options Advisory You Receive</h2>
+        <p style="color: #6b6485; margin-top: 12px; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">
+          NiiveshNeeti focuses on research-backed index options advisory, combining levels, logic and risk control for intraday and expiry trades in Indian indices.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
         <div class="card p-8 reveal from-left">
-          <div class="icon-box icon-bob icon-box-gradient mb-5">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Pre-Market Levels
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            Key intraday levels and zones for Nifty and Bank Nifty options, with
-            bias and important price areas to watch before market opens.
-          </p>
+          <div class="icon-box icon-bob icon-box-gradient mb-5"><i class="fa-solid fa-sun"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Pre-Market Levels</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">Key intraday levels and zones for Nifty and Bank Nifty options, with bias and important price areas to watch before market opens.</p>
         </div>
-
         <div class="card p-8 reveal delay-1">
-          <div class="icon-box icon-bob" style="background:#dcfce7;color:#16a34a;">
-            <i class="fa-solid fa-bell"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Intraday Trade Calls
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            1–3 research-based index option trade setups daily with entry range,
-            targets, stoploss and brief logic behind the trades.
-          </p>
+          <div class="icon-box icon-bob" style="background:linear-gradient(135deg,#c8f7ec,#9ef0d9);color:#0f766e;"><i class="fa-solid fa-bell"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Intraday Trade Calls</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">1–3 research-based index option trade setups daily with entry range, targets, stoploss and brief logic behind the trades.</p>
         </div>
-
         <div class="card p-8 reveal from-right delay-2">
-          <div class="icon-box icon-bob" style="background:#fee2e2;color:#ef4444;">
-            <i class="fa-solid fa-calendar-day"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Expiry & Volatility Plans
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            Weekly expiry strategies and volatility-aware opportunities designed
-            specifically for index options traders.
-          </p>
+          <div class="icon-box icon-bob" style="background:linear-gradient(135deg,#ffd9e6,#ffb0cf);color:#be185d;"><i class="fa-solid fa-calendar-day"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Expiry & Volatility Plans</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">Weekly expiry strategies and volatility-aware opportunities designed specifically for index options traders.</p>
         </div>
-
         <div class="card p-8 reveal from-left delay-3">
-          <div class="icon-box icon-bob" style="background:#ede9fe;color:#7c3aed;">
-            <i class="fa-solid fa-chart-column"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Review & Learning Notes
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            Short notes on what worked, what failed and how price respected levels
-            to sharpen your reading of index options.
-          </p>
+          <div class="icon-box icon-bob" style="background:linear-gradient(135deg,#e6dcff,#c9b3ff);color:#6d28d9;"><i class="fa-solid fa-chart-column"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Review & Learning Notes</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">Short notes on what worked, what failed and how price respected levels to sharpen your reading of index options.</p>
         </div>
-
         <div class="card p-8 reveal delay-4">
-          <div class="icon-box icon-bob" style="background:#cffafe;color:#0ea5e9;">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Real-Time Support
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            Support during market hours to help you understand levels, react to
-            volatility and follow the plan with discipline.
-          </p>
+          <div class="icon-box icon-bob" style="background:linear-gradient(135deg,#cdeeff,#9adcff);color:#0369a1;"><i class="fa-solid fa-headset"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Real-Time Support</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">Support during market hours to help you understand levels, react to volatility and follow the plan with discipline.</p>
         </div>
-
         <div class="card p-8 reveal from-right delay-5">
-          <div class="icon-box icon-bob" style="background:#fef3c7;color:#d97706;">
-            <i class="fa-solid fa-brain"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:#0f172a;margin-bottom:12px;">
-            Risk & Psychology Guidance
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;line-height:1.8;">
-            Emphasis on SL discipline, position sizing and emotional control for
-            high-risk index options trading.
-          </p>
+          <div class="icon-box icon-bob" style="background:linear-gradient(135deg,#ffe8b0,#ffd066);color:#b45309;"><i class="fa-solid fa-brain"></i></div>
+          <h3 style="font-weight:900;font-size:1.08rem;color:#1e1b3a;margin-bottom:12px;">Risk & Psychology Guidance</h3>
+          <p style="font-size:0.93rem;color:#6b6485;line-height:1.8;">Emphasis on SL discipline, position sizing and emotional control for high-risk index options trading.</p>
         </div>
       </div>
     </div>
@@ -1081,119 +586,42 @@
   <section id="why-us" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #0ea5e9;
-            margin-bottom: 8px;
-          "
-        >
-          Why Choose NiiveshNeeti
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          Built for Serious Index Option Traders
-        </h2>
-        <p
-          style="
-            color: #64748b;
-            margin-top: 12px;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.98rem;
-          "
-        >
-          Built by traders with 15+ years in Indian markets, NiiveshNeeti focuses
-          on structure, risk and psychology instead of random tips or hype.
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #4d9fff; margin-bottom: 8px;">Why Choose NiiveshNeeti</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: #1e1b3a;">Built for Serious Index Option Traders</h2>
+        <p style="color: #6b6485; margin-top: 12px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">
+          Built by traders with 15+ years in Indian markets, NiiveshNeeti focuses on structure, risk and psychology instead of random tips or hype.
         </p>
       </div>
-
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card p-7 reveal delay-1">
-          <div class="icon-box mb-4" style="background:#dbeafe;color:#1d4ed8;">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            Structure First
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Clear index levels and zones for better option entries, exits and
-            invalidation planning.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#cdeeff,#9adcff);color:#0369a1;"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">Structure First</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Clear index levels and zones for better option entries, exits and invalidation planning.</p>
         </div>
-
         <div class="card p-7 reveal delay-2">
-          <div class="icon-box mb-4" style="background:#dcfce7;color:#16a34a;">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            Risk Managed
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Position sizing and defined stoploss so one trade does not damage
-            capital heavily.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#c8f7ec,#9ef0d9);color:#0f766e;"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">Risk Managed</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Position sizing and defined stoploss so one trade does not damage capital heavily.</p>
         </div>
-
         <div class="card p-7 reveal delay-3">
-          <div class="icon-box mb-4" style="background:#fee2e2;color:#ef4444;">
-            <i class="fa-solid fa-brain"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            Psychology Focus
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Helps you stay objective during fast moves, event days and weekly expiry
-            volatility.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#ffd9e6,#ffb0cf);color:#be185d;"><i class="fa-solid fa-brain"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">Psychology Focus</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Helps you stay objective during fast moves, event days and weekly expiry volatility.</p>
         </div>
-
         <div class="card p-7 reveal delay-4">
-          <div class="icon-box mb-4" style="background:#ede9fe;color:#7c3aed;">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            Research + Explanation
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Advisory with context and reasoning so you understand the trade, not
-            just the level.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#e6dcff,#c9b3ff);color:#6d28d9;"><i class="fa-solid fa-book-open"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">Research + Explanation</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Advisory with context and reasoning so you understand the trade, not just the level.</p>
         </div>
-
         <div class="card p-7 reveal delay-5">
-          <div class="icon-box mb-4" style="background:#cffafe;color:#0ea5e9;">
-            <i class="fa-solid fa-robot"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            Algo-Friendly Thinking
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Suitable for traders who eventually want to systematize their index
-            option approach.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#cdeeff,#9adcff);color:#0369a1;"><i class="fa-solid fa-robot"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">Algo-Friendly Thinking</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Suitable for traders who eventually want to systematize their index option approach.</p>
         </div>
-
         <div class="card p-7 reveal delay-6">
-          <div class="icon-box mb-4" style="background:#fef3c7;color:#d97706;">
-            <i class="fa-solid fa-user-shield"></i>
-          </div>
-          <h3 style="font-weight:900;font-size:1.02rem;color:#0f172a;margin-bottom:10px;">
-            No Hype Promise
-          </h3>
-          <p style="font-size:0.93rem;color:#64748b;">
-            Not for guaranteed-profit seekers. This is advisory with focus on
-            process and risk.
-          </p>
+          <div class="icon-box mb-4" style="background:linear-gradient(135deg,#ffe8b0,#ffd066);color:#b45309;"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 style="font-weight:900;font-size:1.02rem;color:#1e1b3a;margin-bottom:10px;">No Hype Promise</h3>
+          <p style="font-size:0.93rem;color:#6b6485;">Not for guaranteed-profit seekers. This is advisory with focus on process and risk.</p>
         </div>
       </div>
     </div>
@@ -1204,52 +632,25 @@
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="card p-8 reveal from-left">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-emerald-50 text-xs font-extrabold text-emerald-800 px-4 py-2 mb-5 border border-emerald-100"
-          >
-            <i class="fa-solid fa-users"></i>
-            Who This Advisory Is For
+          <div class="inline-flex items-center gap-2 rounded-full bg-teal-50 text-xs font-extrabold text-teal-800 px-4 py-2 mb-5 border border-teal-100">
+            <i class="fa-solid fa-users"></i> Who This Advisory Is For
           </div>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 12px;
-              color: #475569;
-              font-size: 0.97rem;
-            "
-          >
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Active index option traders seeking structured calls.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry traders looking for research-led weekly strategies.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: #4b4468; font-size: 0.97rem;">
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Active index option traders seeking structured calls.</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Expiry traders looking for research-led weekly strategies.</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
           </ul>
         </div>
-
         <div class="card p-8 reveal from-right">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-sky-50 text-xs font-extrabold text-sky-800 px-4 py-2 mb-5 border border-sky-100"
-          >
-            <i class="fa-solid fa-wave-square"></i>
-            Why Index Options
+          <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 text-xs font-extrabold text-blue-700 px-4 py-2 mb-5 border border-blue-100">
+            <i class="fa-solid fa-wave-square"></i> Why Index Options
           </div>
-          <p
-            style="
-              font-size: 0.97rem;
-              color: #475569;
-              line-height: 1.9;
-              margin-bottom: 10px;
-            "
-          >
-            Index options, especially Bank Nifty and Nifty, offer liquidity, tighter
-            spreads and frequent intraday opportunities—but also come with high risk
-            and fast moves.
+          <p style="font-size: 0.97rem; color: #4b4468; line-height: 1.9; margin-bottom: 10px;">
+            Index options, especially Bank Nifty and Nifty, offer liquidity, tighter spreads and frequent intraday opportunities—but also come with high risk and fast moves.
           </p>
-          <p style="font-size:0.97rem;color:#475569;line-height:1.9;">
-            With a clear framework on levels, direction and volatility, index options
-            can be traded more objectively with better understanding of reward and
-            risk on each trade.
+          <p style="font-size:0.97rem;color:#4b4468;line-height:1.9;">
+            With a clear framework on levels, direction and volatility, index options can be traded more objectively with better understanding of reward and risk on each trade.
           </p>
         </div>
       </div>
@@ -1260,386 +661,134 @@
   <section id="pricing" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #22c55e;
-            margin-bottom: 8px;
-          "
-        >
-          Pricing Plans
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          Choose Your NiiveshNeeti Index Options Plan
-        </h2>
-        <p
-          style="
-            color: #64748b;
-            margin-top: 12px;
-            font-size: 0.98rem;
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-          "
-        >
-          Select a research-backed index options advisory plan aligned with your
-          activity level and risk profile.
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #17c3b2; margin-bottom: 8px;">Pricing Plans</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: #1e1b3a;">Choose Your NiiveshNeeti Index Options Plan</h2>
+        <p style="color: #6b6485; margin-top: 12px; font-size: 0.98rem; max-width: 640px; margin-left: auto; margin-right: auto;">
+          Select a research-backed index options advisory plan aligned with your activity level and risk profile.
         </p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
         <div class="card p-8 reveal from-left">
           <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:#0f172a;">Index Options Silver</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600">
-              For Beginners
-            </span>
+            <h3 style="font-weight:900;font-size:1.18rem;color:#1e1b3a;">Index Options Silver</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600">For Beginners</span>
           </div>
-          <p style="font-size:0.92rem;color:#64748b;margin-bottom:16px;">
-            Suitable for beginners focusing on a structured trading approach in
-            index options.
-          </p>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              font-size: 0.92rem;
-              color: #475569;
-              border-top: 1px solid #e2e8f0;
-              padding-top: 18px;
-              margin-bottom: 24px;
-            "
-          >
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target & stoploss levels</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
+          <p style="font-size:0.92rem;color:#6b6485;margin-bottom:16px;">Suitable for beginners focusing on a structured trading approach in index options.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #4b4468; border-top: 1px solid #f1e4ff; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>1 research-based index option trade setup daily</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Clear entry, target & stoploss levels</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Intraday market insights on indices</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Basic support during market hours</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Educational explanation of trade logic</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-orange-500 mr-2"></i>Risk Level: High</li>
           </ul>
-          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
-            Join Now
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
+          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">Join Now <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
         <div class="pricing-popular p-8 pt-14 reveal delay-1">
-          <div
-            style="
-              position: absolute;
-              top: 16px;
-              left: 50%;
-              transform: translateX(-50%);
-              background: linear-gradient(135deg, #22c55e, #06b6d4);
-              color: #fff;
-              padding: 6px 18px;
-              border-radius: 999px;
-              font-size: 11px;
-              font-weight: 800;
-              letter-spacing: 0.06em;
-              box-shadow: 0 10px 24px rgba(34, 197, 94, 0.4);
-              z-index: 2;
-            "
-          >
-            RECOMMENDED
-          </div>
+          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #ff6b6b, #ffa63d); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(255,107,107,0.4); z-index: 2;">RECOMMENDED</div>
           <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:#0f172a;">Index Options Gold</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800">
-              Active Traders
-            </span>
+            <h3 style="font-weight:900;font-size:1.18rem;color:#1e1b3a;">Index Options Gold</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800">Active Traders</span>
           </div>
-          <p style="font-size:0.92rem;color:#334155;margin-bottom:16px;">
-            Best suited for active index option traders aiming for consistency and
-            structured execution.
-          </p>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              font-size: 0.92rem;
-              color: #334155;
-              border-top: 1px solid #c7f9dd;
-              padding-top: 18px;
-              margin-bottom: 24px;
-            "
-          >
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty & Finnifty index options</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit & risk levels with clear logic</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+          <p style="font-size:0.92rem;color:#3a3560;margin-bottom:16px;">Best suited for active index option traders aiming for consistency and structured execution.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #3a3560; border-top: 1px solid #ffe6c2; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Up to 2 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Coverage: Bank Nifty, Nifty & Finnifty index options</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Entry, exit & risk levels with clear logic</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Weekly expiry strategy calls</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Intraday + short term option opportunities</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Live market tracking support</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-orange-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
-          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
-            Join Now
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
+          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">Join Now <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
 
         <div class="card p-8 reveal from-right delay-2">
           <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:#0f172a;">Index Options Platinum</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white">
-              Experienced
-            </span>
+            <h3 style="font-weight:900;font-size:1.18rem;color:#1e1b3a;">Index Options Platinum</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white">Experienced</span>
           </div>
-          <p style="font-size:0.92rem;color:#64748b;margin-bottom:16px;">
-            Designed for experienced traders with higher capital exposure in index
-            options.
-          </p>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              font-size: 0.92rem;
-              color: #475569;
-              border-top: 1px solid #e2e8f0;
-              padding-top: 18px;
-              margin-bottom: 24px;
-            "
-          >
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage – Nifty, BankNifty, Sensex & selected indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+          <p style="font-size:0.92rem;color:#6b6485;margin-bottom:16px;">Designed for experienced traders with higher capital exposure in index options.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #4b4468; border-top: 1px solid #f1e4ff; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Up to 3 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>All index coverage – Nifty, BankNifty, Sensex & selected indices</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Advanced expiry strategy planning</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Volatility-based index option opportunities</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Live market observation and continuous guidance</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Priority dedicated support desk</li>
+            <li><i class="fa-solid fa-check text-teal-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-orange-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
-          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
-            Join Now
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
+          <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">Join Now <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / SEBI / BLOG / RESEARCH -->
+  <!-- ABOUT -->
   <section id="about" class="py-24">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #06b6d4;
-            margin-bottom: 8px;
-          "
-        >
-          About NiiveshNeeti
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          SEBI Registered Index Options Advisory
-        </h2>
-        <p
-          style="
-            color: #64748b;
-            margin-top: 12px;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.98rem;
-          "
-        >
-          NiiveshNeeti offers SEBI registered research advisory in Indian indices
-          with a clear focus on index options, structure, risk and trader-friendly
-          communication.
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #4d9fff; margin-bottom: 8px;">About NiiveshNeeti</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: #1e1b3a;">SEBI Registered Index Options Advisory</h2>
+        <p style="color: #6b6485; margin-top: 12px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">
+          NiiveshNeeti offers SEBI registered research advisory in Indian indices with a clear focus on index options, structure, risk and trader-friendly communication.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         <div class="card p-8 reveal from-left">
-          <h3
-            style="
-              font-weight: 900;
-              font-size: 1.15rem;
-              color: #0f172a;
-              margin-bottom: 16px;
-            "
-          >
-            Built by traders with 15+ years in Indian markets
-          </h3>
-          <p
-            style="
-              font-size: 0.96rem;
-              color: #475569;
-              line-height: 1.85;
-              margin-bottom: 18px;
-            "
-          >
-            We focus on three pillars: structure, risk and psychology. This means
-            clearer levels, defined risk per trade and more discipline when
-            volatility expands in index options.
+          <h3 style="font-weight: 900; font-size: 1.15rem; color: #1e1b3a; margin-bottom: 16px;">Built by traders with 15+ years in Indian markets</h3>
+          <p style="font-size: 0.96rem; color: #4b4468; line-height: 1.85; margin-bottom: 18px;">
+            We focus on three pillars: structure, risk and psychology. This means clearer levels, defined risk per trade and more discipline when volatility expands in index options.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="border border-slate-200 rounded-2xl p-5 card" style="box-shadow:none;">
-              <div class="icon-box mb-3" style="background:#dbeafe;color:#1d4ed8;">
-                <i class="fa-solid fa-draw-polygon"></i>
-              </div>
-              <h4
-                style="
-                  font-weight: 800;
-                  color: #0f172a;
-                  margin-bottom: 6px;
-                  font-size: 0.95rem;
-                "
-              >
-                Structure
-              </h4>
-              <p style="font-size:0.88rem;color:#64748b;">
-                Clear zones and levels for option entries and exits.
-              </p>
+            <div class="border border-purple-100 rounded-2xl p-5 card" style="box-shadow:none;">
+              <div class="icon-box mb-3" style="background:linear-gradient(135deg,#cdeeff,#9adcff);color:#0369a1;"><i class="fa-solid fa-draw-polygon"></i></div>
+              <h4 style="font-weight: 800; color: #1e1b3a; margin-bottom: 6px; font-size: 0.95rem;">Structure</h4>
+              <p style="font-size:0.88rem;color:#6b6485;">Clear zones and levels for option entries and exits.</p>
             </div>
-            <div class="border border-slate-200 rounded-2xl p-5 card" style="box-shadow:none;">
-              <div class="icon-box mb-3" style="background:#dcfce7;color:#16a34a;">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <h4
-                style="
-                  font-weight: 800;
-                  color: #0f172a;
-                  margin-bottom: 6px;
-                  font-size: 0.95rem;
-                "
-              >
-                Risk
-              </h4>
-              <p style="font-size:0.88rem;color:#64748b;">
-                Sizing and SL logic so one trade does not hit the account badly.
-              </p>
+            <div class="border border-purple-100 rounded-2xl p-5 card" style="box-shadow:none;">
+              <div class="icon-box mb-3" style="background:linear-gradient(135deg,#c8f7ec,#9ef0d9);color:#0f766e;"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4 style="font-weight: 800; color: #1e1b3a; margin-bottom: 6px; font-size: 0.95rem;">Risk</h4>
+              <p style="font-size:0.88rem;color:#6b6485;">Sizing and SL logic so one trade does not hit the account badly.</p>
             </div>
-            <div class="border border-slate-200 rounded-2xl p-5 card" style="box-shadow:none;">
-              <div class="icon-box mb-3" style="background:#fef3c7;color:#d97706;">
-                <i class="fa-solid fa-brain"></i>
-              </div>
-              <h4
-                style="
-                  font-weight: 800;
-                  color: #0f172a;
-                  margin-bottom: 6px;
-                  font-size: 0.95rem;
-                "
-              >
-                Psychology
-              </h4>
-              <p style="font-size:0.88rem;color:#64748b;">
-                Stay disciplined when markets become emotional or noisy.
-              </p>
+            <div class="border border-purple-100 rounded-2xl p-5 card" style="box-shadow:none;">
+              <div class="icon-box mb-3" style="background:linear-gradient(135deg,#ffe8b0,#ffd066);color:#b45309;"><i class="fa-solid fa-brain"></i></div>
+              <h4 style="font-weight: 800; color: #1e1b3a; margin-bottom: 6px; font-size: 0.95rem;">Psychology</h4>
+              <p style="font-size:0.88rem;color:#6b6485;">Stay disciplined when markets become emotional or noisy.</p>
             </div>
           </div>
         </div>
 
         <div class="card p-8 reveal from-right">
-          <h3
-            style="
-              font-weight: 900;
-              font-size: 1.15rem;
-              color: #0f172a;
-              margin-bottom: 16px;
-            "
-          >
-            SEBI Registered Research Analyst Details
-          </h3>
+          <h3 style="font-weight: 900; font-size: 1.15rem; color: #1e1b3a; margin-bottom: 16px;">SEBI Registered Research Analyst Details</h3>
           <div class="space-y-3 text-[0.95rem] text-slate-600">
             <p><span class="font-extrabold text-slate-900">Registered Name:</span> Amit Kori</p>
             <p><span class="font-extrabold text-slate-900">Type of registration:</span> Individual</p>
             <p><span class="font-extrabold text-slate-900">Registration No.:</span> INH000016533</p>
             <p><span class="font-extrabold text-slate-900">Validity:</span> Nov 22, 2027</p>
-            <p>
-              <span class="font-extrabold text-slate-900">Nearest SEBI Office Address:</span>
-              SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra
-              (East), Mumbai – 400051, Maharashtra
-            </p>
+            <p><span class="font-extrabold text-slate-900">Nearest SEBI Office Address:</span> SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra</p>
           </div>
-
-          <div class="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50 px-5 py-4">
-            <p style="font-size:0.92rem;color:#166534;line-height:1.8;">
-              This is research advisory, not guaranteed tips. We focus on education,
-              structure and real-time context alongside trade calls.
-            </p>
+          <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 px-5 py-4">
+            <p style="font-size:0.92rem;color:#0f766e;line-height:1.8;">This is research advisory, not guaranteed tips. We focus on education, structure and real-time context alongside trade calls.</p>
           </div>
-
-          <div class="mt-6">
-            <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn">
-              Talk to Advisory Desk
-            </a>
-          </div>
+          <div class="mt-6"><a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn">Talk to Advisory Desk</a></div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="card p-8 reveal from-left">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-sky-50 text-xs font-extrabold text-sky-700 px-4 py-2 mb-5 border border-sky-100"
-          >
-            <i class="fa-solid fa-newspaper"></i>
-            Blog
-          </div>
-          <h3
-            style="
-              font-weight: 900;
-              font-size: 1.15rem;
-              color: #0f172a;
-              margin-bottom: 10px;
-            "
-          >
-            Market Learning Notes
-          </h3>
-          <p style="font-size:0.95rem;color:#64748b;line-height:1.8;">
-            Use this area for articles on index options structure, momentum, risk,
-            trading psychology and practical notes from the advisory desk.
-          </p>
+          <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 text-xs font-extrabold text-blue-700 px-4 py-2 mb-5 border border-blue-100"><i class="fa-solid fa-newspaper"></i> Blog</div>
+          <h3 style="font-weight: 900; font-size: 1.15rem; color: #1e1b3a; margin-bottom: 10px;">Market Learning Notes</h3>
+          <p style="font-size:0.95rem;color:#6b6485;line-height:1.8;">Use this area for articles on index options structure, momentum, risk, trading psychology and practical notes from the advisory desk.</p>
         </div>
-
         <div class="card p-8 reveal from-right">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-violet-50 text-xs font-extrabold text-violet-700 px-4 py-2 mb-5 border border-violet-100"
-          >
-            <i class="fa-solid fa-file-lines"></i>
-            Research Report
-          </div>
-          <h3
-            style="
-              font-weight: 900;
-              font-size: 1.15rem;
-              color: #0f172a;
-              margin-bottom: 10px;
-            "
-          >
-            Research & Review Archive
-          </h3>
-          <p style="font-size:0.95rem;color:#64748b;line-height:1.8;">
-            Use this area for weekly research reports, setup reviews, market
-            observations and recorded webinars for index option traders.
-          </p>
+          <div class="inline-flex items-center gap-2 rounded-full bg-violet-50 text-xs font-extrabold text-violet-700 px-4 py-2 mb-5 border border-violet-100"><i class="fa-solid fa-file-lines"></i> Research Report</div>
+          <h3 style="font-weight: 900; font-size: 1.15rem; color: #1e1b3a; margin-bottom: 10px;">Research & Review Archive</h3>
+          <p style="font-size:0.95rem;color:#6b6485;line-height:1.8;">Use this area for weekly research reports, setup reviews, market observations and recorded webinars for index option traders.</p>
         </div>
       </div>
     </div>
@@ -1649,94 +798,34 @@
   <section id="faq" class="py-24 section-alt">
     <div class="max-w-5xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #22c55e;
-            margin-bottom: 8px;
-          "
-        >
-          FAQs
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.6rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          Frequently Asked Questions
-        </h2>
-        <p
-          style="
-            color: #64748b;
-            margin-top: 12px;
-            font-size: 0.98rem;
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
-          "
-        >
-          A few clear answers so users understand what NiiveshNeeti advisory is and
-          what it is not.
-        </p>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #17c3b2; margin-bottom: 8px;">FAQs</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: #1e1b3a;">Frequently Asked Questions</h2>
+        <p style="color: #6b6485; margin-top: 12px; font-size: 0.98rem; max-width: 680px; margin-left: auto; margin-right: auto;">A few clear answers so users understand what NiiveshNeeti advisory is and what it is not.</p>
       </div>
-
       <div class="space-y-5">
         <details class="card faq-item reveal">
           <summary>Is this a tips channel?</summary>
-          <div class="faq-body">
-            No. NiiveshNeeti provides SEBI compliant research advisory. Calls are
-            backed by analysis, structure and risk logic—this is not random tips or
-            guaranteed profit service.
-          </div>
+          <div class="faq-body">No. NiiveshNeeti provides SEBI compliant research advisory. Calls are backed by analysis, structure and risk logic—this is not random tips or guaranteed profit service.</div>
         </details>
-
         <details class="card faq-item reveal delay-1">
           <summary>Which instruments do you primarily cover?</summary>
-          <div class="faq-body">
-            We focus on index options and related levels—primarily Nifty, Bank Nifty,
-            Finnifty and relevant index structures, with occasional index-based
-            futures context.
-          </div>
+          <div class="faq-body">We focus on index options and related levels—primarily Nifty, Bank Nifty, Finnifty and relevant index structures, with occasional index-based futures context.</div>
         </details>
-
         <details class="card faq-item reveal delay-2">
           <summary>Who should join NiiveshNeeti?</summary>
-          <div class="faq-body">
-            Active index option traders, expiry traders, and serious learners who
-            want structured calls, levels, risk-defined trades and real-time support
-            instead of noise.
-          </div>
+          <div class="faq-body">Active index option traders, expiry traders, and serious learners who want structured calls, levels, risk-defined trades and real-time support instead of noise.</div>
         </details>
-
         <details class="card faq-item reveal delay-3">
           <summary>Will I get daily trade setups?</summary>
-          <div class="faq-body">
-            Yes. Depending on the plan, you get 1–3 research-based index option trade
-            setups daily along with levels, bias and brief notes on context.
-          </div>
+          <div class="faq-body">Yes. Depending on the plan, you get 1–3 research-based index option trade setups daily along with levels, bias and brief notes on context.</div>
         </details>
-
         <details class="card faq-item reveal delay-4">
           <summary>Do you cover hedging and risk management?</summary>
-          <div class="faq-body">
-            Yes. We actively highlight risk, stoploss, position sizing, and when to
-            reduce exposure or switch to defined-risk strategies in high volatility
-            phases.
-          </div>
+          <div class="faq-body">Yes. We actively highlight risk, stoploss, position sizing, and when to reduce exposure or switch to defined-risk strategies in high volatility phases.</div>
         </details>
-
         <details class="card faq-item reveal delay-5">
           <summary>Do you execute trades on my behalf?</summary>
-          <div class="faq-body">
-            No. This is only research and advisory. You remain fully responsible for
-            execution, risk and your capital. We do not provide PMS, execution or
-            guaranteed returns.
-          </div>
+          <div class="faq-body">No. This is only research and advisory. You remain fully responsible for execution, risk and your capital. We do not provide PMS, execution or guaranteed returns.</div>
         </details>
       </div>
     </div>
@@ -1746,172 +835,51 @@
   <section id="disclaimer" class="py-24">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <div class="text-center mb-12 reveal">
-        <div
-          style="
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #ef4444;
-            margin-bottom: 8px;
-          "
-        >
-          Disclaimer
-        </div>
-        <h2
-          style="
-            font-size: clamp(1.9rem, 3.6vw, 2.6rem);
-            font-weight: 900;
-            color: #0f172a;
-          "
-        >
-          Mandatory Disclosures
-        </h2>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #ff6b6b; margin-bottom: 8px;">Disclaimer</div>
+        <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: #1e1b3a;">Mandatory Disclosures</h2>
       </div>
-
       <div class="card p-8 md:p-10 reveal">
         <div class="space-y-5 text-[0.96rem] text-slate-600 leading-8">
-          <p>
-            <strong>*Disclaimer:</strong> "Registration granted by SEBI and
-            certification from NISM in no way guarantee performance of the
-            intermediary or provide any assurance of returns to investors."
-          </p>
-          <p>
-            <strong>*Disclaimer:</strong> For security/securities displayed in the
-            website and in the advertisement – "The securities quoted (If any) on
-            our website or in any of our advertisement are for illustration only and
-            are not recommendatory."
-          </p>
-          <p>
-            <strong>*Standard warning:</strong> "Investment in securities market are
-            subject to market risks. Read all the related documents carefully before
-            investing."
-          </p>
-          <p>
-            <strong>*Mandatory notice:</strong> "Clients shall be requested to go
-            through Do's and Don'ts while dealing with RA as specified in SEBI master
-            circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as
-            may be specified by SEBI from time to time."
-          </p>
+          <p><strong>*Disclaimer:</strong> "Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."</p>
+          <p><strong>*Disclaimer:</strong> For security/securities displayed in the website and in the advertisement – "The securities quoted (If any) on our website or in any of our advertisement are for illustration only and are not recommendatory."</p>
+          <p><strong>*Standard warning:</strong> "Investment in securities market are subject to market risks. Read all the related documents carefully before investing."</p>
+          <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-slate-200/70">
+  <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-purple-100/70">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mb-12">
         <div>
           <a href="#home" target="_self">
-            <img
-              src="niiveshlogo.png"
-              alt="NiiveshNeeti"
-              class="h-11 w-auto mb-5"
-              onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/f5f3ff/0f172a?text=NIIVESHNEETI';"
-            />
+            <img src="niiveshlogo.png" alt="NiiveshNeeti" class="h-11 w-auto mb-5" onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fef2ff/1e1b3a?text=NIIVESHNEETI';" />
           </a>
-          <p style="font-size:13px;color:#64748b;line-height:1.8;">
-            NiiveshNeeti is a SEBI registered research analyst advisory focused on
-            index options. We provide research-based trade calls, levels and support
-            for disciplined traders.
-          </p>
+          <p style="font-size:13px;color:#6b6485;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
         </div>
-
         <div>
-          <h4
-            style="
-              font-weight: 800;
-              font-size: 12px;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              color: #0f172a;
-              margin-bottom: 14px;
-            "
-          >
-            Quick Links
-          </h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-              font-size: 13px;
-              color: #64748b;
-            "
-          >
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #1e1b3a; margin-bottom: 14px;">Quick Links</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #6b6485;">
             <li><a class="footer-link" href="#services" target="_self">Services</a></li>
             <li><a class="footer-link" href="#pricing" target="_self">Pricing</a></li>
             <li><a class="footer-link" href="#faq" target="_self">FAQ</a></li>
             <li><a class="footer-link" href="#disclaimer" target="_self">Disclaimer</a></li>
           </ul>
         </div>
-
         <div>
-          <h4
-            style="
-              font-weight: 800;
-              font-size: 12px;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              color: #0f172a;
-              margin-bottom: 14px;
-            "
-          >
-            Contact Us
-          </h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              font-size: 13px;
-              color: #64748b;
-            "
-          >
-            <li>
-              <i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i>
-              +91 91379 32216
-            </li>
-            <li>
-              <i class="fa-solid fa-envelope" style="color:#06b6d4;margin-right:8px;width:14px;"></i>
-              support@niiveshneeti.com
-            </li>
-            <li>
-              <i class="fa-solid fa-paper-plane" style="color:#a855f7;margin-right:8px;width:14px;"></i>
-              Advisory group access shared after onboarding
-            </li>
-            <li>
-              <i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i>
-              Mon to Sat, 9:00AM to 6:00PM
-            </li>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #1e1b3a; margin-bottom: 14px;">Contact Us</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #6b6485;">
+            <li><i class="fa-solid fa-phone" style="color:#17c3b2;margin-right:8px;width:14px;"></i>+91 91379 32216</li>
+            <li><i class="fa-solid fa-envelope" style="color:#4d9fff;margin-right:8px;width:14px;"></i>support@niiveshneeti.com</li>
+            <li><i class="fa-solid fa-paper-plane" style="color:#9b5de5;margin-right:8px;width:14px;"></i>Advisory group access shared after onboarding</li>
+            <li><i class="fa-solid fa-clock" style="color:#ffa63d;margin-right:8px;width:14px;"></i>Mon to Sat, 9:00AM to 6:00PM</li>
           </ul>
         </div>
-
         <div>
-          <h4
-            style="
-              font-weight: 800;
-              font-size: 12px;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              color: #0f172a;
-              margin-bottom: 14px;
-            "
-          >
-            Legal & Policy
-          </h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-              font-size: 13px;
-            "
-          >
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #1e1b3a; margin-bottom: 14px;">Legal & Policy</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
             <li><a class="footer-link" href="Disclaimer.html" target="_self" rel="noopener noreferrer">Disclaimer</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_indexneeti1.pdf" target="_blank" rel="noopener noreferrer">Disclosure</a></li>
             <li><a class="footer-link" href="Terms_and_Condition.html" target="_self" rel="noopener noreferrer">Terms &amp; Condition</a></li>
@@ -1925,84 +893,28 @@
         </div>
       </div>
 
-      <div
-        style="
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
-          border-radius: 16px;
-          padding: 20px 22px;
-          margin-bottom: 26px;
-          font-size: 11px;
-          color: #64748b;
-          line-height: 1.8;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        "
-      >
-        <p>
-          <strong>*Disclaimer:</strong> "Registration granted by SEBI and
-          certification from NISM in no way guarantee performance of the
-          intermediary or provide any assurance of returns to investors."
-        </p>
-        <p>
-          <strong>*Disclaimer:</strong> For security/securities displayed in the
-          website and in the advertisement – "The securities quoted (If any) on our
-          website or in any of our advertisement are for illustration only and are
-          not recommendatory."
-        </p>
-        <p>
-          <strong>*Standard warning:</strong> "Investment in securities market are
-          subject to market risks. Read all the related documents carefully before
-          investing."
-        </p>
-        <p>
-          <strong>*Mandatory notice:</strong> "Clients shall be requested to go
-          through Do's and Don'ts while dealing with RA as specified in SEBI master
-          circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as
-          may be specified by SEBI from time to time."
-        </p>
-
-        <div
-          style="
-            border-top: 1px solid #e2e8f0;
-            padding-top: 14px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-          "
-        >
+      <div style="background: #faf5ff; border: 1px solid #f1e4ff; border-radius: 16px; padding: 20px 22px; margin-bottom: 26px; font-size: 11px; color: #6b6485; line-height: 1.8; display: flex; flex-direction: column; gap: 10px;">
+        <p><strong>*Disclaimer:</strong> "Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."</p>
+        <p><strong>*Disclaimer:</strong> For security/securities displayed in the website and in the advertisement – "The securities quoted (If any) on our website or in any of our advertisement are for illustration only and are not recommendatory."</p>
+        <p><strong>*Standard warning:</strong> "Investment in securities market are subject to market risks. Read all the related documents carefully before investing."</p>
+        <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
+        <div style="border-top: 1px solid #f1e4ff; padding-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
           <div>
-            <p style="font-weight:800;color:#0f172a;margin-bottom:4px;">
-              SEBI Registered Research Analyst Details:
-            </p>
+            <p style="font-weight:800;color:#1e1b3a;margin-bottom:4px;">SEBI Registered Research Analyst Details:</p>
             <p>Registered Name: Amit Kori</p>
             <p>Type of registration: Individual</p>
             <p>Registration No.: INH000016533</p>
             <p>Validity: Nov 22, 2027</p>
           </div>
           <div>
-            <p style="font-weight:800;color:#0f172a;margin-bottom:4px;">
-              Nearest SEBI Office Address:
-            </p>
-            <p>
-              SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra
-              (East), Mumbai – 400051, Maharashtra
-            </p>
+            <p style="font-weight:800;color:#1e1b3a;margin-bottom:4px;">Nearest SEBI Office Address:</p>
+            <p>SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra</p>
           </div>
         </div>
       </div>
 
-      <div
-        style="
-          text-align: center;
-          font-size: 12px;
-          color: #94a3b8;
-          border-top: 1px solid #f1f5f9;
-          padding-top: 20px;
-        "
-      >
-        NiiveshNeeti ©2026 All Rights Reserved.
+      <div style="text-align: center; font-size: 12px; color: #a49bc4; border-top: 1px solid #f6effe; padding-top: 20px;">
+        NiiveshNeeti &copy;2026 All Rights Reserved.
       </div>
     </div>
   </footer>
@@ -2017,148 +929,228 @@
     menuToggle?.addEventListener("click", () => {
       mobileMenu.classList.toggle("open");
       const icon = menuToggle.querySelector("i");
-      if (mobileMenu.classList.contains("open")) {
-        icon.className = "fa-solid fa-xmark text-lg";
-      } else {
-        icon.className = "fa-solid fa-bars text-lg";
-      }
+      icon.className = mobileMenu.classList.contains("open") ? "fa-solid fa-xmark text-lg" : "fa-solid fa-bars text-lg";
     });
-
     mobileNavLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
-        const icon = menuToggle.querySelector("i");
-        icon.className = "fa-solid fa-bars text-lg";
+        menuToggle.querySelector("i").className = "fa-solid fa-bars text-lg";
       });
     });
 
     // reveal on scroll
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    document.querySelectorAll(".reveal").forEach((el) =>
-      revealObserver.observe(el)
-    );
-
-    // hero notification state machine
-    const stages = [
-      {
-        title: "Advisory Alert: BUY NIFTY CE 24500",
-        text:
-          "Notification received: <strong>BUY NIFTY CE 24500 @ 125</strong>, <strong>Target 202</strong>, <strong>Stoploss 104</strong>. Trader gets the complete plan with levels and risk.",
-        meta: {
-          entry: "24500 Call near 125 (±2 pts)",
-          target: "202 (partial booking allowed)",
-          sl: "104 (strict)",
-        },
-        chips: ["Advisory notification released", "Trade plan with logic"],
-        activeStep: 0,
-      },
-      {
-        title: "Trade Execution: Order Filled Near 125",
-        text:
-          "Trader executes BUY NIFTY CE 24500 close to 125 as per advisory. Risk per lot is known upfront with stoploss at 104.",
-        meta: {
-          entry: "Executed around 125 after alert",
-          target: "202 target remains active",
-          sl: "104 respected as hard stop",
-        },
-        chips: ["User follows advisory levels", "Position size aligned with risk"],
-        activeStep: 1,
-      },
-      {
-        title: "Target Hit: Price Touches 202 Zone",
-        text:
-          "NIFTY CE 24500 rallies and touches 202 zone. Position is squared off as per advisory target, booking defined profit.",
-        meta: {
-          entry: "Trade originated near 125",
-          target: "Exit near 202 (as per plan)",
-          sl: "SL not hit; risk was controlled",
-        },
-        chips: ["Target booked at advisory level", "Trade closed exactly as planned"],
-        activeStep: 2,
-      },
-      {
-        title: "Post-Trade Note: Process Over Outcome",
-        text:
-          "Trade is reviewed with notes on structure, volatility and behaviour around levels. Focus stays on execution quality and risk discipline.",
-        meta: {
-          entry: "Review of entry context",
-          target: "Understanding of exit behaviour",
-          sl: "Reinforcing SL discipline",
-        },
-        chips: ["Learning notes shared", "Helps refine future decisions"],
-        activeStep: 2,
-      },
-    ];
-
-    const stageShell = document.getElementById("notifStageShell");
-    const stageTitle = document.getElementById("notifStageTitle");
-    const stageText = document.getElementById("notifStageText");
-    const timelineSteps = document.querySelectorAll(".notif-step");
-
-    function applyStage(index) {
-      const stage = stages[index];
-      if (!stage) return;
-
-      stageShell.classList.add("stage-transition");
-
-      setTimeout(() => {
-        stageTitle.textContent = stage.title;
-        stageText.innerHTML = stage.text;
-
-        const metaList = stageShell.querySelector(".notif-meta-list");
-        if (metaList) {
-          metaList.innerHTML = `
-            <li><span>Entry:</span> ${stage.meta.entry}</li>
-            <li><span>Target:</span> ${stage.meta.target}</li>
-            <li><span>Stoploss:</span> ${stage.meta.sl}</li>
-          `;
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-        const chipRow = stageShell.querySelector(".notif-chip-row");
-        if (chipRow) {
-          chipRow.innerHTML = "";
-          stage.chips.forEach((chipText, idx) => {
-            const chip = document.createElement("div");
-            chip.className = "notif-chip";
-            const icon = document.createElement("i");
-            icon.className =
-              idx === 0 ? "fa-solid fa-bell" : "fa-solid fa-list-check";
-            chip.appendChild(icon);
-            const span = document.createElement("span");
-            span.textContent = chipText;
-            chip.appendChild(span);
-            chipRow.appendChild(chip);
-          });
-        }
-
-        timelineSteps.forEach((stepEl) => {
-          const stepIndex = Number(stepEl.dataset.step || 0);
-          stepEl.dataset.active =
-            stepIndex === stage.activeStep ? "true" : "false";
-        });
-
-        stageShell.classList.remove("stage-transition");
-      }, 220);
+    // live clock in phone status bar
+    function updateClock() {
+      const el = document.getElementById("clockTime");
+      if (!el) return;
+      const now = new Date();
+      let h = now.getHours();
+      const m = now.getMinutes().toString().padStart(2, "0");
+      el.textContent = `${h.toString().padStart(2,"0")}:${m}`;
     }
+    updateClock();
+    setInterval(updateClock, 30000);
 
-    let stageIndex = 0;
-    applyStage(stageIndex);
+    /* =========================================================
+       PHONE TRADE ANIMATION SEQUENCE
+       Random-walk price path from 125 -> jitters -> 202 -> jitters -> reset
+    ========================================================= */
+    (function () {
+      const svgW = 300, svgH = 130, padY = 14;
+      const priceArea = document.getElementById("priceArea");
+      const priceLine = document.getElementById("priceLine");
+      const priceDot = document.getElementById("priceDot");
+      const priceValueEl = document.getElementById("priceValue");
+      const priceDeltaEl = document.getElementById("priceDelta");
+      const buyBtn = document.getElementById("buyBtn");
+      const sellBtn = document.getElementById("sellBtn");
+      const notifTray = document.getElementById("notifTray");
+      const notifIcon = document.getElementById("notifIcon");
+      const notifTitle = document.getElementById("notifTitle");
+      const notifText = document.getElementById("notifText");
+      const notifTime = document.getElementById("notifTime");
+      const flowCaption = document.getElementById("flowCaption");
+      const flowCaptionText = document.getElementById("flowCaptionText");
 
-    setInterval(() => {
-      stageIndex = (stageIndex + 1) % stages.length;
-      applyStage(stageIndex);
-    }, 6000);
+      const ENTRY = 125, TARGET = 202, SL = 104;
+      const MIN_P = 95, MAX_P = 215;
+
+      function priceToY(p) {
+        const clamped = Math.max(MIN_P, Math.min(MAX_P, p));
+        const ratio = (clamped - MIN_P) / (MAX_P - MIN_P);
+        return svgH - padY - ratio * (svgH - padY * 2);
+      }
+
+      function buildPath(points) {
+        if (!points.length) return { line: "", area: "" };
+        const step = svgW / (points.length - 1);
+        let line = `M0,${priceToY(points[0]).toFixed(1)}`;
+        points.forEach((p, i) => {
+          if (i === 0) return;
+          line += ` L${(i * step).toFixed(1)},${priceToY(p).toFixed(1)}`;
+        });
+        const area = `${line} L${svgW},${svgH} L0,${svgH} Z`;
+        return { line, area };
+      }
+
+      function setChart(points, animate) {
+        const { line, area } = buildPath(points);
+        priceLine.setAttribute("d", line);
+        priceArea.setAttribute("d", area);
+        const lastX = svgW;
+        const lastY = priceToY(points[points.length - 1]);
+        priceDot.setAttribute("cx", lastX);
+        priceDot.setAttribute("cy", lastY);
+        if (animate) {
+          const len = priceLine.getTotalLength ? priceLine.getTotalLength() : 900;
+          priceLine.style.strokeDasharray = len;
+          priceLine.style.strokeDashoffset = len;
+          priceLine.style.transition = "none";
+          void priceLine.offsetWidth;
+          priceLine.style.transition = "stroke-dashoffset 1.4s ease-out";
+          requestAnimationFrame(() => { priceLine.style.strokeDashoffset = 0; });
+        }
+      }
+
+      function jitterSeries(base, count, spread) {
+        const arr = [base];
+        for (let i = 1; i < count; i++) {
+          const prev = arr[i - 1];
+          const move = (Math.random() - 0.5) * spread;
+          arr.push(Math.max(MIN_P, Math.min(MAX_P, prev + move)));
+        }
+        return arr;
+      }
+
+      function riseSeries(from, to, count) {
+        const arr = [from];
+        for (let i = 1; i < count; i++) {
+          const target = from + (to - from) * (i / (count - 1));
+          const noise = (Math.random() - 0.45) * 10;
+          arr.push(Math.max(MIN_P, Math.min(MAX_P, target + noise)));
+        }
+        arr[arr.length - 1] = to;
+        return arr;
+      }
+
+      function updatePriceLabel(p, refPrice, positive) {
+        priceValueEl.textContent = p.toFixed(2);
+        const pct = (((p - refPrice) / refPrice) * 100).toFixed(1);
+        priceDeltaEl.textContent = (pct >= 0 ? "+" : "") + pct + "%";
+        priceDeltaEl.style.color = positive ? "#17c3b2" : "#ff6b6b";
+      }
+
+      function ripple(btn) {
+        const r = document.createElement("span");
+        r.className = "ripple animate";
+        btn.appendChild(r);
+        setTimeout(() => r.remove(), 650);
+      }
+
+      function pressButton(btn) {
+        btn.classList.add("pressed", "glow");
+        ripple(btn);
+        setTimeout(() => btn.classList.remove("pressed", "glow"), 400);
+      }
+
+      function showNotif(type, title, text) {
+        notifIcon.className = "notif-icon-badge " + type;
+        notifIcon.innerHTML = type === "buy"
+          ? '<i class="fa-solid fa-bell"></i>'
+          : '<i class="fa-solid fa-circle-check"></i>';
+        notifTitle.textContent = title;
+        notifText.textContent = text;
+        notifTime.textContent = "now";
+        notifTray.classList.add("show");
+      }
+      function hideNotif() { notifTray.classList.remove("show"); }
+
+      function setCaption(text) {
+        flowCaptionText.textContent = text;
+        flowCaption.classList.add("show");
+      }
+      function clearCaption() { flowCaption.classList.remove("show"); }
+
+      async function wait(ms) { return new Promise((res) => setTimeout(res, ms)); }
+
+      async function runCycle() {
+        // reset visuals
+        sellBtn.style.opacity = "0.45";
+        hideNotif();
+        clearCaption();
+
+        // 1) watching phase - price jitters near entry before signal
+        setCaption("Watching live price…");
+        const watch = jitterSeries(128, 10, 6);
+        setChart(watch, true);
+        updatePriceLabel(watch[watch.length - 1], ENTRY, watch[watch.length - 1] >= ENTRY);
+        await wait(1500);
+
+        // 2) advisory notification appears
+        showNotif("buy", "NiiveshNeeti Advisory", "BUY NIFTY CE 24500 @ 125. Target 202, SL 104.");
+        setCaption("Advisory alert received");
+        await wait(1800);
+        hideNotif();
+
+        // 3) user taps BUY
+        setCaption("Executing BUY order…");
+        pressButton(buyBtn);
+        await wait(500);
+        const entryPoint = jitterSeries(ENTRY, 6, 4);
+        setChart(entryPoint, true);
+        updatePriceLabel(ENTRY, ENTRY, true);
+        await wait(1000);
+
+        // 4) price moves up/down/up/down then rallies toward target
+        setCaption("Position live — tracking price");
+        const rally = riseSeries(ENTRY, TARGET, 14);
+        setChart(rally, true);
+        for (let i = 0; i < rally.length; i++) {
+          updatePriceLabel(rally[i], ENTRY, rally[i] >= ENTRY);
+          await wait(150);
+        }
+        updatePriceLabel(TARGET, ENTRY, true);
+        sellBtn.style.opacity = "1";
+
+        // 5) target hit notification
+        showNotif("sell", "Target Achieved!", "NIFTY CE 24500 hit 202. Book profit now.");
+        setCaption("Target zone reached 🎯");
+        await wait(1600);
+        hideNotif();
+
+        // 6) user taps SELL
+        setCaption("Executing SELL — booking profit…");
+        pressButton(sellBtn);
+        await wait(600);
+        setCaption("Trade closed: +77 pts booked ✅");
+        await wait(2200);
+
+        clearCaption();
+        await wait(600);
+      }
+
+      async function loop() {
+        // initial static chart before first cycle
+        const initPts = jitterSeries(125, 8, 5);
+        setChart(initPts, false);
+        updatePriceLabel(initPts[initPts.length - 1], ENTRY, true);
+        while (true) {
+          await runCycle();
+        }
+      }
+
+      loop();
+    })();
   </script>
 </body>
 </html>

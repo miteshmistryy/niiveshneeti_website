@@ -6,15 +6,16 @@
   <title>NiiveshNeeti | SEBI Registered Index Options Advisory</title>
 
   <!-- Favicon -->
-  /png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Styles & fonts -->
-  <script src="https://cdn.tailwindcss.com"></scripipt>
-  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  s"
   />
-  //api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
     rel="stylesheet"
   />
 
@@ -603,6 +604,32 @@
       transition: color 0.2s ease;
     }
     .footer-link:hover { color: var(--color-primary-alt); }
+
+    /* mobile menu */
+    .mobile-menu-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .mobile-menu-panel.open {
+      max-height: 400px;
+    }
+
+    /* FAQ */
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #0f172a;
+      padding: 20px 24px;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-body {
+      padding: 0 24px 20px;
+      color: #64748b;
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -787,10 +814,10 @@
                   gets complete plan with levels and risk.
                 </div>
 
-                <ul class="notif-meta-listst">
-                  ><span>Entry:</span> 24500 Call near 125 (±2 pts)</l/li>
-                  ><span>Target:</span> 202 (partial booking allowed)</l/li>
-                  ><span>Stoploss:</span> 104 (strict)</li>
+                <ul class="notif-meta-list">
+                  <li><span>Entry:</span> 24500 Call near 125 (±2 pts)</li>
+                  <li><span>Target:</span> 202 (partial booking allowed)</li>
+                  <li><span>Stoploss:</span> 104 (strict)</li>
                 </ul>
 
                 <div class="notif-chip-row">
@@ -824,7 +851,7 @@
 
                 <svg viewBox="0 0 120 40" class="hero-chart-svg" preserveAspectRatio="none">
                   <defs>
-                    earGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stop-color="#06b6d4" />
                       <stop offset="40%" stop-color="#22c55e" />
                       <stop offset="100%" stop-color="#fb7185" />
@@ -1192,12 +1219,11 @@
               color: #475569;
               font-size: 0.97rem;
             "
-          "
           >
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Active index option traders seeking structured calls.</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry traders looking for research-led weekly strategies.</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Active index option traders seeking structured calls.</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry traders looking for research-led weekly strategies.</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
           </ul>
         </div>
 
@@ -1294,14 +1320,13 @@
               padding-top: 18px;
               margin-bottom: 24px;
             "
-          "
           >
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target & stoploss levels</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</l/li>
-            ><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target & stoploss levels</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
             Join Now
@@ -1351,16 +1376,15 @@
               padding-top: 18px;
               margin-bottom: 24px;
             "
-          "
           >
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty & Finnifty index options</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit & risk levels with clear logic</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</l/li>
-            ><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty & Finnifty index options</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit & risk levels with clear logic</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
             Join Now
@@ -1391,16 +1415,15 @@
               padding-top: 18px;
               margin-bottom: 24px;
             "
-          "
           >
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage – Nifty, BankNifty, Sensex & selected indices</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</l/li>
-            ><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</l/li>
-            ><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage – Nifty, BankNifty, Sensex & selected indices</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" target="_self" class="cta-btn w-full">
             Join Now
@@ -1552,7 +1575,7 @@
             <p><span class="font-extrabold text-slate-900">Validity:</span> Nov 22, 2027</p>
             <p>
               <span class="font-extrabold text-slate-900">Nearest SEBI Office Address:</span>
-              SEBI Bhavan BKC, Plot No.C4-A, ‘G’ Block Bandra-Kurla Complex, Bandra
+              SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra
               (East), Mumbai – 400051, Maharashtra
             </p>
           </div>
@@ -1749,26 +1772,26 @@
       <div class="card p-8 md:p-10 reveal">
         <div class="space-y-5 text-[0.96rem] text-slate-600 leading-8">
           <p>
-            <strong>*Disclaimer:</strong> “Registration granted by SEBI and
+            <strong>*Disclaimer:</strong> "Registration granted by SEBI and
             certification from NISM in no way guarantee performance of the
-            intermediary or provide any assurance of returns to investors.”
+            intermediary or provide any assurance of returns to investors."
           </p>
           <p>
             <strong>*Disclaimer:</strong> For security/securities displayed in the
-            website and in the advertisement – “The securities quoted (If any) on
+            website and in the advertisement – "The securities quoted (If any) on
             our website or in any of our advertisement are for illustration only and
-            are not recommendatory.”
+            are not recommendatory."
           </p>
           <p>
-            <strong>*Standard warning:</strong> “Investment in securities market are
+            <strong>*Standard warning:</strong> "Investment in securities market are
             subject to market risks. Read all the related documents carefully before
-            investing.”
+            investing."
           </p>
           <p>
-            <strong>*Mandatory notice:</strong> “Clients shall be requested to go
-            through Do’s and Don’ts while dealing with RA as specified in SEBI master
+            <strong>*Mandatory notice:</strong> "Clients shall be requested to go
+            through Do's and Don'ts while dealing with RA as specified in SEBI master
             circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as
-            may be specified by SEBI from time to time.”
+            may be specified by SEBI from time to time."
           </p>
         </div>
       </div>
@@ -1817,12 +1840,11 @@
               font-size: 13px;
               color: #64748b;
             "
-          "
           >
-            ><a class="footer-link" href="#services" target="_self">Services</a></l/li>
-            ><a class="footer-link" href="#pricing" target="_self">Pricing</a></l/li>
-            ><a class="footer-link" href="#faq" target="_self">FAQ</a></l/li>
-            ><a class="footer-link" href="#disclaimer" target="_self">Disclaimer</a></li>
+            <li><a class="footer-link" href="#services" target="_self">Services</a></li>
+            <li><a class="footer-link" href="#pricing" target="_self">Pricing</a></li>
+            <li><a class="footer-link" href="#faq" target="_self">FAQ</a></li>
+            <li><a class="footer-link" href="#disclaimer" target="_self">Disclaimer</a></li>
           </ul>
         </div>
 
@@ -1848,21 +1870,20 @@
               font-size: 13px;
               color: #64748b;
             "
-          "
           >
-            >
+            <li>
               <i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i>
               +91 91379 32216
-            </l/li>
-            >
+            </li>
+            <li>
               <i class="fa-solid fa-envelope" style="color:#06b6d4;margin-right:8px;width:14px;"></i>
               support@niiveshneeti.com
-            </l/li>
-            >
+            </li>
+            <li>
               <i class="fa-solid fa-paper-plane" style="color:#a855f7;margin-right:8px;width:14px;"></i>
               Advisory group access shared after onboarding
-            </l/li>
-            >
+            </li>
+            <li>
               <i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i>
               Mon to Sat, 9:00AM to 6:00PM
             </li>
@@ -1890,17 +1911,16 @@
               gap: 8px;
               font-size: 13px;
             "
-          "
           >
-            ><a class="footer-link" href="Disclaimer.html" target="_self" rel="noopener noreferrer">Disclaimer</a></l/li>
-            ><a class="footer-link" href="https://niiveshneeti.com/Disclosure_indexneeti1.pdf" target="_blank" rel="noopener noreferrer">Disclosure</a></l/li>
-            ><a class="footer-link" href="Terms_and_Condition.html" target="_self" rel="noopener noreferrer">Terms &amp; Condition</a></l/li>
-            ><a class="footer-link" href="Privacy_Policy.html" target="_self" rel="noopener noreferrer">Privacy Policy</a></l/li>
-            ><a class="footer-link" href="Grievance_Redressal.html" target="_self" rel="noopener noreferrer">Grievance Redressal</a></l/li>
-            ><a class="footer-link" href="https://niiveshneeti.com/about_us" target="_self" rel="noopener noreferrer">About Us</a></l/li>
-            ><a class="footer-link" href="https://niiveshneeti.com/contact" target="_self" rel="noopener noreferrer">Contact</a></l/li>
-            ><a class="footer-link" href="https://niiveshneeti.com/blog" target="_self" rel="noopener noreferrer">Blog</a></l/li>
-            ><a class="footer-link" href="https://niiveshneeti.com/research_report" target="_self" rel="noopener noreferrer">Research Report</a></li>
+            <li><a class="footer-link" href="Disclaimer.html" target="_self" rel="noopener noreferrer">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_indexneeti1.pdf" target="_blank" rel="noopener noreferrer">Disclosure</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html" target="_self" rel="noopener noreferrer">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html" target="_self" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html" target="_self" rel="noopener noreferrer">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us" target="_self" rel="noopener noreferrer">About Us</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/contact" target="_self" rel="noopener noreferrer">Contact</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/blog" target="_self" rel="noopener noreferrer">Blog</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/research_report" target="_self" rel="noopener noreferrer">Research Report</a></li>
           </ul>
         </div>
       </div>
@@ -1921,26 +1941,26 @@
         "
       >
         <p>
-          <strong>*Disclaimer:</strong> “Registration granted by SEBI and
+          <strong>*Disclaimer:</strong> "Registration granted by SEBI and
           certification from NISM in no way guarantee performance of the
-          intermediary or provide any assurance of returns to investors.”
+          intermediary or provide any assurance of returns to investors."
         </p>
         <p>
           <strong>*Disclaimer:</strong> For security/securities displayed in the
-          website and in the advertisement – “The securities quoted (If any) on our
+          website and in the advertisement – "The securities quoted (If any) on our
           website or in any of our advertisement are for illustration only and are
-          not recommendatory.”
+          not recommendatory."
         </p>
         <p>
-          <strong>*Standard warning:</strong> “Investment in securities market are
+          <strong>*Standard warning:</strong> "Investment in securities market are
           subject to market risks. Read all the related documents carefully before
-          investing.”
+          investing."
         </p>
         <p>
-          <strong>*Mandatory notice:</strong> “Clients shall be requested to go
-          through Do’s and Don’ts while dealing with RA as specified in SEBI master
+          <strong>*Mandatory notice:</strong> "Clients shall be requested to go
+          through Do's and Don'ts while dealing with RA as specified in SEBI master
           circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as
-          may be specified by SEBI from time to time.”
+          may be specified by SEBI from time to time."
         </p>
 
         <div
@@ -1966,7 +1986,7 @@
               Nearest SEBI Office Address:
             </p>
             <p>
-              SEBI Bhavan BKC, Plot No.C4-A, ‘G’ Block Bandra-Kurla Complex, Bandra
+              SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra
               (East), Mumbai – 400051, Maharashtra
             </p>
           </div>
@@ -2099,9 +2119,9 @@
         const metaList = stageShell.querySelector(".notif-meta-list");
         if (metaList) {
           metaList.innerHTML = `
-            ><span>Entry:</span> ${stage.meta.entry}</l/li>
-            ><span>Target:</span> ${stage.meta.target}</l/li>
-            ><span>Stoploss:</span> ${stage.meta.sl}</li>
+            <li><span>Entry:</span> ${stage.meta.entry}</li>
+            <li><span>Target:</span> ${stage.meta.target}</li>
+            <li><span>Stoploss:</span> ${stage.meta.sl}</li>
           `;
         }
 

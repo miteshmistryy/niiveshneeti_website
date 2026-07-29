@@ -133,16 +133,6 @@
       transform: translateY(-6px);
       box-shadow: var(--shadow-strong);
     }
-    .card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,107,107,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
     .section-alt {
       background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,245,0.98));
     }
@@ -340,31 +330,6 @@
       height: 100%;
       overflow: visible;
     }
-    .phone-line-path {
-      fill: none;
-      stroke: url(#phoneLineGrad);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 300;
-      stroke-dashoffset: 300;
-    }
-    .phone-line-path.animate {
-      animation: drawLine 3s ease-out forwards;
-    }
-    @keyframes drawLine {
-      to { stroke-dashoffset: 0; }
-    }
-    .phone-area-path {
-      fill: url(#phoneAreaGrad);
-      opacity: 0;
-    }
-    .phone-area-path.animate {
-      animation: fadeInArea 1s ease-out 2s forwards;
-    }
-    @keyframes fadeInArea {
-      to { opacity: 0.3; }
-    }
     .phone-target-flag {
       position: absolute;
       right: 20px;
@@ -555,7 +520,13 @@
       .phone-wrapper { transform: scale(0.9); }
     }
     @media (max-width: 768px) {
-      .phone-wrapper { transform: scale(0.85); margin-top: 20px; }
+      /* Scaled down to prevent clipping and adjusted margins for mobile */
+      .phone-wrapper { 
+        transform: scale(0.65); 
+        transform-origin: top center; 
+        margin-top: 10px; 
+        margin-bottom: -180px;
+      }
       .float-badge { display: none; }
     }
   </style>
@@ -592,17 +563,17 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="relative pt-20 pb-28 overflow-hidden">
+  <!-- HERO (Adjusted Padding) -->
+  <section id="home" class="relative pt-8 pb-12 lg:pt-14 lg:pb-20 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
       <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-200/40 to-rose-200/30 blur-3xl"></div>
       <div class="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-violet-200/30 to-sky-200/20 blur-3xl"></div>
       <div class="absolute -bottom-40 right-1/4 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-amber-200/30 to-orange-200/20 blur-3xl"></div>
     </div>
-    <div class="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-2 gap-14 relative items-center">
+    <div class="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-2 gap-10 lg:gap-14 relative items-center">
       <!-- LEFT -->
       <div class="reveal from-left">
-        <div class="badge-pill mb-5">
+        <div class="badge-pill mb-5 mt-4 md:mt-0">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
           SEBI Registered Research Analyst &middot; Index Options Advisory
         </div>
@@ -637,7 +608,7 @@
       </div>
 
       <!-- RIGHT: PHONE ANIMATION -->
-      <div class="reveal from-right flex justify-center md:justify-end relative">
+      <div class="reveal from-right flex justify-center md:justify-end relative pb-10 md:pb-0">
         <div class="phone-wrapper">
           <div class="phone-glow"></div>
           <div class="float-badge float-badge-1"><i class="fa-solid fa-bolt mr-1"></i> Live Market</div>
@@ -666,22 +637,9 @@
                     <span style="color:#22c55e"><i class="fa-solid fa-caret-up"></i> +0.00%</span>
                   </div>
                 </div>
-                <div class="phone-line-chart">
-                  <svg viewBox="0 0 240 100" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="phoneLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#ff6b6b" />
-                        <stop offset="50%" stop-color="#fbbf24" />
-                        <stop offset="100%" stop-color="#22c55e" />
-                      </linearGradient>
-                      <linearGradient id="phoneAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3" />
-                        <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
-                      </linearGradient>
-                    </defs>
-                    <path class="phone-area-path" id="phoneArea" d="" />
-                    <path class="phone-line-path" id="phoneLine" d="" />
-                  </svg>
+                <!-- Candlestick SVG Target -->
+                <div class="phone-line-chart" id="candleChartContainer">
+                  <svg id="candleSvg" viewBox="0 0 240 100" preserveAspectRatio="none"></svg>
                 </div>
                 <div class="phone-target-flag" id="targetFlag">
                   <i class="fa-solid fa-flag-checkered mr-1"></i> Target 202
@@ -741,7 +699,7 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- REDESIGNED SERVICES -->
   <section id="services" class="py-24">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
@@ -749,37 +707,58 @@
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Index Options Advisory You Receive</h2>
         <p style="color: var(--text-body); margin-top: 12px; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">NiiveshNeeti focuses on research-backed index options advisory, combining levels, logic and risk control for intraday and expiry trades in Indian indices.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
-        <div class="card p-8 reveal from-left">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: #b45309;"><i class="fa-solid fa-sun"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Pre-Market Levels</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">Key intraday levels and zones for Nifty and Bank Nifty options, with bias and important price areas to watch before market opens.</p>
+      
+      <!-- New Horizontal Card Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <div class="card p-6 md:p-8 reveal from-left flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-amber-500 transition-all duration-300" style="border-left: 4px solid var(--amber);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: #b45309;"><i class="fa-solid fa-sun"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Pre-Market Levels</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">Key intraday levels and zones for Nifty and Bank Nifty options, with bias and important price areas to watch before market opens.</p>
+          </div>
         </div>
-        <div class="card p-8 reveal delay-1">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--coral-light), #ffe4e6); color: var(--coral);"><i class="fa-solid fa-bell"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Intraday Trade Calls</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">1&ndash;3 research-based index option trade setups daily with entry range, targets, stoploss and brief logic behind the trades.</p>
+        
+        <div class="card p-6 md:p-8 reveal delay-1 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-coral-500 transition-all duration-300" style="border-left: 4px solid var(--coral);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--coral-light), #ffe4e6); color: var(--coral);"><i class="fa-solid fa-bell"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Intraday Trade Calls</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">1&ndash;3 research-based index option trade setups daily with entry range, targets, stoploss and brief logic behind the trades.</p>
+          </div>
         </div>
-        <div class="card p-8 reveal from-right delay-2">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--rose-light), #ffe4e6); color: var(--rose);"><i class="fa-solid fa-calendar-day"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Expiry &amp; Volatility Plans</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">Weekly expiry strategies and volatility-aware opportunities designed specifically for index options traders.</p>
+        
+        <div class="card p-6 md:p-8 reveal from-left delay-2 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-rose-500 transition-all duration-300" style="border-left: 4px solid var(--rose);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--rose-light), #ffe4e6); color: var(--rose);"><i class="fa-solid fa-calendar-day"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Expiry &amp; Volatility Plans</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">Weekly expiry strategies and volatility-aware opportunities designed specifically for index options traders.</p>
+          </div>
         </div>
-        <div class="card p-8 reveal from-left delay-3">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--lavender-light), #ede9fe); color: var(--lavender);"><i class="fa-solid fa-chart-column"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Review &amp; Learning Notes</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">Short notes on what worked, what failed and how price respected levels to sharpen your reading of index options.</p>
+        
+        <div class="card p-6 md:p-8 reveal delay-3 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-lavender-500 transition-all duration-300" style="border-left: 4px solid var(--lavender);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--lavender-light), #ede9fe); color: var(--lavender);"><i class="fa-solid fa-chart-column"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Review &amp; Learning Notes</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">Short notes on what worked, what failed and how price respected levels to sharpen your reading of index options.</p>
+          </div>
         </div>
-        <div class="card p-8 reveal delay-4">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--sky-light), #e0f2fe); color: var(--sky);"><i class="fa-solid fa-headset"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Real-Time Support</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">Support during market hours to help you understand levels, react to volatility and follow the plan with discipline.</p>
+        
+        <div class="card p-6 md:p-8 reveal from-left delay-4 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-sky-500 transition-all duration-300" style="border-left: 4px solid var(--sky);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--sky-light), #e0f2fe); color: var(--sky);"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Real-Time Support</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">Support during market hours to help you understand levels, react to volatility and follow the plan with discipline.</p>
+          </div>
         </div>
-        <div class="card p-8 reveal from-right delay-5">
-          <div class="icon-box icon-float mb-5" style="background: linear-gradient(135deg, var(--teal-light), #ccfbf1); color: #0f766e;"><i class="fa-solid fa-brain"></i></div>
-          <h3 style="font-weight:900;font-size:1.08rem;color:var(--text-dark);margin-bottom:12px;">Risk &amp; Psychology Guidance</h3>
-          <p style="font-size:0.93rem;color:var(--text-body);line-height:1.8;">Emphasis on SL discipline, position sizing and emotional control for high-risk index options trading.</p>
+        
+        <div class="card p-6 md:p-8 reveal delay-5 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-teal-500 transition-all duration-300" style="border-left: 4px solid var(--teal);">
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--teal-light), #ccfbf1); color: #0f766e;"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Risk &amp; Psychology Guidance</h3>
+            <p class="text-[0.93rem] text-slate-600 leading-relaxed">Emphasis on SL discipline, position sizing and emotional control for high-risk index options trading.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1150,15 +1129,14 @@
     );
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-    // ===== PHONE ANIMATION =====
+    // ===== PHONE ANIMATION (Candlestick Version) =====
     const phonePrice = document.getElementById('phonePrice');
     const phoneChange = document.getElementById('phoneChange');
     const buyBtn = document.getElementById('buyBtn');
     const phoneNotif = document.getElementById('phoneNotif');
     const sellNotif = document.getElementById('sellNotif');
     const targetFlag = document.getElementById('targetFlag');
-    const phoneLine = document.getElementById('phoneLine');
-    const phoneArea = document.getElementById('phoneArea');
+    const candleSvg = document.getElementById('candleSvg');
 
     let currentPrice = 125.00;
     let targetPrice = 202.00;
@@ -1166,13 +1144,23 @@
     let phase = 'idle'; // idle, notify, buy, runup, sell
     let priceInterval = null;
 
-    function formatPrice(p) {
-      return p.toFixed(2);
+    // Generate historic path for candles 125 -> 202
+    const totalCandles = 20;
+    const candleData = [];
+    for(let i = 0; i < totalCandles; i++) {
+       let o = (i === 0) ? 125 : candleData[i-1].c;
+       let progress = (i + 1) / totalCandles;
+       let expectedC = 125 + (202 - 125) * progress;
+       let c = expectedC + (Math.random() * 8 - 4); // add noise
+       if (i === totalCandles - 1) c = 202; // Force end value
+       let h = Math.max(o, c) + Math.random() * 4;
+       let l = Math.min(o, c) - Math.random() * 4;
+       candleData.push({o, h, l, c});
     }
 
-    function randomBetween(min, max) {
-      return Math.random() * (max - min) + min;
-    }
+    function formatPrice(p) { return p.toFixed(2); }
+
+    function randomBetween(min, max) { return Math.random() * (max - min) + min; }
 
     function spawnParticles(x, y, color) {
       for (let i = 0; i < 8; i++) {
@@ -1191,40 +1179,41 @@
       }
     }
 
-    function generateChartPath(startPrice, endPrice, steps, wiggle) {
-      const points = [];
-      const minP = Math.min(startPrice, endPrice);
-      const maxP = Math.max(startPrice, endPrice);
-      const range = maxP - minP || 1;
-      const width = 240;
-      const height = 80;
-      const padding = 10;
+    // New Candlestick Rendering Logic
+    function renderCandles(t, currentP) { // t is progress (0.0 to 1.0)
+        let maxIdx = Math.floor(t * (totalCandles - 1));
+        if (maxIdx < 0) maxIdx = 0;
+        
+        let html = '';
+        const minP = 115, maxP = 210, w = 240, h = 80;
+        const cW = 8;
+        const gap = 4;
+        const getX = (i) => i * (cW + gap) + 4;
+        const getY = (p) => h - ((p - minP) / (maxP - minP) * h);
 
-      for (let i = 0; i <= steps; i++) {
-        const t = i / steps;
-        const base = startPrice + (endPrice - startPrice) * t;
-        const noise = Math.sin(t * Math.PI * 4) * wiggle * (1 - t * 0.5);
-        const price = base + noise;
-        const x = padding + (width - 2 * padding) * t;
-        const y = height - padding - ((price - (minP - wiggle)) / (range + 2 * wiggle)) * (height - 2 * padding);
-        points.push(`${x},${y}`);
-      }
-      return points;
-    }
+        for (let i = 0; i <= maxIdx; i++) {
+            let d = candleData[i];
+            let isLast = (i === maxIdx);
+            
+            let o = d.o;
+            let c = isLast ? currentP : d.c; // Live update active candle
+            let high = isLast ? Math.max(o, c) + 1 : d.h;
+            let low = isLast ? Math.min(o, c) - 1 : d.l;
 
-    function drawChart(startPrice, endPrice, wiggle) {
-      const pts = generateChartPath(startPrice, endPrice, 30, wiggle);
-      const lineD = 'M' + pts.join(' L');
-      const first = pts[0].split(',');
-      const last = pts[pts.length - 1].split(',');
-      const areaD = lineD + ` L${last[0]},90 L${first[0]},90 Z`;
-      phoneLine.setAttribute('d', lineD);
-      phoneArea.setAttribute('d', areaD);
-      phoneLine.classList.remove('animate');
-      phoneArea.classList.remove('animate');
-      void phoneLine.offsetWidth; // reflow
-      phoneLine.classList.add('animate');
-      phoneArea.classList.add('animate');
+            let isGreen = c >= o;
+            let color = isGreen ? '#22c55e' : '#ef4444';
+
+            // Draw wick
+            let wickX = getX(i) + cW/2;
+            html += `<line x1="${wickX}" y1="${getY(high)}" x2="${wickX}" y2="${getY(low)}" stroke="${color}" stroke-width="1.5" />`;
+
+            // Draw body
+            let y = getY(Math.max(o, c));
+            let bodyH = Math.abs(getY(o) - getY(c));
+            if (bodyH < 1) bodyH = 1; // Minimum body height
+            html += `<rect x="${getX(i)}" y="${y}" width="${cW}" height="${bodyH}" fill="${color}" rx="1" />`;
+        }
+        candleSvg.innerHTML = html;
     }
 
     function updatePriceDisplay(price, prevPrice) {
@@ -1243,6 +1232,7 @@
           const prev = currentPrice;
           currentPrice = Math.max(122, Math.min(128, 125 + wiggle));
           updatePriceDisplay(currentPrice, prev);
+          renderCandles(0, currentPrice); // Just wiggle the first candle
         }
       }, 400);
     }
@@ -1254,30 +1244,32 @@
       buyBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> BOUGHT AT 125';
       spawnParticles(buyBtn.offsetWidth / 2, buyBtn.offsetHeight / 2, '#22c55e');
 
-      // Animate price from 125 to 202 with wiggles
       const duration = 4000;
       const startTime = Date.now();
       const startP = 125;
       const endP = 202;
-      const wiggle = 8;
-
-      drawChart(startP, endP, wiggle);
+      const wiggleAmt = 8;
 
       if (priceInterval) clearInterval(priceInterval);
+      
       priceInterval = setInterval(() => {
         const elapsed = Date.now() - startTime;
-        const t = Math.min(elapsed / duration, 1);
+        let t = Math.min(elapsed / duration, 1);
         const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // easeInOutQuad
+        
         const base = startP + (endP - startP) * ease;
-        const noise = Math.sin(t * Math.PI * 6) * wiggle * (1 - t * 0.3);
+        const noise = Math.sin(t * Math.PI * 6) * wiggleAmt * (1 - t * 0.3);
         const prev = currentPrice;
+        
         currentPrice = base + noise;
         updatePriceDisplay(currentPrice, prev);
+        renderCandles(ease, currentPrice);
 
         if (t >= 1) {
           clearInterval(priceInterval);
           currentPrice = endP;
           updatePriceDisplay(currentPrice, currentPrice - 1);
+          renderCandles(1, currentPrice); // Snap fully to end
           setTimeout(showSell, 600);
         }
       }, 50);
@@ -1304,8 +1296,6 @@
       phoneNotif.classList.remove('hide');
       sellNotif.classList.remove('show');
       targetFlag.classList.remove('show');
-      phoneLine.classList.remove('animate');
-      phoneArea.classList.remove('animate');
       startPriceWiggle();
     }
 

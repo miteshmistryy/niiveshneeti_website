@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NiiveshNeeti | Privacy Policy</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <meta name="description" content="Privacy Policy explaining how NiiveshNeeti collects, uses, protects, and manages your information and data." />
+  <style>
+    :root {
+      --bg-cream: #fffaf5;
+      --bg-white: #ffffff;
+      --coral: #ff6b6b;
+      --coral-light: #ffe8e8;
+      --lavender: #a78bfa;
+      --lavender-light: #f3e8ff;
+      --teal: #2dd4bf;
+      --teal-light: #ccfbf1;
+      --amber: #fbbf24;
+      --amber-light: #fef3c7;
+      --rose: #fb7185;
+      --rose-light: #ffe4e6;
+      --sky: #38bdf8;
+      --sky-light: #e0f2fe;
+      --text-dark: #1e1b4b;
+      --text-body: #475569;
+      --text-muted: #94a3b8;
+      --font-body: "Satoshi", system-ui, -apple-system, sans-serif;
+      --shadow-soft: 0 20px 50px rgba(30, 27, 75, 0.08);
+      --shadow-strong: 0 30px 70px rgba(30, 27, 75, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+    .nav-link {
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--coral), var(--amber));
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover { color: var(--coral); }
+    .nav-link:hover::after { width: 100%; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--coral), #ff8e53);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(255, 107, 107, 0.35);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #ff8e53, var(--coral));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 48px rgba(255, 107, 107, 0.45); }
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn span { position: relative; z-index: 1; }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: linear-gradient(135deg, var(--coral-light), var(--amber-light));
+      color: var(--text-dark);
+      border: 1px solid rgba(255, 107, 107, 0.15);
+    }
+    .card {
+      background: var(--bg-white);
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+    .section-alt {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,250,245,0.98));
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.from-left { transform: translateX(-40px); }
+    .reveal.from-right { transform: translateX(40px); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      position: relative;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .card:hover .icon-box { transform: scale(1.1) rotate(-4deg); }
+    .footer-link {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover { color: var(--coral); }
+    .mobile-menu-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .mobile-menu-panel.open { max-height: 400px; }
+    
+    /* Content specific styling */
+    .policy-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .policy-list li {
+      position: relative;
+      padding-left: 28px;
+      font-size: 0.98rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+    .policy-list li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--teal);
+      position: absolute;
+      left: 0;
+      top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
+    <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="niiveshlogo.png" alt="NiiveshNeeti Logo" class="h-11 md:h-12 w-auto rounded-xl"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link">About Us</a>
+        <a href="https://agreement.niiveshneeti.com/" class="nav-link">User Consent</a>
+        <a href="https://niiveshneeti.com/contact" class="cta-btn !py-3 !px-5"><span>Contact Us</span></a>
+      </nav>
+      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu-panel md:hidden border-t border-orange-100 bg-white">
+      <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4">
+        <a href="index.html#services" class="nav-link mobile-nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link mobile-nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link mobile-nav-link">About Us</a>
+        <a href="https://agreement.niiveshneeti.com/" class="nav-link mobile-nav-link">User Consent</a>
+        <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Contact Advisory Desk</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-teal-200/30 to-sky-200/20 blur-3xl"></div>
+      <div class="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-violet-200/20 to-rose-200/20 blur-3xl"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-5 md:px-6 text-center relative z-10 reveal">
+      <div class="badge-pill mb-4 border-sky-200 bg-sky-50 text-sky-700">
+        <i class="fa-solid fa-user-shield text-sky-500"></i> Data Protection
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--text-dark); margin-bottom: 16px;">
+        Privacy Policy
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--text-body); line-height: 1.8; max-width: 720px; margin: 0 auto;">
+        This Privacy Policy explains how NiiveshNeeti collects, uses, protects, and manages information shared through its website and related communication channels.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <section class="py-12 pb-24 section-alt">
+    <div class="max-w-5xl mx-auto px-5 md:px-6 flex flex-col gap-8">
+      
+      <!-- SECTION 1 -->
+      <div class="card p-8 md:p-10 reveal from-left">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-5">
+          <div class="icon-box" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: #b45309;"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--text-dark);">1. Our Privacy Commitment & Information We Collect</h2>
+        </div>
+        <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.8; margin-bottom: 16px;">
+          Your privacy is important to us, and we are dedicated to safeguarding it. To ensure transparency in how we collect, use, and manage your information, we have outlined our online data practices and the choices available to you in this notice.
+        </p>
+        <ul class="policy-list">
+          <li>We collect certain details when you voluntarily share them through our website or social media platforms.</li>
+          <li>The purpose of gathering this information is to enhance our services, provide relevant market updates, and deliver the best possible experience for you.</li>
+        </ul>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card p-8 md:p-10 reveal from-right">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-5">
+          <div class="icon-box" style="background: linear-gradient(135deg, var(--teal-light), #ccfbf1); color: #0f766e;"><i class="fa-solid fa-shield-halved"></i></div>
+          <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--text-dark);">2. Data Accuracy and Protection</h2>
+        </div>
+        <ul class="policy-list">
+          <li>We make every effort to keep your information accurate and secure. Maintaining the confidentiality and protection of your data is our top priority.</li>
+          <li>We implement security measures to safeguard any personal details you provide. However, while we strive to keep your information safe, we cannot guarantee complete security over the internet.</li>
+          <li>Any data you transmit to us via our online services or communication channels is at your own discretion and risk.</li>
+        </ul>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card p-8 md:p-10 reveal from-left">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-5">
+          <div class="icon-box" style="background: linear-gradient(135deg, var(--lavender-light), #ede9fe); color: var(--lavender);"><i class="fa-solid fa-bullhorn"></i></div>
+          <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--text-dark);">3. Service & Promotional Communication</h2>
+        </div>
+        <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.8; margin-bottom: 16px;">
+          Please be aware that you may receive promotional calls, contest invitations, or notifications regarding service-related activities.
+        </p>
+        <ul class="policy-list">
+          <li>Beyond our core services, we may also use your contact details, including your mobile number and email address, to share newsletters, surveys, contest details, or updates on new advisory plans that may be beneficial to you.</li>
+          <li>By subscribing to our services, you acknowledge and voluntarily agree to receive such communications from NiiveshNeeti.</li>
+        </ul>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="card p-8 md:p-10 reveal from-right">
+        <div class="flex items-center gap-4 mb-6 border-b border-slate-100 pb-5">
+          <div class="icon-box" style="background: linear-gradient(135deg, var(--coral-light), #ffe4e6); color: var(--coral);"><i class="fa-solid fa-comments"></i></div>
+          <h2 style="font-size: 1.5rem; font-weight: 900; color: var(--text-dark);">4. Sharing of Information & Contact Consent</h2>
+        </div>
+        <ul class="policy-list">
+          <li><strong>Information Sharing:</strong> Your personal information, whether public or private, will remain securely with us. However, it may be shared with regulatory authorities, affiliated organizations, or relevant third parties where legally necessary, without requiring additional consent.</li>
+          <li><strong>Inquiry Consent:</strong> By submitting the Inquiry Form on our website or reaching out to us through any other platform, including social media, you consent to being contacted via phone call, SMS, or WhatsApp on the number you provide.</li>
+          <li><strong>DND Registry Override:</strong> Even if your number is registered under the National Do Not Disturb (DND) registry, by initiating an inquiry, you agree to receive messages and calls from us regarding your request.</li>
+        </ul>
+      </div>
+
+      <!-- CONCLUSION -->
+      <div class="reveal mt-4 text-center">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;">Respect for Your Trust</h3>
+        <p style="font-size: 1.05rem; color: var(--text-body);">We deeply value your trust and assure you that your privacy will always be treated with the utmost respect at NiiveshNeeti.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mb-12">
+        <div>
+          <a href="index.html">
+            <img src="niiveshlogo.png" alt="NiiveshNeeti" class="h-11 w-auto mb-5"
+              onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+          </a>
+          <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
+            <li><a class="footer-link" href="index.html#services">Services</a></li>
+            <li><a class="footer-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="index.html#faq">FAQ</a></li>
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
+            <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
+            <li><i class="fa-solid fa-paper-plane" style="color:var(--lavender);margin-right:8px;width:14px;"></i> Advisory group access shared after onboarding</li>
+            <li><i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_indexneeti1.pdf">Disclosure</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/blog">Blog</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/research_report">Research Report</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 22px; margin-bottom: 26px; font-size: 11px; color: #64748b; line-height: 1.8; display: flex; flex-direction: column; gap: 10px;">
+        <p><strong>*Disclaimer:</strong> "Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."</p>
+        <p><strong>*Disclaimer:</strong> For security/securities displayed in the website and in the advertisement &ndash; "The securities quoted (If any) on our website or in any of our advertisement are for illustration only and are not recommendatory."</p>
+        <p><strong>*Standard warning:</strong> "Investment in securities market are subject to market risks. Read all the related documents carefully before investing."</p>
+        <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <div>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">SEBI Registered Research Analyst Details:</p>
+            <p>Registered Name: Amit Kori</p>
+            <p>Type of registration: Individual</p>
+            <p>Registration No.: INH000016533</p>
+            <p>Validity: Nov 22, 2027</p>
+          </div>
+          <div>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">Nearest SEBI Office Address:</p>
+            <p>SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai &ndash; 400051, Maharashtra</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+        NiiveshNeeti &copy;2026 All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // mobile menu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      const icon = menuToggle.querySelector("i");
+      if (mobileMenu.classList.contains("open")) {
+        icon.className = "fa-solid fa-xmark text-lg";
+      } else {
+        icon.className = "fa-solid fa-bars text-lg";
+      }
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        const icon = menuToggle.querySelector("i");
+        icon.className = "fa-solid fa-bars text-lg";
+      });
+    });
+
+    // scroll reveal observer
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

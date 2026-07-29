@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NiiveshNeeti | Blog & Market Notes (Coming Soon)</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <meta name="description" content="Market Learning Notes and Blog by NiiveshNeeti. Educational articles on index options structure, momentum, risk, and trading psychology." />
+  <style>
+    :root {
+      --bg-cream: #fffaf5;
+      --bg-white: #ffffff;
+      --coral: #ff6b6b;
+      --coral-light: #ffe8e8;
+      --lavender: #a78bfa;
+      --lavender-light: #f3e8ff;
+      --teal: #2dd4bf;
+      --teal-light: #ccfbf1;
+      --amber: #fbbf24;
+      --amber-light: #fef3c7;
+      --rose: #fb7185;
+      --rose-light: #ffe4e6;
+      --sky: #38bdf8;
+      --sky-light: #e0f2fe;
+      --text-dark: #1e1b4b;
+      --text-body: #475569;
+      --text-muted: #94a3b8;
+      --font-body: "Satoshi", system-ui, -apple-system, sans-serif;
+      --shadow-soft: 0 20px 50px rgba(30, 27, 75, 0.08);
+      --shadow-strong: 0 30px 70px rgba(30, 27, 75, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+    .nav-link {
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--coral), var(--amber));
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover { color: var(--coral); }
+    .nav-link:hover::after { width: 100%; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--coral), #ff8e53);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(255, 107, 107, 0.35);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #ff8e53, var(--coral));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 48px rgba(255, 107, 107, 0.45); }
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn span { position: relative; z-index: 1; }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: linear-gradient(135deg, var(--coral-light), var(--amber-light));
+      color: var(--text-dark);
+      border: 1px solid rgba(255, 107, 107, 0.15);
+    }
+    .card {
+      background: var(--bg-white);
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 20px;
+    }
+    .footer-link {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover { color: var(--coral); }
+    .mobile-menu-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .mobile-menu-panel.open { max-height: 400px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
+    <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="niiveshlogo.png" alt="NiiveshNeeti Logo" class="h-11 md:h-12 w-auto rounded-xl"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link">About Us</a>
+        <a href="https://agreement.niiveshneeti.com/" class="nav-link">User Consent</a>
+        <a href="contact.html" class="cta-btn !py-3 !px-5"><span>Contact Us</span></a>
+      </nav>
+      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu-panel md:hidden border-t border-orange-100 bg-white">
+      <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4">
+        <a href="index.html#services" class="nav-link mobile-nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link mobile-nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link mobile-nav-link">About Us</a>
+        <a href="https://agreement.niiveshneeti.com/" class="nav-link mobile-nav-link">User Consent</a>
+        <a href="contact.html" class="cta-btn w-full"><span>Contact Advisory Desk</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- COMING SOON CONTENT -->
+  <section class="pt-20 pb-28 min-h-[70vh] flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-200/40 to-rose-200/30 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-violet-200/30 to-sky-200/20 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-5 text-center relative z-10 reveal">
+      <div class="card p-10 md:p-16 shadow-xl border-orange-100/80">
+        <div class="icon-box" style="background: linear-gradient(135deg, var(--sky-light), #e0f2fe); color: var(--sky);">
+          <i class="fa-solid fa-newspaper"></i>
+        </div>
+        
+        <div class="badge-pill mb-6 bg-sky-50 text-sky-700 border-sky-100">
+          <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+          Launching Soon
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.1; color: var(--text-dark); margin-bottom: 1rem;">
+          Market Learning Notes & Blog
+        </h1>
+
+        <p style="font-size: 1.05rem; color: var(--text-body); line-height: 1.85; max-width: 600px; margin: 0 auto 2rem;">
+          We are preparing detailed articles and practical guides on index options structure, momentum trading, risk management, and market psychology.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="index.html" class="cta-btn"><span>Back to Home <i class="fa-solid fa-house ml-1"></i></span></a>
+          <a href="contact.html" class="cta-btn !bg-none !bg-slate-900 shadow-none hover:!bg-slate-800"><span>Talk to Advisory Desk</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mb-12">
+        <div>
+          <a href="index.html">
+            <img src="niiveshlogo.png" alt="NiiveshNeeti" class="h-11 w-auto mb-5"
+              onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+          </a>
+          <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
+            <li><a class="footer-link" href="index.html#services">Services</a></li>
+            <li><a class="footer-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="index.html#faq">FAQ</a></li>
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
+            <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
+            <li><i class="fa-solid fa-paper-plane" style="color:var(--lavender);margin-right:8px;width:14px;"></i> Advisory group access shared after onboarding</li>
+            <li><i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf">Disclosure</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/new-investor-charter.pdf">Investor Charter</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
+            <li><a class="footer-link" href="blog.html">Blog</a></li>
+            <li><a class="footer-link" href="research_report.html">Research Report</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 22px; margin-bottom: 26px; font-size: 11px; color: #64748b; line-height: 1.8; display: flex; flex-direction: column; gap: 10px;">
+        <p><strong>*Disclaimer:</strong> "Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."</p>
+        <p><strong>*Disclaimer:</strong> For security/securities displayed in the website and in the advertisement &ndash; "The securities quoted (If any) on our website or in any of our advertisement are for illustration only and are not recommendatory."</p>
+        <p><strong>*Standard warning:</strong> "Investment in securities market are subject to market risks. Read all the related documents carefully before investing."</p>
+        <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <div>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">SEBI Registered Research Analyst Details:</p>
+            <p>Registered Name: Amit Kori</p>
+            <p>Type of registration: Individual</p>
+            <p>Registration No.: INH000016533</p>
+            <p>Validity: Nov 22, 2027</p>
+          </div>
+          <div>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">Nearest SEBI Office Address:</p>
+            <p>SEBI Bhavan BKC, Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai &ndash; 400051, Maharashtra</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+        NiiveshNeeti &copy;2026 All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      const icon = menuToggle.querySelector("i");
+      if (mobileMenu.classList.contains("open")) {
+        icon.className = "fa-solid fa-xmark text-lg";
+      } else {
+        icon.className = "fa-solid fa-bars text-lg";
+      }
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        const icon = menuToggle.querySelector("i");
+        icon.className = "fa-solid fa-bars text-lg";
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>

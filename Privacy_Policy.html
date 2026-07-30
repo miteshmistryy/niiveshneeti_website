@@ -220,6 +220,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- PAGE HEADER -->
   <section class="pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -307,6 +308,7 @@
 
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70">
@@ -320,7 +322,7 @@
           <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h4>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
             <li><a class="footer-link" href="index.html#services">Services</a></li>
             <li><a class="footer-link" href="index.html#pricing">Pricing</a></li>
@@ -329,7 +331,7 @@
           </ul>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
             <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
@@ -338,16 +340,17 @@
           </ul>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h4>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
             <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf">Disclosure</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/new-investor-charter.pdf" rel="noopener noreferrer">Investor charter</a></li>
             <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
             <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
             <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
-            </ul>
+          </ul>
         </div>
       </div>
 
@@ -371,7 +374,7 @@
         </div>
       </div>
 
-      <div style="text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+      <div style="text-align: center; font-size: 12px; color: #475569; border-top: 1px solid #f1f5f9; padding-top: 20px;">
         NiiveshNeeti &copy;2026 All Rights Reserved.
       </div>
     </div>
@@ -379,7 +382,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    // mobile menu toggle
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -402,7 +404,6 @@
       });
     });
 
-    // scroll reveal observer
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

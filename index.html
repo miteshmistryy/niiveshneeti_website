@@ -1082,14 +1082,14 @@
         <div>
           <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
-            <li><a class="footer-link" href="Disclaimer.html" rel="noopener noreferrer">Disclaimer</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf" rel="noopener noreferrer">Disclosure</a></li>
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf">Disclosure</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/new-investor-charter.pdf" rel="noopener noreferrer">Investor charter</a></li>
-            <li><a class="footer-link" href="Terms_and_Condition.html" rel="noopener noreferrer">Terms &amp; Condition</a></li>
-            <li><a class="footer-link" href="Privacy_Policy.html" rel="noopener noreferrer">Privacy Policy</a></li>
-            <li><a class="footer-link" href="Grievance_Redressal.html" rel="noopener noreferrer">Grievance Redressal</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/about_us" rel="noopener noreferrer">About Us</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/contact" rel="noopener noreferrer">Contact</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -1101,7 +1101,7 @@
         <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
           <div>
-            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">SEBI Registered Research Analyst Details:</p>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">Registered Analyst Details:</p>
             <p>Registered Name: Amit Kori</p>
             <p>Type of registration: Individual</p>
             <p>Registration No.: INH000016533</p>
@@ -1122,7 +1122,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    // mobile menu
+    // mobile menu toggle
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -1145,7 +1145,7 @@
       });
     });
 
-    // reveal on scroll
+    // scroll reader reveal
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -1355,7 +1355,7 @@
     }, 9000);
 
     // Manual buy click
-    buyBtn.addEventListener('click', <>
+    buyBtn.addEventListener('click', () => {
       if (phase === 'notify') {
         phoneNotif.classList.add('hide');
         runBuySequence();

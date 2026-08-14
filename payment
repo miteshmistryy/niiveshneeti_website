@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment | NiiveshNeeti</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <meta name="description" content="Secure payment page for NiiveshNeeti plans." />
+  
+  <style>
+    :root {
+      --bg-cream: #fffaf5;
+      --bg-white: #ffffff;
+      --coral: #ff6b6b;
+      --coral-light: #ffe8e8;
+      --lavender: #a78bfa;
+      --lavender-light: #f3e8ff;
+      --teal: #2dd4bf;
+      --teal-light: #ccfbf1;
+      --amber: #fbbf24;
+      --amber-light: #fef3c7;
+      --rose: #fb7185;
+      --rose-light: #ffe4e6;
+      --sky: #38bdf8;
+      --sky-light: #e0f2fe;
+      --text-dark: #1e1b4b;
+      --text-body: #475569;
+      --text-muted: #94a3b8;
+      --font-body: "Satoshi", system-ui, -apple-system, sans-serif;
+      --shadow-soft: 0 20px 50px rgba(30, 27, 75, 0.08);
+      --shadow-strong: 0 30px 70px rgba(30, 27, 75, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+    .nav-link {
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--coral), var(--amber));
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover { color: var(--coral); }
+    .nav-link:hover::after { width: 100%; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--coral), #ff8e53);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 14px 36px rgba(255, 107, 107, 0.35);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #ff8e53, var(--coral));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 48px rgba(255, 107, 107, 0.45); }
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn span { position: relative; z-index: 1; }
+    
+    .wa-btn {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      box-shadow: 0 14px 36px rgba(37, 211, 102, 0.35);
+    }
+    .wa-btn::before {
+      background: linear-gradient(135deg, #128C7E, #25D366);
+    }
+    .wa-btn:hover { box-shadow: 0 20px 48px rgba(37, 211, 102, 0.45); }
+
+    .card {
+      background: var(--bg-white);
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+    }
+    .footer-link {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover { color: var(--coral); }
+    .mobile-menu-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .mobile-menu-panel.open { max-height: 400px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
+    <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="niiveshlogo.png" alt="NiiveshNeeti Logo" class="h-11 md:h-12 w-auto rounded-xl"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link">About Us</a>
+        <a href="https://userconsentagreement.niiveshneeti.com" class="nav-link">User Consent</a>
+        <a href="https://niiveshneeti.com/contact" class="cta-btn !py-3 !px-5"><span>Contact Us</span></a>
+      </nav>
+      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu-panel md:hidden border-t border-orange-100 bg-white">
+      <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4">
+        <a href="index.html#services" class="nav-link mobile-nav-link">Services</a>
+        <a href="index.html#pricing" class="nav-link mobile-nav-link">Pricing</a>
+        <a href="https://niiveshneeti.com/about_us" class="nav-link mobile-nav-link">About Us</a>
+        <a href="https://userconsentagreement.niiveshneeti.com" class="nav-link mobile-nav-link">User Consent</a>
+        <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Contact Advisory Desk</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAYMENT SECTION -->
+  <main class="py-16 md:py-24 relative overflow-hidden">
+    <!-- Background Accents -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-200/30 to-rose-200/20 blur-3xl"></div>
+      <div class="absolute top-1/2 -left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-sky-200/20 to-teal-200/20 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-5 md:px-6 relative z-10">
+      <!-- Page Title -->
+      <div class="text-center mb-12">
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #dc2626; margin-bottom: 8px;">Secure Checkout</div>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--text-dark); line-height: 1.1;">Complete Your Payment</h1>
+        <p style="color: var(--text-body); margin-top: 12px; font-size: 1rem;">Choose your preferred payment method below. Verify details before transferring.</p>
+      </div>
+
+      <!-- Payment Methods Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- QR Code Card -->
+        <div class="card p-8 flex flex-col items-center text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 text-xs font-extrabold text-amber-700 px-4 py-2 mb-6 border border-amber-100">
+            <i class="fa-solid fa-qrcode"></i> Scan to Pay
+          </div>
+          
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm mb-6 w-full max-w-[280px]">
+            <img src="https://indexneeti.com/amitkori_upi.jpeg" alt="NiiveshNeeti UPI QR Code" class="w-full h-auto rounded-xl object-contain aspect-square" />
+          </div>
+
+          <div class="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 mt-auto">
+            <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">UPI ID</p>
+            <p class="text-lg md:text-xl font-black text-slate-800 tracking-wide select-all">amit.kori4@ybl</p>
+          </div>
+        </div>
+
+        <!-- Bank Details Card -->
+        <div class="card p-8 flex flex-col">
+          <div class="inline-flex self-start items-center gap-2 rounded-full bg-blue-50 text-xs font-extrabold text-blue-700 px-4 py-2 mb-6 border border-blue-100">
+            <i class="fa-solid fa-building-columns"></i> Bank Transfer Details
+          </div>
+          
+          <p class="text-[0.95rem] text-slate-600 mb-6">Use NEFT, IMPS, RTGS, or direct transfer. Please verify details before making payment.</p>
+
+          <div class="space-y-4 w-full mt-auto">
+            <!-- Preferred Bank Box -->
+            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <div>
+                <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Preferred Bank</p>
+                <p class="font-black text-slate-800">State Bank of India</p>
+              </div>
+              <img src="https://indexneeti.com/sbi-logo.png" alt="SBI Logo" class="h-8 object-contain" onerror="this.style.display='none'" />
+            </div>
+
+            <!-- Account Details Box -->
+            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
+                <span class="text-xs font-bold text-slate-500 uppercase">Account Name</span>
+                <span class="font-bold text-slate-800 sm:text-right">Amit Kori</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
+                <span class="text-xs font-bold text-slate-500 uppercase">Account Number</span>
+                <span class="font-black text-slate-900 sm:text-right text-lg tracking-wider select-all">00000038550414297</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
+                <span class="text-xs font-bold text-slate-500 uppercase">IFSC Code</span>
+                <span class="font-bold text-slate-800 sm:text-right uppercase select-all">SBIN0015474</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                <span class="text-xs font-bold text-slate-500 uppercase">Branch</span>
+                <span class="font-bold text-slate-800 sm:text-right">Shivaji talao Bhandup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- After Payment Action Card -->
+      <div class="mt-8 card p-8 md:p-10 text-center" style="background: linear-gradient(180deg, #ffffff, #f0fdf4); border: 2px solid #bbf7d0;">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-3xl mb-5 shadow-sm">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h2 style="font-size: 1.8rem; font-weight: 900; color: #14532d; margin-bottom: 12px;">After Payment</h2>
+        <p style="color: #166534; max-width: 600px; margin: 0 auto 24px auto; font-size: 1rem; line-height: 1.7;">
+          Send your screenshot on WhatsApp to activate or verify quickly. Please mention your <strong>name</strong> and <strong>selected plan</strong> while sending the screenshot so the team can verify the payment faster.
+        </p>
+        
+        <!-- Pre-filled WhatsApp Link -->
+        <a href="https://wa.me/919137932216?text=Hi%20NiiveshNeeti%20Team,%20I%20have%20made%20the%20payment.%20My%20name%20is%20[Your%20Name]%20and%20I%20selected%20the%20[Plan%20Name]%20plan.%20Here%20is%20my%20screenshot:" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="cta-btn wa-btn w-full sm:w-auto !px-8 !py-4 text-lg">
+          <span><i class="fa-brands fa-whatsapp text-xl mr-1"></i> Send Screenshot (+91 91379 32216)</span>
+        </a>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70 mt-10">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mb-12">
+        <div>
+          <a href="index.html">
+            <img src="niiveshlogo.png" alt="NiiveshNeeti" class="h-11 w-auto mb-5"
+              onerror="this.onerror=null; this.src='https://via.placeholder.com/220x72/fff5f5/1e1b4b?text=NIIVESHNEETI';" />
+          </a>
+          <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
+        </div>
+        <div>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
+            <li><a class="footer-link" href="index.html#services">Services</a></li>
+            <li><a class="footer-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="index.html#faq">FAQ</a></li>
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
+            <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
+            <li><i class="fa-solid fa-paper-plane" style="color:var(--lavender);margin-right:8px;width:14px;"></i> Advisory group access shared after onboarding</li>
+            <li><i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf">Disclosure</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/new-investor-charter.pdf" rel="noopener noreferrer">Investor charter</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align: center; font-size: 12px; color: #475569; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+        NiiveshNeeti &copy;2026 All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      const icon = menuToggle.querySelector("i");
+      if (mobileMenu.classList.contains("open")) {
+        icon.className = "fa-solid fa-xmark text-lg";
+      } else {
+        icon.className = "fa-solid fa-bars text-lg";
+      }
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        const icon = menuToggle.querySelector("i");
+        icon.className = "fa-solid fa-bars text-lg";
+      });
+    });
+  </script>
+</body>
+</html>

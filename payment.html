@@ -106,19 +106,36 @@
     }
     .wa-btn:hover { box-shadow: 0 20px 48px rgba(37, 211, 102, 0.45); }
 
-    .card {
+    .checkout-container {
       background: var(--bg-white);
-      border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
+      border-radius: 32px;
       box-shadow: var(--shadow-strong);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      overflow: hidden;
+      position: relative;
     }
+    
+    .qr-section {
+      background: linear-gradient(145deg, var(--bg-cream), #fff);
+      border-right: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .detail-row {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    
+    @media (min-width: 640px) {
+      .detail-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
     .footer-link {
       color: #64748b;
       text-decoration: none;
@@ -173,90 +190,94 @@
     </div>
 
     <div class="max-w-5xl mx-auto px-5 md:px-6 relative z-10">
+      
       <!-- Page Title -->
-      <div class="text-center mb-12">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #dc2626; margin-bottom: 8px;">Secure Checkout</div>
-        <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--text-dark); line-height: 1.1;">Complete Your Payment</h1>
-        <p style="color: var(--text-body); margin-top: 12px; font-size: 1rem;">Choose your preferred payment method below. Verify details before transferring.</p>
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 text-coral-500 text-2xl mb-4">
+          <i class="fa-solid fa-shield-check"></i>
+        </div>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--text-dark); line-height: 1.1;">Secure Checkout</h1>
+        <p style="color: var(--text-body); margin-top: 12px; font-size: 1rem;">Complete your payment using the official NiiveshNeeti details below.</p>
       </div>
 
-      <!-- Payment Methods Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <!-- Unified Checkout Card -->
+      <div class="checkout-container flex flex-col lg:flex-row">
         
-        <!-- QR Code Card -->
-        <div class="card p-8 flex flex-col items-center text-center">
-          <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 text-xs font-extrabold text-amber-700 px-4 py-2 mb-6 border border-amber-100">
-            <i class="fa-solid fa-qrcode"></i> Scan to Pay
+        <!-- Left: QR Code Section -->
+        <div class="qr-section w-full lg:w-2/5 p-8 lg:p-10 flex flex-col items-center justify-center text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-amber-50 text-xs font-extrabold text-amber-700 px-4 py-2 mb-6 border border-amber-200">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> Step 1: Scan & Pay
           </div>
           
-          <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm mb-6 w-full max-w-[360px]">
-            <img src="https://indexneeti.com/amitkori_upi.jpeg" alt="NiiveshNeeti UPI QR Code" class="w-full h-auto rounded-xl object-contain" />
-          </div>
-
-          <div class="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 mt-auto">
-            <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">UPI ID</p>
-            <p class="text-lg md:text-xl font-black text-slate-800 tracking-wide select-all">amit.kori4@ybl</p>
-          </div>
-        </div>
-
-        <!-- Bank Details Card -->
-        <div class="card p-8 flex flex-col">
-          <div class="inline-flex self-start items-center gap-2 rounded-full bg-blue-50 text-xs font-extrabold text-blue-700 px-4 py-2 mb-6 border border-blue-100">
-            <i class="fa-solid fa-building-columns"></i> Bank Transfer Details
+          <div class="bg-white p-3 rounded-3xl border-2 border-slate-100 shadow-sm mb-6 w-full max-w-[320px] transition-transform hover:scale-105 duration-300">
+            <!-- Updated QR Image Source -->
+            <img src="qr.jpeg" alt="NiiveshNeeti Official QR Code" class="w-full h-auto rounded-2xl object-contain" />
           </div>
           
-          <p class="text-[0.95rem] text-slate-600 mb-6">Use NEFT, IMPS, RTGS, or direct transfer. Please verify details before making payment.</p>
-
-          <div class="space-y-4 w-full mt-auto">
-            <!-- Preferred Bank Box -->
-            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
-              <div>
-                <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Preferred Bank</p>
-                <p class="font-black text-slate-800">State Bank of India</p>
-              </div>
-              <img src="https://indexneeti.com/sbi-logo.png" alt="SBI Logo" class="h-8 object-contain" onerror="this.style.display='none'" />
-            </div>
-
-            <!-- Account Details Box -->
-            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 space-y-4">
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
-                <span class="text-xs font-bold text-slate-500 uppercase">Account Name</span>
-                <span class="font-bold text-slate-800 sm:text-right">Amit Kori</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
-                <span class="text-xs font-bold text-slate-500 uppercase">Account Number</span>
-                <span class="font-black text-slate-900 sm:text-right text-lg tracking-wider select-all">00000038550414297</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-slate-200 pb-3 gap-1">
-                <span class="text-xs font-bold text-slate-500 uppercase">IFSC Code</span>
-                <span class="font-bold text-slate-800 sm:text-right uppercase select-all">SBIN0015474</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                <span class="text-xs font-bold text-slate-500 uppercase">Branch</span>
-                <span class="font-bold text-slate-800 sm:text-right">Shivaji talao Bhandup</span>
-              </div>
-            </div>
-          </div>
+          <p class="text-sm font-bold text-slate-500">Scan using any UPI App</p>
         </div>
 
+        <!-- Right: Bank Details Section -->
+        <div class="w-full lg:w-3/5 p-8 lg:p-10 bg-white flex flex-col">
+          <div class="inline-flex self-start items-center gap-2 rounded-full bg-blue-50 text-xs font-extrabold text-blue-700 px-4 py-2 mb-6 border border-blue-200">
+             <i class="fa-solid fa-building-columns"></i> Or use Bank Transfer
+          </div>
+
+          <!-- Bank Header -->
+          <div class="flex items-center justify-between p-5 bg-slate-50 rounded-2xl border border-slate-200 mb-6">
+            <div>
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">Preferred Bank</p>
+              <h3 class="font-black text-slate-800 text-lg">State Bank of India</h3>
+            </div>
+            <img src="https://indexneeti.com/sbi-logo.png" alt="SBI Logo" class="h-10 object-contain" onerror="this.style.display='none'" />
+          </div>
+
+          <!-- Account Details Box -->
+          <div class="p-2 space-y-1 mb-8">
+            <div class="detail-row">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Account Name</span>
+              <span class="font-bold text-slate-900 text-base">NIIVESHNEETI</span>
+            </div>
+            <div class="detail-row">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Account Number</span>
+              <span class="font-black text-slate-900 text-xl tracking-wider select-all text-coral-600">44137222807</span>
+            </div>
+            <div class="detail-row">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">IFSC Code</span>
+              <span class="font-bold text-slate-900 text-base uppercase select-all">SBIN0015474</span>
+            </div>
+            <div class="detail-row">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">MICR No</span>
+              <span class="font-bold text-slate-900 text-base select-all">400002314</span>
+            </div>
+          </div>
+          
+          <div class="mt-auto p-4 rounded-xl bg-amber-50 border border-amber-100 flex items-start gap-3">
+            <i class="fa-solid fa-circle-exclamation text-amber-500 mt-0.5"></i>
+            <p class="text-xs font-medium text-amber-800 leading-relaxed">
+              Ensure you verify the <strong>Account Name</strong> and <strong>Account Number</strong> carefully before initiating NEFT, IMPS, or RTGS transfers.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- After Payment Action Card -->
-      <div class="mt-8 card p-8 md:p-10 text-center" style="background: linear-gradient(180deg, #ffffff, #f0fdf4); border: 2px solid #bbf7d0;">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 text-3xl mb-5 shadow-sm">
-          <i class="fa-brands fa-whatsapp"></i>
+      <!-- Step 2: After Payment Action Card -->
+      <div class="mt-8 checkout-container p-8 md:p-10 text-center" style="background: linear-gradient(180deg, #ffffff, #f0fdf4); border-color: #bbf7d0;">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-xs font-extrabold text-emerald-800 px-4 py-2 mb-6 border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Step 2: Verification
         </div>
-        <h2 style="font-size: 1.8rem; font-weight: 900; color: #14532d; margin-bottom: 12px;">After Payment</h2>
+        
+        <h2 style="font-size: 1.8rem; font-weight: 900; color: #14532d; margin-bottom: 12px;">Activate Your Plan</h2>
         <p style="color: #166534; max-width: 600px; margin: 0 auto 24px auto; font-size: 1rem; line-height: 1.7;">
-          Send your screenshot on WhatsApp to activate or verify quickly. Please mention your <strong>name</strong> and <strong>selected plan</strong> while sending the screenshot so the team can verify the payment faster.
+          Once paid, please send your screenshot on WhatsApp. Mention your <strong>name</strong> and <strong>selected plan</strong> so our advisory team can verify and activate your access quickly.
         </p>
         
         <!-- Pre-filled WhatsApp Link -->
         <a href="https://wa.me/919137932216?text=Hi%20NiiveshNeeti%20Team,%20I%20have%20made%20the%20payment.%20My%20name%20is%20[Your%20Name]%20and%20I%20selected%20the%20[Plan%20Name]%20plan.%20Here%20is%20my%20screenshot:" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="cta-btn wa-btn w-full sm:w-auto !px-8 !py-4 text-lg">
-          <span><i class="fa-brands fa-whatsapp text-xl mr-1"></i> Send Screenshot (+91 91379 32216)</span>
+           class="cta-btn wa-btn w-full sm:w-auto !px-8 !py-4 text-lg inline-flex shadow-lg hover:shadow-xl">
+          <span><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Send Screenshot to Verify</span>
         </a>
       </div>
       

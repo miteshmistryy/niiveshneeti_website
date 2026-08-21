@@ -1274,15 +1274,33 @@
       if(e.target === modal) modal.classList.remove('active');
     });
 
+    // Replace with your actual Google Apps Script URL (same as the one on your contact page)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzsVt4ZxHxSGw1nbP_IOYx_lNK5-ubwxoY5Rgq0YrRQPM5Rw0lNdeLT2lNW5cSS34nV/exec';
+
     function handlePopupSubmit(e) {
       e.preventDefault();
-      const plan = document.getElementById('planInput').value;
-      const name = document.getElementById('popupName').value;
-      const number = document.getElementById('popupNumber').value;
       
-      // Redirect to contact page
-      // Passing form inputs as URL parameters for potential autofill on contact.html
-      window.location.href = `contact.html?plan=${encodeURIComponent(plan)}&name=${encodeURIComponent(name)}&number=${encodeURIComponent(number)}`;
+      const form = document.getElementById('popupForm');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      // 1. Prevent double clicks and show a loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin mr-2"></i> Submitting...</span>';
+
+      // 2. Gather the form data (Plan, Name, Number)
+      const formData = new FormData(form);
+
+      // 3. Send the data to your Google Sheet
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          // 4. On success, redirect to the contact page
+          window.location.href = 'contact.html';
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          // If there's an error, you can still redirect them so they aren't stuck
+          window.location.href = 'contact.html';
+        });
     }
 
     // ===== PHONE ANIMATION (Candlestick Version) =====

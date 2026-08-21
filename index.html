@@ -231,6 +231,23 @@
       font-size: 0.95rem;
       line-height: 1.85;
     }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(30, 27, 75, 0.6); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: all 0.3s ease;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-content {
+      background: #fff; border-radius: 24px; width: 100%; max-width: 420px;
+      padding: 32px; transform: translateY(20px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin: 20px;
+    }
+    .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
+
     /* ===== PHONE ANIMATION ===== */
     .phone-wrapper {
       position: relative;
@@ -873,7 +890,7 @@
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- UPDATED PRICING SECTION -->
   <section id="pricing" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
@@ -881,60 +898,101 @@
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Choose Your NiiveshNeeti Index Options Plan</h2>
         <p style="color: var(--text-body); margin-top: 12px; font-size: 0.98rem; max-width: 640px; margin-left: auto; margin-right: auto;">Select a research-backed index options Recommendation plan aligned with your activity level and risk profile.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 items-start">
-        <div class="card p-8 reveal from-left">
-          <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Silver</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600">For Beginners</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+        
+        <!-- Monthly Plan -->
+        <div class="card p-6 reveal from-left">
+          <div class="mb-4">
+            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Monthly Plan</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600 mt-2 inline-block">30 Days</span>
           </div>
-          <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Suitable for beginners focusing on a structured trading approach in index options.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target &amp; stoploss levels</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
-          </ul>
-          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full" aria-label="Join Index Options Silver Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
-        </div>
-        <div class="pricing-popular p-8 pt-14 reveal delay-1">
-          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(251, 191, 36, 0.4); z-index: 2;">RECOMMENDED</div>
-          <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Gold</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800">Active Traders</span>
+          <div class="mb-2">
+            <span class="text-3xl font-black text-slate-900">₹4,444</span>
           </div>
-          <p style="font-size:0.92rem;color:#334155;margin-bottom:16px;">Best suited for active index option traders aiming for consistency and structured execution.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #334155; border-top: 1px solid #fef3c7; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty &amp; Finnifty index options</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit &amp; risk levels with clear logic</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
           </ul>
-          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full" aria-label="Join Index Options Gold Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
+          <button onclick="openModal('Monthly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Monthly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
-        <div class="card p-8 reveal from-right delay-2">
-          <div class="flex items-center justify-between mb-4">
-            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Platinum</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white">Experienced</span>
+
+        <!-- Quarterly Plan -->
+        <div class="pricing-popular p-6 pt-10 reveal delay-1">
+          <div style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; padding: 4px 14px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(251, 191, 36, 0.4); z-index: 2;">RECOMMENDED</div>
+          <div class="mb-4">
+            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Quarterly Plan</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mt-2 inline-block">90 Days</span>
           </div>
-          <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Designed for experienced traders with higher capital exposure in index options.</p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage &ndash; Nifty, BankNifty, Sensex &amp; selected indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+          <div class="mb-2">
+            <span class="text-3xl font-black text-slate-900">₹11,999</span>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: #334155; border-top: 1px solid #fef3c7; padding-top: 16px; margin-bottom: 20px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
           </ul>
-          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full" aria-label="Join Index Options Platinum Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
+          <button onclick="openModal('Quarterly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Quarterly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
+
+        <!-- Half Yearly Plan -->
+        <div class="card p-6 reveal delay-2">
+          <div class="mb-4">
+            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Half Yearly Plan</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600 mt-2 inline-block">180 Days</span>
+          </div>
+          <div class="mb-2">
+            <span class="text-3xl font-black text-slate-900">₹23,999</span>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
+          </ul>
+          <button onclick="openModal('Half Yearly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Half Yearly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
+        </div>
+
+        <!-- Yearly Plan -->
+        <div class="card p-6 reveal from-right delay-3">
+          <div class="mb-4">
+            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Yearly Plan</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white mt-2 inline-block">365 Days</span>
+          </div>
+          <div class="mb-2">
+            <span class="text-3xl font-black text-slate-900">₹45,999</span>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
+          </ul>
+          <button onclick="openModal('Yearly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Yearly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1131,6 +1189,32 @@
     </div>
   </footer>
 
+  <!-- JOIN MODAL OVERLAY -->
+  <div id="joinModal" class="modal-overlay">
+    <div class="modal-content relative">
+      <button id="closeModal" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 transition-colors">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+      <h3 class="text-2xl font-black text-slate-900 mb-2">Get Started</h3>
+      <p class="text-slate-600 text-sm mb-6">Enter your details to proceed with the <span id="selectedPlanName" class="font-bold text-coral-600"></span>.</p>
+      
+      <form id="popupForm" onsubmit="handlePopupSubmit(event)">
+        <input type="hidden" id="planInput" name="plan" value="" />
+        <div class="mb-4 text-left">
+          <label class="block text-sm font-extrabold text-slate-900 mb-2" for="popupName">Full Name</label>
+          <input type="text" id="popupName" name="name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-coral-500 focus:ring-4 focus:ring-coral-50 outline-none transition-all text-slate-800" placeholder="e.g. Rahul Sharma" required />
+        </div>
+        <div class="mb-6 text-left">
+          <label class="block text-sm font-extrabold text-slate-900 mb-2" for="popupNumber">Mobile Number</label>
+          <input type="tel" id="popupNumber" name="number" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-coral-500 focus:ring-4 focus:ring-coral-50 outline-none transition-all text-slate-800" placeholder="e.g. 9876543210" required />
+        </div>
+        <button type="submit" class="cta-btn w-full !py-4 text-[1.05rem]">
+          <span>Proceed <i class="fa-solid fa-arrow-right-long ml-2"></i></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script>
     // mobile menu toggle
@@ -1169,6 +1253,37 @@
       { threshold: 0.12 }
     );
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    // ===== MODAL LOGIC =====
+    const modal = document.getElementById('joinModal');
+    const closeBtn = document.getElementById('closeModal');
+    const planNameDisplay = document.getElementById('selectedPlanName');
+    const planInput = document.getElementById('planInput');
+
+    function openModal(planName) {
+      planNameDisplay.textContent = planName;
+      planInput.value = planName;
+      modal.classList.add('active');
+    }
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) modal.classList.remove('active');
+    });
+
+    function handlePopupSubmit(e) {
+      e.preventDefault();
+      const plan = document.getElementById('planInput').value;
+      const name = document.getElementById('popupName').value;
+      const number = document.getElementById('popupNumber').value;
+      
+      // Redirect to contact page
+      // Passing form inputs as URL parameters for potential autofill on contact.html
+      window.location.href = `contact.html?plan=${encodeURIComponent(plan)}&name=${encodeURIComponent(name)}&number=${encodeURIComponent(number)}`;
+    }
 
     // ===== PHONE ANIMATION (Candlestick Version) =====
     const phonePrice = document.getElementById('phonePrice');

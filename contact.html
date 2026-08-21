@@ -269,8 +269,8 @@
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
         
-        <!-- Left: Contact Info -->
-        <div class="lg:col-span-2 reveal from-left">
+        <!-- Left: Contact Info (Shifted down on mobile with order-2, normal on desktop with lg:order-1) -->
+        <div class="lg:col-span-2 reveal from-left order-2 lg:order-1">
           <h2 style="font-size: 1.6rem; font-weight: 900; color: var(--text-dark); margin-bottom: 24px;">Reach Out Directly</h2>
           
           <div class="contact-item">
@@ -310,8 +310,8 @@
           </div>
         </div>
 
-        <!-- Right: Contact Form -->
-        <div class="lg:col-span-3">
+        <!-- Right: Contact Form (Shifted up on mobile with order-1, normal on desktop with lg:order-2) -->
+        <div class="lg:col-span-3 order-1 lg:order-2">
           <div class="card p-8 md:p-10 reveal from-right shadow-xl">
             <h3 style="font-size: 1.4rem; font-weight: 900; color: var(--text-dark); margin-bottom: 24px;">Send us a message</h3>
             
@@ -471,6 +471,20 @@
     const form = document.forms['contactForm'];
     const submitBtn = document.getElementById('submitBtn');
     const formStatus = document.getElementById('formStatus');
+
+    // Auto-fill logic for data coming from the home page popup
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const planFromUrl = urlParams.get('plan');
+      const nameFromUrl = urlParams.get('name');
+      const numberFromUrl = urlParams.get('number');
+
+      if (nameFromUrl) document.getElementById('name').value = nameFromUrl;
+      if (numberFromUrl) document.getElementById('number').value = numberFromUrl;
+      if (planFromUrl) {
+        document.getElementById('message').value = "Hi, I am interested in the " + planFromUrl + " and would like to know more about the onboarding process.";
+      }
+    });
 
     form.addEventListener('submit', e => {
       e.preventDefault();

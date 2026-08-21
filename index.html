@@ -1198,7 +1198,7 @@
       <h3 class="text-2xl font-black text-slate-900 mb-2">Get Started</h3>
       <p class="text-slate-600 text-sm mb-6">Enter your details to proceed with the <span id="selectedPlanName" class="font-bold text-coral-600"></span>.</p>
       
-      <form id="popupForm" onsubmit="handlePopupSubmit(event)">
+      <form id="popupForm">
         <input type="hidden" id="planInput" name="plan" value="" />
         <div class="mb-4 text-left">
           <label class="block text-sm font-extrabold text-slate-900 mb-2" for="popupName">Full Name</label>
@@ -1254,7 +1254,7 @@
     );
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-    // ===== MODAL LOGIC =====
+    // ===== MODAL LOGIC & FORM SUBMISSION =====
     const modal = document.getElementById('joinModal');
     const closeBtn = document.getElementById('closeModal');
     const planNameDisplay = document.getElementById('selectedPlanName');
@@ -1274,34 +1274,32 @@
       if(e.target === modal) modal.classList.remove('active');
     });
 
-    // Replace with your actual Google Apps Script URL (same as the one on your contact page)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzsVt4ZxHxSGw1nbP_IOYx_lNK5-ubwxoY5Rgq0YrRQPM5Rw0lNdeLT2lNW5cSS34nV/exec';
+    const popupForm = document.getElementById('popupForm');
+    const popupScriptURL = 'https://script.google.com/macros/s/AKfycbzsVt4ZxHxSGw1nbP_IOYx_lNK5-ubwxoY5Rgq0YrRQPM5Rw0lNdeLT2lNW5cSS34nV/exec';
 
-    function handlePopupSubmit(e) {
+    popupForm.addEventListener('submit', e => {
       e.preventDefault();
       
-      const form = document.getElementById('popupForm');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      
-      // 1. Prevent double clicks and show a loading state
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin mr-2"></i> Submitting...</span>';
+      const submitBtn = popupForm.querySelector('button[type="submit"]');
+      if(submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin mr-2"></i> Submitting...</span>';
+      }
 
-      // 2. Gather the form data (Plan, Name, Number)
-      const formData = new FormData(form);
+      const formData = new FormData(popupForm);
 
-      // 3. Send the data to your Google Sheet
-      fetch(scriptURL, { method: 'POST', body: formData })
+      fetch(popupScriptURL, { method: 'POST', body: formData })
         .then(response => {
-          // 4. On success, redirect to the contact page
-          window.location.href = 'contact.html';
+          // Pass the data as query params so contact.html can potentially auto-fill it
+          const urlParams = `?plan=${encodeURIComponent(formData.get('plan'))}&name=${encodeURIComponent(formData.get('name'))}&number=${encodeURIComponent(formData.get('number'))}`;
+          window.location.href = 'contact.html' + urlParams;
         })
         .catch(error => {
-          console.error('Error!', error.message);
-          // If there's an error, you can still redirect them so they aren't stuck
+          console.error('Error!', error);
+          // Even if there is a network error (like CORS blocks fetch), redirect them anyway
           window.location.href = 'contact.html';
         });
-    }
+    });
 
     // ===== PHONE ANIMATION (Candlestick Version) =====
     const phonePrice = document.getElementById('phonePrice');

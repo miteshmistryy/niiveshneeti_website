@@ -9,15 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
   <meta name="description" content="NiiveshNeeti is a SEBI registered index options Recommendation. Get research-based trade calls, levels, and real-time support in Nifty, Bank Nifty and other index options." />
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18374314464"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18374314464');
-</script>
   <style>
     :root {
       --bg-cream: #fffaf5;
@@ -231,23 +222,6 @@
       font-size: 0.95rem;
       line-height: 1.85;
     }
-
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 100;
-      background: rgba(30, 27, 75, 0.6); backdrop-filter: blur(4px);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; visibility: hidden; transition: all 0.3s ease;
-    }
-    .modal-overlay.active { opacity: 1; visibility: visible; }
-    .modal-content {
-      background: #fff; border-radius: 24px; width: 100%; max-width: 420px;
-      padding: 32px; transform: translateY(20px) scale(0.95);
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      margin: 20px;
-    }
-    .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
-
     /* ===== PHONE ANIMATION ===== */
     .phone-wrapper {
       position: relative;
@@ -310,7 +284,7 @@
       background: linear-gradient(135deg, var(--coral), #ff8e53);
       color: white;
     }
-    .phone-app-header h2 { font-size: 14px; font-weight: 800; }
+    .phone-app-header h4 { font-size: 14px; font-weight: 800; }
     .phone-app-header p { font-size: 10px; opacity: 0.9; }
     .phone-chart-area {
       flex: 1;
@@ -593,7 +567,7 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="https://niiveshneeti.com/about_us" class="nav-link">About Us</a>
-        <a href="https://userconsentagreement.niiveshneeti.com" class="nav-link">User Consent</a>
+        <a href="https://useragreement.niiveshneeti.com/" class="nav-link">User Consent</a>
         <a href="https://niiveshneeti.com/contact" class="cta-btn !py-3 !px-5"><span>Contact Us</span></a>
       </nav>
       <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm">
@@ -605,13 +579,12 @@
         <a href="#services" class="nav-link mobile-nav-link">Services</a>
         <a href="#pricing" class="nav-link mobile-nav-link">Pricing</a>
         <a href="https://niiveshneeti.com/about_us" class="nav-link mobile-nav-link">About Us</a>
-        <a href="https://userconsentagreement.niiveshneeti.com" class="nav-link mobile-nav-link">User Consent</a>
+        <a href="https://useragreement.niiveshneeti.com/" class="nav-link mobile-nav-link">User Consent</a>
         <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Contact Advisory Desk</span></a>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
   <!-- HERO (Adjusted top padding for better spacing) -->
   <section id="home" class="relative pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -629,10 +602,10 @@
         <h1 style="font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 900; line-height: 1.05; color: var(--text-dark); margin-bottom: 0.8rem;">
           Research-Backed
           <span style="background: linear-gradient(90deg, var(--coral), var(--amber), var(--lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Index Options</span>
-          Recommendation with <span style="color: #dc2626;">Clear Neeti.</span>
+          Recommendation with <span style="color: var(--coral);">Clear Neeti.</span>
         </h1>
-        <p style="font-size: 0.95rem; color: #000000; font-weight: 500; line-height: 1.7; max-width: 640px; margin-bottom: 1rem;">
-          NiiveshNeeti provides SEBI compliant index options recommendation with research-based trade calls, defined entry–target–stop-loss levels, and real-time trader support when Nifty, Bank Nifty, and other indices move fast.
+        <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7; max-width: 640px; margin-bottom: 1rem;">
+          NiiveshNeeti provides SEBI compliant index options Recommendation with research-based trade calls, defined entry&ndash;target&ndash;stoploss levels, and real-time trader support when Nifty, Bank Nifty and other indices move fast.
         </p>
         <div class="flex flex-wrap gap-2 mb-5">
           <div class="flex items-center gap-2 text-xs text-slate-700 bg-white px-3 py-2 rounded-full border border-orange-100 shadow-sm">
@@ -675,7 +648,7 @@
                 </div>
               </div>
               <div class="phone-app-header">
-                <h2><i class="fa-solid fa-layer-group mr-1"></i> NiiveshNeeti Recommendation</h2>
+                <h4><i class="fa-solid fa-layer-group mr-1"></i> NiiveshNeeti Recommendation</h4>
                 <p>NIFTY CE 24500 &middot; Intraday Call</p>
               </div>
               <div class="phone-chart-area">
@@ -761,7 +734,7 @@
   <section id="services" class="py-24">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #dc2626; margin-bottom: 8px;">Our Services</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--coral); margin-bottom: 8px;">Our Services</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Index Options Recommendation You Receive</h2>
         <p style="color: var(--text-body); margin-top: 12px; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">NiiveshNeeti focuses on research-backed index options Recommendation, combining levels, logic and risk control for intraday and expiry trades in Indian indices.</p>
       </div>
@@ -825,7 +798,7 @@
   <section id="why-us" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #6d28d9; margin-bottom: 8px;">Why Choose NiiveshNeeti</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--lavender); margin-bottom: 8px;">Why Choose NiiveshNeeti</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Built for Serious Index Option Traders</h2>
         <p style="color: var(--text-body); margin-top: 12px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">Built by traders with 15+ years in Indian markets, NiiveshNeeti focuses on structure, risk and psychology instead of random tips or hype.</p>
       </div>
@@ -890,109 +863,68 @@
     </div>
   </section>
 
-  <!-- UPDATED PRICING SECTION -->
+  <!-- PRICING -->
   <section id="pricing" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #15803d; margin-bottom: 8px;">Pricing Plans</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #22c55e; margin-bottom: 8px;">Pricing Plans</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Choose Your NiiveshNeeti Index Options Plan</h2>
         <p style="color: var(--text-body); margin-top: 12px; font-size: 0.98rem; max-width: 640px; margin-left: auto; margin-right: auto;">Select a research-backed index options Recommendation plan aligned with your activity level and risk profile.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-        
-        <!-- Monthly Plan -->
-        <div class="card p-6 reveal from-left">
-          <div class="mb-4">
-            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Monthly Plan</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600 mt-2 inline-block">30 Days</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 items-start">
+        <div class="card p-8 reveal from-left">
+          <div class="flex items-center justify-between mb-4">
+            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Silver</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600">For Beginners</span>
           </div>
-          <div class="mb-2">
-            <span class="text-3xl font-black text-slate-900">₹14,750</span>
-          </div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
+          <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Suitable for beginners focusing on a structured trading approach in index options.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target &amp; stoploss levels</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
           </ul>
-          <button onclick="openModal('Monthly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Monthly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
+          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
-
-        <!-- Quarterly Plan -->
-        <div class="pricing-popular p-6 pt-10 reveal delay-1">
-          <div style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; padding: 4px 14px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(251, 191, 36, 0.4); z-index: 2;">RECOMMENDED</div>
-          <div class="mb-4">
-            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Quarterly Plan</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mt-2 inline-block">90 Days</span>
+        <div class="pricing-popular p-8 pt-14 reveal delay-1">
+          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(251, 191, 36, 0.4); z-index: 2;">RECOMMENDED</div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Gold</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800">Active Traders</span>
           </div>
-          <div class="mb-2">
-            <span class="text-3xl font-black text-slate-900">₹39,899</span>
-          </div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: #334155; border-top: 1px solid #fef3c7; padding-top: 16px; margin-bottom: 20px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
+          <p style="font-size:0.92rem;color:#334155;margin-bottom:16px;">Best suited for active index option traders aiming for consistency and structured execution.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #334155; border-top: 1px solid #fef3c7; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty &amp; Finnifty index options</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit &amp; risk levels with clear logic</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
-          <button onclick="openModal('Quarterly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Quarterly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
+          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
-
-        <!-- Half Yearly Plan -->
-        <div class="card p-6 reveal delay-2">
-          <div class="mb-4">
-            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Half Yearly Plan</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-100 text-slate-600 mt-2 inline-block">180 Days</span>
+        <div class="card p-8 reveal from-right delay-2">
+          <div class="flex items-center justify-between mb-4">
+            <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Platinum</h3>
+            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white">Experienced</span>
           </div>
-          <div class="mb-2">
-            <span class="text-3xl font-black text-slate-900">₹75,000</span>
-          </div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
+          <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Designed for experienced traders with higher capital exposure in index options.</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage &ndash; Nifty, BankNifty, Sensex &amp; selected indices</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</li>
+            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
-          <button onclick="openModal('Half Yearly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Half Yearly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
+          <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
-
-        <!-- Yearly Plan -->
-        <div class="card p-6 reveal from-right delay-3">
-          <div class="mb-4">
-            <h3 style="font-weight:900;font-size:1.15rem;color:var(--text-dark);">Yearly Plan</h3>
-            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-slate-900 text-white mt-2 inline-block">365 Days</span>
-          </div>
-          <div class="mb-2">
-            <span class="text-3xl font-black text-slate-900">₹1,31,999</span>
-          </div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 20px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 Research Trade Setups Daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All Index Coverage (Nifty, BankNifty, Sensex)</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry Strategy Planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-Based Opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live Market Observation</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority Dedicated Support</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading Psychology Insights</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Risk management</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Market update</li>
-          </ul>
-          <button onclick="openModal('Yearly Plan')" class="cta-btn w-full !py-3 !text-[0.95rem]" aria-label="Join Yearly Plan"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></button>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1001,7 +933,7 @@
   <section id="about" class="py-24">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #dc2626; margin-bottom: 8px;">About NiiveshNeeti</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--coral); margin-bottom: 8px;">About NiiveshNeeti</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">SEBI Registered Index Options Recommendation</h2>
         <p style="color: var(--text-body); margin-top: 12px; max-width: 760px; margin-left: auto; margin-right: auto; font-size: 0.98rem;">NiiveshNeeti offers SEBI registered research Recommendation in Indian indices with a clear focus on index options, structure, risk and trader-friendly communication.</p>
       </div>
@@ -1067,7 +999,7 @@
   <section id="faq" class="py-24 section-alt">
     <div class="max-w-5xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #15803d; margin-bottom: 8px;">FAQs</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #22c55e; margin-bottom: 8px;">FAQs</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: var(--text-dark);">Frequently Asked Questions</h2>
         <p style="color: var(--text-body); margin-top: 12px; font-size: 0.98rem; max-width: 680px; margin-left: auto; margin-right: auto;">A few clear answers so users understand what NiiveshNeeti Recommendation is and what it is not.</p>
       </div>
@@ -1104,7 +1036,7 @@
   <section id="disclaimer" class="py-24">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <div class="text-center mb-12 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #b91c1c; margin-bottom: 8px;">Disclaimer</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #ef4444; margin-bottom: 8px;">Disclaimer</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: var(--text-dark);">Mandatory Disclosures</h2>
       </div>
       <div class="card p-8 md:p-10 reveal">
@@ -1117,7 +1049,6 @@
       </div>
     </div>
   </section>
-  </main>
 
   <!-- FOOTER -->
   <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70">
@@ -1131,16 +1062,16 @@
           <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
         </div>
         <div>
-          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h3>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
             <li><a class="footer-link" href="#services">Services</a></li>
             <li><a class="footer-link" href="#pricing">Pricing</a></li>
             <li><a class="footer-link" href="#faq">FAQ</a></li>
-            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
+            <li><a class="footer-link" href="#disclaimer">Disclaimer</a></li>
           </ul>
         </div>
         <div>
-          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h3>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
             <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
@@ -1149,16 +1080,18 @@
           </ul>
         </div>
         <div>
-          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h3>
+          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
-            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf">Disclosure</a></li>
+            <li><a class="footer-link" href="Disclaimer.html" rel="noopener noreferrer">Disclaimer</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf" rel="noopener noreferrer">Disclosure</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/new-investor-charter.pdf" rel="noopener noreferrer">Investor charter</a></li>
-            <li><a class="footer-link" href="Terms_and_Condition.html">Terms &amp; Condition</a></li>
-            <li><a class="footer-link" href="Privacy_Policy.html">Privacy Policy</a></li>
-            <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
+            <li><a class="footer-link" href="Terms_and_Condition.html" rel="noopener noreferrer">Terms &amp; Condition</a></li>
+            <li><a class="footer-link" href="Privacy_Policy.html" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a class="footer-link" href="Grievance_Redressal.html" rel="noopener noreferrer">Grievance Redressal</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/about_us" rel="noopener noreferrer">About Us</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/contact" rel="noopener noreferrer">Contact</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/blog" rel="noopener noreferrer">Blog</a></li>
+            <li><a class="footer-link" href="https://niiveshneeti.com/research_report" rel="noopener noreferrer">Research Report</a></li>
           </ul>
         </div>
       </div>
@@ -1170,7 +1103,7 @@
         <p><strong>*Mandatory notice:</strong> "Clients shall be requested to go through Do's and Don'ts while dealing with RA as specified in SEBI master circular no. SEBI/HO/MIRSD-POD- 1/P/CIR/2024/49 dated May 21, 2024 or as may be specified by SEBI from time to time."</p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
           <div>
-            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">Registered Analyst Details:</p>
+            <p style="font-weight:800;color:var(--text-dark);margin-bottom:4px;">SEBI Registered Research Analyst Details:</p>
             <p>Registered Name: Amit Kori</p>
             <p>Type of registration: Individual</p>
             <p>Registration No.: INH000016533</p>
@@ -1183,41 +1116,15 @@
         </div>
       </div>
 
-      <div style="text-align: center; font-size: 12px; color: #475569; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+      <div style="text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 20px;">
         NiiveshNeeti &copy;2026 All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- JOIN MODAL OVERLAY -->
-  <div id="joinModal" class="modal-overlay">
-    <div class="modal-content relative">
-      <button id="closeModal" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 transition-colors">
-        <i class="fa-solid fa-xmark text-xl"></i>
-      </button>
-      <h3 class="text-2xl font-black text-slate-900 mb-2">Get Started</h3>
-      <p class="text-slate-600 text-sm mb-6">Enter your details to proceed with the <span id="selectedPlanName" class="font-bold text-coral-600"></span>.</p>
-      
-      <form id="popupForm">
-        <input type="hidden" id="planInput" name="plan" value="" />
-        <div class="mb-4 text-left">
-          <label class="block text-sm font-extrabold text-slate-900 mb-2" for="popupName">Full Name</label>
-          <input type="text" id="popupName" name="name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-coral-500 focus:ring-4 focus:ring-coral-50 outline-none transition-all text-slate-800" placeholder="e.g. Rahul Sharma" required />
-        </div>
-        <div class="mb-6 text-left">
-          <label class="block text-sm font-extrabold text-slate-900 mb-2" for="popupNumber">Mobile Number</label>
-          <input type="tel" id="popupNumber" name="number" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-coral-500 focus:ring-4 focus:ring-coral-50 outline-none transition-all text-slate-800" placeholder="e.g. 9876543210" required />
-        </div>
-        <button type="submit" class="cta-btn w-full !py-4 text-[1.05rem]">
-          <span>Proceed <i class="fa-solid fa-arrow-right-long ml-2"></i></span>
-        </button>
-      </form>
-    </div>
-  </div>
-
   <!-- SCRIPTS -->
   <script>
-    // mobile menu toggle
+    // mobile menu
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -1240,7 +1147,7 @@
       });
     });
 
-    // scroll reader reveal
+    // reveal on scroll
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -1253,53 +1160,6 @@
       { threshold: 0.12 }
     );
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    // ===== MODAL LOGIC & FORM SUBMISSION =====
-    const modal = document.getElementById('joinModal');
-    const closeBtn = document.getElementById('closeModal');
-    const planNameDisplay = document.getElementById('selectedPlanName');
-    const planInput = document.getElementById('planInput');
-
-    function openModal(planName) {
-      planNameDisplay.textContent = planName;
-      planInput.value = planName;
-      modal.classList.add('active');
-    }
-
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
-
-    modal.addEventListener('click', (e) => {
-      if(e.target === modal) modal.classList.remove('active');
-    });
-
-    const popupForm = document.getElementById('popupForm');
-    const popupScriptURL = 'https://script.google.com/macros/s/AKfycbzsVt4ZxHxSGw1nbP_IOYx_lNK5-ubwxoY5Rgq0YrRQPM5Rw0lNdeLT2lNW5cSS34nV/exec';
-
-    popupForm.addEventListener('submit', e => {
-      e.preventDefault();
-      
-      const submitBtn = popupForm.querySelector('button[type="submit"]');
-      if(submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span><i class="fa-solid fa-spinner fa-spin mr-2"></i> Submitting...</span>';
-      }
-
-      const formData = new FormData(popupForm);
-
-      fetch(popupScriptURL, { method: 'POST', body: formData })
-        .then(response => {
-          // Pass the data as query params so contact.html can potentially auto-fill it
-          const urlParams = `?plan=${encodeURIComponent(formData.get('plan'))}&name=${encodeURIComponent(formData.get('name'))}&number=${encodeURIComponent(formData.get('number'))}`;
-          window.location.href = 'contact.html' + urlParams;
-        })
-        .catch(error => {
-          console.error('Error!', error);
-          // Even if there is a network error (like CORS blocks fetch), redirect them anyway
-          window.location.href = 'contact.html';
-        });
-    });
 
     // ===== PHONE ANIMATION (Candlestick Version) =====
     const phonePrice = document.getElementById('phonePrice');

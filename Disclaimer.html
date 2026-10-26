@@ -148,6 +148,7 @@
       font-size: 22px;
       position: relative;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
     .card:hover .icon-box { transform: scale(1.1) rotate(-4deg); }
     .footer-link {
@@ -350,7 +351,7 @@
             <li><a class="footer-link" href="Grievance_Redressal.html">Grievance Redressal</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/about_us">About Us</a></li>
             <li><a class="footer-link" href="https://userconsentagreement.niiveshneeti.com">User Consent</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/contact">Contact</a></li>
+            <li><a class="footer-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -383,7 +384,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    // mobile menu toggle
     const menuToggle = document.getElementById("menuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -406,7 +406,6 @@
       });
     });
 
-    // scroll reader reveal
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

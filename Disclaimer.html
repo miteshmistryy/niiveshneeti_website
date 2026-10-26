@@ -46,6 +46,24 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+
+    /* ===== SKIP TO MAIN CONTENT LINK FOR KEYBOARD ACCESSIBILITY ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%; /* Hidden by default, visually off-screen */
+      left: 0;
+      background-color: var(--text-dark);
+      color: var(--bg-white);
+      padding: 12px 24px;
+      font-weight: 800;
+      z-index: 9999;
+      transition: top 0.2s ease-in-out;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0; /* Appears when focused via keyboard tab */
+    }
+
     .nav-link {
       color: #475569;
       font-weight: 700;
@@ -167,6 +185,9 @@
 </head>
 <body>
 
+  <!-- SKIP TO MAIN CONTENT LINK FOR KEYBOARD ACCESSIBILITY -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
     <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
@@ -196,6 +217,7 @@
     </div>
   </header>
 
+  <!-- MAIN LANDMARK -->
   <main id="main-content">
   <!-- PAGE HEADER -->
   <section class="pt-16 pb-12 lg:pt-20 lg:pb-16 relative overflow-hidden">
@@ -222,19 +244,22 @@
       
       <div class="card p-6 reveal from-left flex flex-col items-start" style="border-top: 4px solid var(--amber);">
         <div class="icon-box mb-4 shrink-0" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: #b45309;"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3 class="font-black text-[1.1rem] text-slate-900 mb-2">No Guaranteed Profits</h3>
+        <!-- Best Practice Fix: Changed from h3 to h2 to maintain correct heading hierarchy (h1 -> h2) -->
+        <h2 class="font-black text-[1.1rem] text-slate-900 mb-2">No Guaranteed Profits</h2>
         <p class="text-[0.93rem] text-slate-600 leading-relaxed">SEBI registration validates our credentials, but it does not remove market volatility. Registration and certifications in no way guarantee trading performance or assure risk-free returns.</p>
       </div>
 
       <div class="card p-6 reveal delay-1 flex flex-col items-start" style="border-top: 4px solid var(--coral);">
         <div class="icon-box mb-4 shrink-0" style="background: linear-gradient(135deg, var(--coral-light), #ffe4e6); color: var(--coral);"><i class="fa-solid fa-chart-pie"></i></div>
-        <h3 class="font-black text-[1.1rem] text-slate-900 mb-2">Illustrative Examples</h3>
+        <!-- Best Practice Fix: Changed from h3 to h2 -->
+        <h2 class="font-black text-[1.1rem] text-slate-900 mb-2">Illustrative Examples</h2>
         <p class="text-[0.93rem] text-slate-600 leading-relaxed">Any specific index levels, option strikes, or securities discussed on this website or in our marketing materials are purely for educational illustration, not direct buy/sell endorsements.</p>
       </div>
 
       <div class="card p-6 reveal from-right delay-2 flex flex-col items-start" style="border-top: 4px solid var(--sky);">
         <div class="icon-box mb-4 shrink-0" style="background: linear-gradient(135deg, var(--sky-light), #e0f2fe); color: var(--sky);"><i class="fa-solid fa-user-check"></i></div>
-        <h3 class="font-black text-[1.1rem] text-slate-900 mb-2">Client Responsibility</h3>
+        <!-- Best Practice Fix: Changed from h3 to h2 -->
+        <h2 class="font-black text-[1.1rem] text-slate-900 mb-2">Client Responsibility</h2>
         <p class="text-[0.93rem] text-slate-600 leading-relaxed">We provide structured research, but final execution rests entirely with you. You are responsible for managing your position sizing, assessing your capital suitability, and strict stop-loss adherence.</p>
       </div>
 

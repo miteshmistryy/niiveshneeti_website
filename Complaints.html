@@ -19,8 +19,9 @@
             --color-border: #e2e8f0;
             --color-text: #0f172a;
             --color-muted: #64748b;
-            --color-primary: #059669;
-            --color-primary-dark: #047857;
+            /* Updated to meet 4.5:1 minimum contrast ratio */
+            --color-primary: #047857; 
+            --color-primary-dark: #065f46;
             --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
             --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.08);
             --font-body: 'Satoshi', system-ui, sans-serif;
@@ -58,7 +59,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #059669, #0891b2);
+            /* Updated gradient colors for WCAG contrast compliance against white text */
+            background: linear-gradient(135deg, #047857, #0e7490);
             color: #fff;
             text-decoration: none;
             padding: 13px 20px;
@@ -114,8 +116,8 @@
         }
 
         .field-input:focus {
-            border-color: #059669;
-            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.10);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.15);
         }
 
         .status-box {
@@ -177,7 +179,7 @@
         }
 
         .footer-link:hover {
-            color: #059669;
+            color: var(--color-primary);
         }
 
         .info-box {
@@ -242,14 +244,14 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Sr. No</th>
-                                    <th>Received from</th>
-                                    <th>Pending at the end of last month</th>
-                                    <th>Received</th>
-                                    <th>Resolved</th>
-                                    <th>Total Pending</th>
-                                    <th>Pending complaints &gt; 3 months</th>
-                                    <th>Average Resolution time (in days)</th>
+                                    <th scope="col">Sr. No</th>
+                                    <th scope="col">Received from</th>
+                                    <th scope="col">Pending at the end of last month</th>
+                                    <th scope="col">Received</th>
+                                    <th scope="col">Resolved</th>
+                                    <th scope="col">Total Pending</th>
+                                    <th scope="col">Pending complaints &gt; 3 months</th>
+                                    <th scope="col">Average Resolution time (in days)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -305,12 +307,12 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Sr. No.</th>
-                                    <th>Month</th>
-                                    <th>Carried forward from Previous month</th>
-                                    <th>Received</th>
-                                    <th>Resolved</th>
-                                    <th>Pending</th>
+                                    <th scope="col">Sr. No.</th>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Carried forward from Previous month</th>
+                                    <th scope="col">Received</th>
+                                    <th scope="col">Resolved</th>
+                                    <th scope="col">Pending</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -346,12 +348,12 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Sr. No.</th>
-                                    <th>Year</th>
-                                    <th>Carried forward from Previous month</th>
-                                    <th>Received</th>
-                                    <th>Resolved</th>
-                                    <th>Pending</th>
+                                    <th scope="col">Sr. No.</th>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Carried forward from Previous month</th>
+                                    <th scope="col">Received</th>
+                                    <th scope="col">Resolved</th>
+                                    <th scope="col">Pending</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -381,7 +383,7 @@
                             </p>
 
                             <div class="info-box mb-4">
-                                <div style="font-size: 0.85rem; font-weight: 800; color: #059669; margin-bottom: 6px;">Submission details</div>
+                                <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">Submission details</div>
                                 <p style="font-size: 0.95rem; color: #475569; line-height: 1.8;">
                                     The form stores your full name, email address, contact number, and complaint message in your Google Sheet for internal follow-up.
                                 </p>
@@ -399,11 +401,12 @@
                         </div>
 
                         <div>
-                            <div id="successMessage" class="status-box status-success mb-4">
+                            <!-- Added role="alert" for screen reader support -->
+                            <div id="successMessage" role="alert" class="status-box status-success mb-4">
                                 Your complaint has been submitted successfully.
                             </div>
 
-                            <div id="errorMessage" class="status-box status-error mb-4">
+                            <div id="errorMessage" role="alert" class="status-box status-error mb-4">
                                 Something went wrong. Please try again.
                             </div>
 

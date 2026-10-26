@@ -36,6 +36,23 @@
             line-height: 1.6;
         }
 
+        /* ===== SKIP TO MAIN CONTENT LINK ===== */
+        .skip-link {
+            position: absolute;
+            top: -100%; /* Hidden by default, visually off-screen */
+            left: 0;
+            background-color: var(--color-text);
+            color: var(--color-surface);
+            padding: 12px 24px;
+            font-weight: 800;
+            z-index: 9999;
+            transition: top 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0; /* Appears when focused via keyboard tab */
+        }
+
         .card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
@@ -197,6 +214,9 @@
 </head>
 <body>
 
+    <!-- SKIP TO MAIN CONTENT LINK FOR KEYBOARD ACCESSIBILITY -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-5 md:px-6 h-[78px] flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
@@ -218,229 +238,232 @@
         </div>
     </header>
 
-    <section class="py-14 md:py-16">
-        <div class="max-w-7xl mx-auto px-5 md:px-6">
-            <div class="card p-8 md:p-10 mb-8">
-                <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 px-4 py-2 text-xs font-extrabold mb-5">
-                    Complaint Disclosure
-                </div>
-
-                <h1 class="hero-heading" style="font-size: 3rem; font-weight: 900; color: #0f172a; line-height: 1.1; margin-bottom: 16px;">
-                    Complaints
-                </h1>
-
-                <p class="section-text" style="max-width: 880px;">
-                    This page presents complaint-related disclosure data and also provides a complaint form for clients or visitors who wish to submit a complaint or concern.
-                </p>
-            </div>
-
-            <div class="space-y-8">
-                <!-- Number of Client's Complaints -->
-                <div class="card p-8 md:p-10">
-                    <h2 class="section-title">Number Of Client's Complaints</h2>
-                    <p class="section-text mb-5">Complaint Status – Data for the Month Ending Sept 2026</p>
-
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Sr. No</th>
-                                    <th scope="col">Received from</th>
-                                    <th scope="col">Pending at the end of last month</th>
-                                    <th scope="col">Received</th>
-                                    <th scope="col">Resolved</th>
-                                    <th scope="col">Total Pending</th>
-                                    <th scope="col">Pending complaints &gt; 3 months</th>
-                                    <th scope="col">Average Resolution time (in days)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Directly from Investors</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>SEBI (SCORES)</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Other Sources (if any)</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Na</td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <!-- MAIN LANDMARK -->
+    <main id="main-content">
+        <section class="py-14 md:py-16">
+            <div class="max-w-7xl mx-auto px-5 md:px-6">
+                <div class="card p-8 md:p-10 mb-8">
+                    <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 px-4 py-2 text-xs font-extrabold mb-5">
+                        Complaint Disclosure
                     </div>
+
+                    <h1 class="hero-heading" style="font-size: 3rem; font-weight: 900; color: #0f172a; line-height: 1.1; margin-bottom: 16px;">
+                        Complaints
+                    </h1>
+
+                    <p class="section-text" style="max-width: 880px;">
+                        This page presents complaint-related disclosure data and also provides a complaint form for clients or visitors who wish to submit a complaint or concern.
+                    </p>
                 </div>
 
-                <!-- Trend of Monthly Disposal of Complaints -->
-                <div class="card p-8 md:p-10">
-                    <h2 class="section-title">Trend of Monthly Disposal of Complaints</h2>
+                <div class="space-y-8">
+                    <!-- Number of Client's Complaints -->
+                    <div class="card p-8 md:p-10">
+                        <h2 class="section-title">Number Of Client's Complaints</h2>
+                        <p class="section-text mb-5">Complaint Status – Data for the Month Ending Sept 2026</p>
 
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Sr. No.</th>
-                                    <th scope="col">Month</th>
-                                    <th scope="col">Carried forward from Previous month</th>
-                                    <th scope="col">Received</th>
-                                    <th scope="col">Resolved</th>
-                                    <th scope="col">Pending</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1</td><td>Oct 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>2</td><td>Nov 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>3</td><td>Dec 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>4</td><td>Jan 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>5</td><td>Feb 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>6</td><td>March 2026</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-                                <tr><td>7</td><td>April 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>8</td><td>May 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>9</td><td>Jun 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                                <tr><td>10</td><td>July 2026</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-                                <tr><td>11</td><td>Aug 2026</td><td>1</td><td>1</td><td>0</td><td>2</td></tr>
-                                <tr><td>12</td><td>Sept 2026</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
-                                <tr>
-                                    <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                    <td>2</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr. No</th>
+                                        <th scope="col">Received from</th>
+                                        <th scope="col">Pending at the end of last month</th>
+                                        <th scope="col">Received</th>
+                                        <th scope="col">Resolved</th>
+                                        <th scope="col">Total Pending</th>
+                                        <th scope="col">Pending complaints &gt; 3 months</th>
+                                        <th scope="col">Average Resolution time (in days)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Directly from Investors</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>SEBI (SCORES)</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Other Sources (if any)</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Na</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Trend of Annual Disposal of Complaints -->
-                <div class="card p-8 md:p-10">
-                    <h2 class="section-title">Trend of Annual Disposal of Complaints</h2>
+                    <!-- Trend of Monthly Disposal of Complaints -->
+                    <div class="card p-8 md:p-10">
+                        <h2 class="section-title">Trend of Monthly Disposal of Complaints</h2>
 
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Sr. No.</th>
-                                    <th scope="col">Year</th>
-                                    <th scope="col">Carried forward from Previous month</th>
-                                    <th scope="col">Received</th>
-                                    <th scope="col">Resolved</th>
-                                    <th scope="col">Pending</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1</td><td>2022-23</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
-                                <tr><td>2</td><td>2023-24</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
-                                <tr><td>3</td><td>2024-25</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
-                                <tr><td>4</td><td>2025-26</td><td>Nil</td><td>1</td><td>1</td><td>Nil</td></tr>
-                                <tr>
-                                    <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                    <td>Nil</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr. No.</th>
+                                        <th scope="col">Month</th>
+                                        <th scope="col">Carried forward from Previous month</th>
+                                        <th scope="col">Received</th>
+                                        <th scope="col">Resolved</th>
+                                        <th scope="col">Pending</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Oct 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>2</td><td>Nov 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>3</td><td>Dec 2025</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>4</td><td>Jan 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>5</td><td>Feb 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>6</td><td>March 2026</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+                                    <tr><td>7</td><td>April 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>8</td><td>May 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>9</td><td>Jun 2026</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                                    <tr><td>10</td><td>July 2026</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                                    <tr><td>11</td><td>Aug 2026</td><td>1</td><td>1</td><td>0</td><td>2</td></tr>
+                                    <tr><td>12</td><td>Sept 2026</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+                                    <tr>
+                                        <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Complaint Form -->
-                <div class="card p-8 md:p-10" style="box-shadow: var(--shadow-md);">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <div>
-                            <h2 class="section-title">Complaint Form</h2>
-                            <p class="section-text mb-6">
-                                Use this form to submit your complaint or issue. The submission will be stored in the same connected Google Sheet used for your contact page.
-                            </p>
+                    <!-- Trend of Annual Disposal of Complaints -->
+                    <div class="card p-8 md:p-10">
+                        <h2 class="section-title">Trend of Annual Disposal of Complaints</h2>
 
-                            <div class="info-box mb-4">
-                                <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">Submission details</div>
-                                <p style="font-size: 0.95rem; color: #475569; line-height: 1.8;">
-                                    The form stores your full name, email address, contact number, and complaint message in your Google Sheet for internal follow-up.
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr. No.</th>
+                                        <th scope="col">Year</th>
+                                        <th scope="col">Carried forward from Previous month</th>
+                                        <th scope="col">Received</th>
+                                        <th scope="col">Resolved</th>
+                                        <th scope="col">Pending</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>2022-23</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
+                                    <tr><td>2</td><td>2023-24</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
+                                    <tr><td>3</td><td>2024-25</td><td>Nil</td><td>Nil</td><td>Nil</td><td>Nil</td></tr>
+                                    <tr><td>4</td><td>2025-26</td><td>Nil</td><td>1</td><td>1</td><td>Nil</td></tr>
+                                    <tr>
+                                        <td colspan="2" style="font-weight: 800; color: #0f172a;">Grand Total</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                        <td>Nil</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Complaint Form -->
+                    <div class="card p-8 md:p-10" style="box-shadow: var(--shadow-md);">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                            <div>
+                                <h2 class="section-title">Complaint Form</h2>
+                                <p class="section-text mb-6">
+                                    Use this form to submit your complaint or issue. The submission will be stored in the same connected Google Sheet used for your contact page.
                                 </p>
-                            </div>
 
-                            <div class="info-box">
-                                <div style="font-size: 0.85rem; font-weight: 800; color: #1d4ed8; margin-bottom: 6px;">Use this form for</div>
-                                <ul style="color: #475569; font-size: 0.95rem; line-height: 1.9; padding-left: 18px;">
-                                    <li>Service-related complaints</li>
-                                    <li>Support delays</li>
-                                    <li>Communication issues</li>
-                                    <li>General complaint follow-up</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div>
-                            <!-- Added role="alert" for screen reader support -->
-                            <div id="successMessage" role="alert" class="status-box status-success mb-4">
-                                Your complaint has been submitted successfully.
-                            </div>
-
-                            <div id="errorMessage" role="alert" class="status-box status-error mb-4">
-                                Something went wrong. Please try again.
-                            </div>
-
-                            <form id="complaintForm" class="space-y-5">
-                                <div>
-                                    <label for="name" class="field-label">Full Name</label>
-                                    <input type="text" id="name" name="name" class="field-input" placeholder="Enter your full name" required />
+                                <div class="info-box mb-4">
+                                    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">Submission details</div>
+                                    <p style="font-size: 0.95rem; color: #475569; line-height: 1.8;">
+                                        The form stores your full name, email address, contact number, and complaint message in your Google Sheet for internal follow-up.
+                                    </p>
                                 </div>
 
-                                <div>
-                                    <label for="email" class="field-label">Email Address</label>
-                                    <input type="email" id="email" name="email" class="field-input" placeholder="Enter your email address" required />
+                                <div class="info-box">
+                                    <div style="font-size: 0.85rem; font-weight: 800; color: #1d4ed8; margin-bottom: 6px;">Use this form for</div>
+                                    <ul style="color: #475569; font-size: 0.95rem; line-height: 1.9; padding-left: 18px;">
+                                        <li>Service-related complaints</li>
+                                        <li>Support delays</li>
+                                        <li>Communication issues</li>
+                                        <li>General complaint follow-up</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <!-- Added role="alert" for screen reader support -->
+                                <div id="successMessage" role="alert" class="status-box status-success mb-4">
+                                    Your complaint has been submitted successfully.
                                 </div>
 
-                                <div>
-                                    <label for="contact" class="field-label">Contact Number</label>
-                                    <input type="tel" id="contact" name="contact" class="field-input" placeholder="Enter your mobile number" required />
+                                <div id="errorMessage" role="alert" class="status-box status-error mb-4">
+                                    Something went wrong. Please try again.
                                 </div>
 
-                                <div>
-                                    <label for="message" class="field-label">Complaint Message</label>
-                                    <textarea id="message" name="message" rows="6" class="field-input" placeholder="Write your complaint here" required></textarea>
-                                </div>
+                                <form id="complaintForm" class="space-y-5">
+                                    <div>
+                                        <label for="name" class="field-label">Full Name</label>
+                                        <input type="text" id="name" name="name" class="field-input" placeholder="Enter your full name" required />
+                                    </div>
 
-                                <button type="submit" id="submitBtn" class="btn-primary w-full">
-                                    Submit Complaint
-                                </button>
-                            </form>
+                                    <div>
+                                        <label for="email" class="field-label">Email Address</label>
+                                        <input type="email" id="email" name="email" class="field-input" placeholder="Enter your email address" required />
+                                    </div>
+
+                                    <div>
+                                        <label for="contact" class="field-label">Contact Number</label>
+                                        <input type="tel" id="contact" name="contact" class="field-input" placeholder="Enter your mobile number" required />
+                                    </div>
+
+                                    <div>
+                                        <label for="message" class="field-label">Complaint Message</label>
+                                        <textarea id="message" name="message" rows="6" class="field-input" placeholder="Write your complaint here" required></textarea>
+                                    </div>
+
+                                    <button type="submit" id="submitBtn" class="btn-primary w-full">
+                                        Submit Complaint
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="bg-white border-t border-slate-200 py-10">
         <div class="max-w-7xl mx-auto px-5 md:px-6">

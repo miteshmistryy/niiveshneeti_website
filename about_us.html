@@ -46,6 +46,24 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+    
+    /* ===== SKIP TO MAIN CONTENT LINK ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%; /* Hidden by default, visually off-screen */
+      left: 0;
+      background-color: var(--text-dark);
+      color: var(--bg-white);
+      padding: 12px 24px;
+      font-weight: 800;
+      z-index: 9999;
+      transition: top 0.2s ease-in-out;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0; /* Appears when focused via keyboard tab */
+    }
+
     .nav-link {
       color: #475569;
       font-weight: 700;
@@ -97,6 +115,17 @@
     .cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 48px rgba(217, 56, 56, 0.45); }
     .cta-btn:hover::before { opacity: 1; }
     .cta-btn span { position: relative; z-index: 1; }
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dark);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 8px;
+      transition: all 0.25s ease;
+    }
+    .secondary-btn:hover { color: var(--coral); transform: translateX(4px); }
     .badge-pill {
       display: inline-flex;
       align-items: center;
@@ -188,6 +217,9 @@
 </head>
 <body>
 
+  <!-- SKIP TO MAIN CONTENT LINK FOR KEYBOARD ACCESSIBILITY -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
     <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
@@ -215,6 +247,7 @@
     </div>
   </header>
 
+  <!-- MAIN LANDMARK -->
   <main id="main-content">
   <!-- PAGE HERO -->
   <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 relative overflow-hidden">
@@ -257,14 +290,14 @@
           
           <div class="flex flex-col gap-4">
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
               <div>
                 <h3 class="font-extrabold text-slate-900">Independent Interpretation</h3>
                 <p class="text-sm text-slate-600 mt-1">We analyze index structures and setups without emotional bias.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
               <div>
                 <h3 class="font-extrabold text-slate-900">Risk-Aware Framing</h3>
                 <p class="text-sm text-slate-600 mt-1">We focus heavily on invalidation levels, not just targets.</p>
@@ -316,28 +349,29 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <div class="step-card reveal delay-1">
-          <div class="step-number">01</div>
-          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-eye"></i></div>
+          <!-- aria-hidden added to low-contrast decorative background numbers -->
+          <div class="step-number" aria-hidden="true">01</div>
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-eye"></i></div>
           <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Observe</h3>
           <p class="text-[0.9rem] text-slate-600 leading-relaxed">We read index structure, key liquidity zones, range behaviour, and broader session volatility before making any assumptions.</p>
         </div>
 
         <div class="step-card reveal delay-2">
-          <div class="step-number">02</div>
+          <div class="step-number" aria-hidden="true">02</div>
           <div class="w-12 h-12 rounded-xl bg-coral-light text-coral flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-brain"></i></div>
           <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Interpret</h3>
           <p class="text-[0.9rem] text-slate-600 leading-relaxed">We translate raw price action into understandable setups, identifying what confirms a view and exactly what invalidates it.</p>
         </div>
 
         <div class="step-card reveal delay-3">
-          <div class="step-number">03</div>
-          <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-tower-broadcast"></i></div>
+          <div class="step-number" aria-hidden="true">03</div>
+          <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-tower-broadcast"></i></div>
           <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Communicate</h3>
           <p class="text-[0.9rem] text-slate-600 leading-relaxed">We share the context in a clean, professional format. Every call emphasizes risk framing, stop-loss discipline, and position sizing.</p>
         </div>
 
         <div class="step-card reveal delay-4">
-          <div class="step-number">04</div>
+          <div class="step-number" aria-hidden="true">04</div>
           <div class="w-12 h-12 rounded-xl bg-lavender-light text-lavender flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-rotate-right"></i></div>
           <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Review</h3>
           <p class="text-[0.9rem] text-slate-600 leading-relaxed">We revisit outcomes daily. We refine our understanding and provide educational notes on why the market behaved the way it did.</p>
@@ -369,7 +403,7 @@
 
           <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm flex flex-col justify-center">
             <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-4">
-              <i class="fa-solid fa-certificate text-2xl text-emerald-500"></i>
+              <i class="fa-solid fa-certificate text-2xl text-emerald-700"></i>
               <h3 class="font-black text-[1.2rem] text-slate-900">SEBI Registration</h3>
             </div>
             <div class="space-y-3 text-[0.95rem] text-slate-700">
@@ -421,10 +455,10 @@
         <div>
           <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
-            <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
+            <li><i class="fa-solid fa-phone" style="color:#15803d;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
             <li><i class="fa-solid fa-paper-plane" style="color:var(--lavender);margin-right:8px;width:14px;"></i> Advisory group access shared after onboarding</li>
-            <li><i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
+            <li><i class="fa-solid fa-clock" style="color:#c2410c;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
           </ul>
         </div>
         <div>

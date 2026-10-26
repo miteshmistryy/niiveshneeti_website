@@ -46,6 +46,24 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+    
+    /* ===== SKIP TO MAIN CONTENT LINK ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%; /* Hidden by default */
+      left: 0;
+      background-color: var(--text-dark);
+      color: var(--bg-white);
+      padding: 12px 24px;
+      font-weight: 800;
+      z-index: 9999;
+      transition: top 0.2s ease-in-out;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0; /* Appears when focused via keyboard */
+    }
+
     .nav-link {
       color: #475569;
       font-weight: 700;
@@ -313,8 +331,8 @@
       margin-top: 4px;
       transition: color 0.3s ease;
     }
-    .phone-price-value.up { color: #22c55e; }
-    .phone-price-value.down { color: #ef4444; }
+    .phone-price-value.up { color: #15803d; }
+    .phone-price-value.down { color: #b91c1c; }
     .phone-price-change {
       font-size: 12px;
       font-weight: 700;
@@ -356,13 +374,13 @@
       position: absolute;
       right: 20px;
       top: 24px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: linear-gradient(135deg, #15803d, #166534);
       color: white;
       padding: 4px 10px;
       border-radius: 8px;
       font-size: 10px;
       font-weight: 800;
-      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.4);
       opacity: 0;
       transform: translateY(10px);
       z-index: 3;
@@ -381,12 +399,12 @@
       padding: 14px;
       border-radius: 16px;
       border: none;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: linear-gradient(135deg, #15803d, #166534);
       color: white;
       font-weight: 900;
       font-size: 15px;
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
+      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.35);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -396,8 +414,8 @@
       animation: btnPulse 1.5s ease-in-out infinite;
     }
     @keyframes btnPulse {
-      0%, 100% { box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35); }
-      50% { box-shadow: 0 8px 32px rgba(34, 197, 94, 0.6); }
+      0%, 100% { box-shadow: 0 8px 24px rgba(21, 128, 61, 0.35); }
+      50% { box-shadow: 0 8px 32px rgba(21, 128, 61, 0.6); }
     }
     .phone-buy-btn.bought {
       background: linear-gradient(135deg, var(--coral), #ff8e53);
@@ -464,11 +482,11 @@
       bottom: 100px;
       left: 12px;
       right: 12px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: linear-gradient(135deg, #15803d, #166534);
       color: white;
       border-radius: 18px;
       padding: 14px 16px;
-      box-shadow: 0 12px 40px rgba(34, 197, 94, 0.3);
+      box-shadow: 0 12px 40px rgba(21, 128, 61, 0.3);
       z-index: 20;
       display: flex;
       align-items: center;
@@ -558,6 +576,9 @@
 </head>
 <body>
 
+  <!-- SKIP TO MAIN CONTENT LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-orange-100">
     <div class="max-w-7xl mx-auto px-5 md:px-6 h-[80px] flex items-center justify-between">
@@ -586,6 +607,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- HERO (Adjusted top padding for better spacing) -->
   <section id="home" class="relative pt-16 pb-12 lg:pt-20 lg:pb-16 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -657,7 +679,7 @@
                   <div class="phone-price-label">Current Price</div>
                   <div class="phone-price-value" id="phonePrice">125.00</div>
                   <div class="phone-price-change" id="phoneChange">
-                    <span style="color:#22c55e"><i class="fa-solid fa-caret-up"></i> +0.00%</span>
+                    <span style="color:#15803d"><i class="fa-solid fa-caret-up"></i> +0.00%</span>
                   </div>
                 </div>
                 <!-- Candlestick chart row with right-side price axis -->
@@ -744,7 +766,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <div class="card p-6 md:p-8 reveal from-left flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-amber-500 transition-all duration-300" style="border-left: 4px solid var(--amber);">
-          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: var(--amber);"><i class="fa-solid fa-sun"></i></div>
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--amber-light), #fef9c3); color: #b45309;"><i class="fa-solid fa-sun"></i></div>
           <div>
             <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Pre-Market Levels</h3>
             <p class="text-[0.93rem] text-slate-600 leading-relaxed">Key intraday levels and zones for Nifty and Bank Nifty options, with bias and important price areas to watch before market opens.</p>
@@ -784,7 +806,7 @@
         </div>
         
         <div class="card p-6 md:p-8 reveal delay-5 flex flex-col sm:flex-row gap-6 items-start hover:border-l-[6px] hover:border-l-teal-500 transition-all duration-300" style="border-left: 4px solid var(--teal);">
-          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--teal-light), #ccfbf1); color: var(--teal);"><i class="fa-solid fa-brain"></i></div>
+          <div class="icon-box shrink-0" style="background: linear-gradient(135deg, var(--teal-light), #ccfbf1); color: #0f766e;"><i class="fa-solid fa-brain"></i></div>
           <div>
             <h3 class="font-black text-[1.1rem] text-slate-900 mb-3">Risk &amp; Psychology Guidance</h3>
             <p class="text-[0.93rem] text-slate-600 leading-relaxed">Emphasis on SL discipline, position sizing and emotional control for high-risk index options trading.</p>
@@ -847,10 +869,10 @@
             <i class="fa-solid fa-users"></i> Who This Recommendation Is For
           </div>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--text-body); font-size: 0.97rem;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Active index option traders seeking structured calls.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Expiry traders looking for research-led weekly strategies.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Active index option traders seeking structured calls.</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Expiry traders looking for research-led weekly strategies.</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Traders who want levels, logic and clear risk marking instead of random tips.</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Index-focused traders who respect risk and want support during live markets.</li>
           </ul>
         </div>
         <div class="card p-8 reveal from-right">
@@ -868,7 +890,7 @@
   <section id="pricing" class="py-24 section-alt">
     <div class="max-w-7xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #22c55e; margin-bottom: 8px;">Pricing Plans</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #15803d; margin-bottom: 8px;">Pricing Plans</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 900; color: var(--text-dark);">Choose Your NiiveshNeeti Index Options Plan</h2>
         <p style="color: var(--text-body); margin-top: 12px; font-size: 0.98rem; max-width: 640px; margin-left: auto; margin-right: auto;">Select a research-backed index options Recommendation plan aligned with your activity level and risk profile.</p>
       </div>
@@ -880,31 +902,31 @@
           </div>
           <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Suitable for beginners focusing on a structured trading approach in index options.</p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>1 research-based index option trade setup daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear entry, target &amp; stoploss levels</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday market insights on indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Basic support during market hours</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Educational explanation of trade logic</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>1 research-based index option trade setup daily</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Clear entry, target &amp; stoploss levels</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Intraday market insights on indices</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Basic support during market hours</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Educational explanation of trade logic</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-700 mr-2"></i>Risk Level: High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
         <div class="pricing-popular p-8 pt-14 reveal delay-1">
-          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--amber), #f59e0b); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(180, 83, 9, 0.4); z-index: 2;">RECOMMENDED</div>
+          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; box-shadow: 0 10px 24px rgba(251, 191, 36, 0.4); z-index: 2;">RECOMMENDED</div>
           <div class="flex items-center justify-between mb-4">
             <h3 style="font-weight:900;font-size:1.18rem;color:var(--text-dark);">Index Options Gold</h3>
             <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800">Active Traders</span>
           </div>
           <p style="font-size:0.92rem;color:#334155;margin-bottom:16px;">Best suited for active index option traders aiming for consistency and structured execution.</p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #334155; border-top: 1px solid #fef3c7; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 2 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Coverage: Bank Nifty, Nifty &amp; Finnifty index options</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Entry, exit &amp; risk levels with clear logic</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Weekly expiry strategy calls</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Intraday + short term option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market tracking support</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Up to 2 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Coverage: Bank Nifty, Nifty &amp; Finnifty index options</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Entry, exit &amp; risk levels with clear logic</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Weekly expiry strategy calls</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Intraday + short term option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Priority WhatsApp/Telegram alerts</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Live market tracking support</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-700 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
@@ -915,14 +937,14 @@
           </div>
           <p style="font-size:0.92rem;color:var(--text-body);margin-bottom:16px;">Designed for experienced traders with higher capital exposure in index options.</p>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-body); border-top: 1px solid #e2e8f0; padding-top: 18px; margin-bottom: 24px;">
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Up to 3 research trade setups daily</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>All index coverage &ndash; Nifty, BankNifty, Sensex &amp; selected indices</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Advanced expiry strategy planning</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Volatility-based index option opportunities</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Live market observation and continuous guidance</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Priority dedicated support desk</li>
-            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Trading psychology insights for large risk exposure</li>
-            <li><i class="fa-solid fa-exclamation-triangle text-amber-500 mr-2"></i>Risk Level: High to Very High</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Up to 3 research trade setups daily</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>All index coverage &ndash; Nifty, BankNifty, Sensex &amp; selected indices</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Advanced expiry strategy planning</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Volatility-based index option opportunities</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Live market observation and continuous guidance</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Priority dedicated support desk</li>
+            <li><i class="fa-solid fa-check text-emerald-700 mr-2"></i>Trading psychology insights for large risk exposure</li>
+            <li><i class="fa-solid fa-exclamation-triangle text-amber-700 mr-2"></i>Risk Level: High to Very High</li>
           </ul>
           <a href="https://niiveshneeti.com/contact" class="cta-btn w-full"><span>Join Now <i class="fa-solid fa-arrow-right-long"></i></span></a>
         </div>
@@ -1000,7 +1022,7 @@
   <section id="faq" class="py-24 section-alt">
     <div class="max-w-5xl mx-auto px-5 md:px-6">
       <div class="text-center mb-14 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #22c55e; margin-bottom: 8px;">FAQs</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #15803d; margin-bottom: 8px;">FAQs</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: var(--text-dark);">Frequently Asked Questions</h2>
         <p style="color: var(--text-body); margin-top: 12px; font-size: 0.98rem; max-width: 680px; margin-left: auto; margin-right: auto;">A few clear answers so users understand what NiiveshNeeti Recommendation is and what it is not.</p>
       </div>
@@ -1037,7 +1059,7 @@
   <section id="disclaimer" class="py-24">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <div class="text-center mb-12 reveal">
-        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #ef4444; margin-bottom: 8px;">Disclaimer</div>
+        <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #b91c1c; margin-bottom: 8px;">Disclaimer</div>
         <h2 style="font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 900; color: var(--text-dark);">Mandatory Disclosures</h2>
       </div>
       <div class="card p-8 md:p-10 reveal">
@@ -1050,6 +1072,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer id="contact" class="bg-white/95 pt-16 pb-8 border-t border-orange-100/70">
@@ -1074,10 +1097,10 @@
         <div>
           <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
-            <li><i class="fa-solid fa-phone" style="color:#22c55e;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
+            <li><i class="fa-solid fa-phone" style="color:#15803d;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
             <li><i class="fa-solid fa-paper-plane" style="color:var(--lavender);margin-right:8px;width:14px;"></i> Advisory group access shared after onboarding</li>
-            <li><i class="fa-solid fa-clock" style="color:#f97316;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
+            <li><i class="fa-solid fa-clock" style="color:#c2410c;margin-right:8px;width:14px;"></i> Mon to Sat, 9:00AM to 6:00PM</li>
           </ul>
         </div>
         <div>
@@ -1233,7 +1256,7 @@
             let low = isLast ? Math.min(o, c) - 1 : d.l;
 
             let isGreen = c >= o;
-            let color = isGreen ? '#22c55e' : '#ef4444';
+            let color = isGreen ? '#15803d' : '#b91c1c';
 
             // Draw wick
             let wickX = getX(i) + cW/2;
@@ -1253,7 +1276,7 @@
       const change = ((price - 125) / 125) * 100;
       const isUp = price >= prevPrice;
       phonePrice.className = 'phone-price-value ' + (isUp ? 'up' : 'down');
-      phoneChange.innerHTML = `<span style="color:${isUp ? '#22c55e' : '#ef4444'}"><i class="fa-solid fa-caret-${isUp ? 'up' : 'down'}"></i> ${change >= 0 ? '+' : ''}${change.toFixed(2)}%</span>`;
+      phoneChange.innerHTML = `<span style="color:${isUp ? '#15803d' : '#b91c1c'}"><i class="fa-solid fa-caret-${isUp ? 'up' : 'down'}"></i> ${change >= 0 ? '+' : ''}${change.toFixed(2)}%</span>`;
     }
 
     function startPriceWiggle() {
@@ -1274,7 +1297,7 @@
       buyBtn.classList.remove('pulse');
       buyBtn.classList.add('bought');
       buyBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> BOUGHT AT 125';
-      spawnParticles(buyBtn.offsetWidth / 2, buyBtn.offsetHeight / 2, '#22c55e');
+      spawnParticles(buyBtn.offsetWidth / 2, buyBtn.offsetHeight / 2, '#15803d');
 
       const duration = 4000;
       const startTime = Date.now();

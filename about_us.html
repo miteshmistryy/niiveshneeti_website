@@ -14,7 +14,7 @@
       --bg-cream: #fffaf5;
       --bg-white: #ffffff;
       /* Updated for WCAG AA Contrast Compliance */
-      --coral: #d93838; 
+      --coral: #b91c1c; 
       --coral-light: #ffe8e8;
       --lavender: #7c3aed;
       --lavender-light: #f3e8ff;
@@ -29,7 +29,7 @@
       
       --text-dark: #1e1b4b;
       --text-body: #475569;
-      --text-muted: #94a3b8;
+      --text-muted: #64748b; /* Darkened for accessibility */
       --font-body: "Satoshi", system-ui, -apple-system, sans-serif;
       --shadow-soft: 0 20px 50px rgba(30, 27, 75, 0.08);
       --shadow-strong: 0 30px 70px rgba(30, 27, 75, 0.15);
@@ -233,7 +233,7 @@
         <a href="https://userconsentagreement.niiveshneeti.com" class="nav-link">User Consent</a>
         <a href="contact.html" class="cta-btn !py-3 !px-5"><span>Contact Us</span></a>
       </nav>
-      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm">
+      <button id="menuToggle" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-orange-200 text-slate-700 bg-white shadow-sm" aria-label="Toggle Navigation Menu">
         <i class="fa-solid fa-bars text-lg"></i>
       </button>
     </div>
@@ -248,7 +248,7 @@
   </header>
 
   <!-- MAIN LANDMARK -->
-  <main id="main-content">
+  <main id="main-content" role="main">
   <!-- PAGE HERO -->
   <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -279,7 +279,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         
         <div class="reveal from-left">
-          <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #b91c1c; margin-bottom: 8px;">Our Identity</div>
+          <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--coral); margin-bottom: 8px;">Our Identity</div>
           <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--text-dark); margin-bottom: 16px; line-height: 1.2;">Clarity First. <br>Claims Never.</h2>
           <p style="font-size: 1rem; color: var(--text-body); line-height: 1.8; margin-bottom: 16px;">
             The options market is flooded with shortcut-to-profit schemes. NiiveshNeeti is positioned entirely differently. We are a research-led advisory platform that respects the complexity of the market.
@@ -309,23 +309,24 @@
         <div class="reveal from-right">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div class="card p-6 border-t-[4px] border-t-teal-400">
-              <h3 class="font-black text-3xl text-teal-700 mb-2">15+</h3>
-              <h4 class="font-bold text-slate-900 mb-2">Years Mindset</h4>
+              <!-- Replaced <h3> and <h4> with structurally correct spans and <h3>s to maintain hierarchy -->
+              <span class="font-black text-3xl text-teal-700 mb-2 block">15+</span>
+              <h3 class="font-bold text-slate-900 mb-2">Years Mindset</h3>
               <p class="text-sm text-slate-600">Built around disciplined market observation, deep risk awareness, and structured execution.</p>
             </div>
             <div class="card p-6 border-t-[4px] border-t-rose-400 sm:translate-y-6">
-              <h3 class="font-black text-3xl text-rose-600 mb-2">100%</h3>
-              <h4 class="font-bold text-slate-900 mb-2">Transparent</h4>
+              <span class="font-black text-3xl text-rose-600 mb-2 block">100%</span>
+              <h3 class="font-bold text-slate-900 mb-2">Transparent</h3>
               <p class="text-sm text-slate-600">Clear context, clean framing, and honest risk discussion on every single trade call.</p>
             </div>
             <div class="card p-6 border-t-[4px] border-t-sky-400">
-              <h3 class="font-black text-3xl text-sky-700 mb-2">Index</h3>
-              <h4 class="font-bold text-slate-900 mb-2">Focused Only</h4>
+              <span class="font-black text-3xl text-sky-700 mb-2 block">Index</span>
+              <h3 class="font-bold text-slate-900 mb-2">Focused Only</h3>
               <p class="text-sm text-slate-600">Mastery requires focus. We dedicate all our research specifically to Indian index options.</p>
             </div>
             <div class="card p-6 border-t-[4px] border-t-amber-400 sm:translate-y-6">
-              <h3 class="font-black text-3xl text-amber-700 mb-2">Edu</h3>
-              <h4 class="font-bold text-slate-900 mb-2">Education-Led</h4>
+              <span class="font-black text-3xl text-amber-700 mb-2 block">Edu</span>
+              <h3 class="font-bold text-slate-900 mb-2">Education-Led</h3>
               <p class="text-sm text-slate-600">Market learning designed for serious participants, not impulse or thrill seekers.</p>
             </div>
           </div>
@@ -444,16 +445,17 @@
           <p style="font-size:13px;color:#64748b;line-height:1.8;">NiiveshNeeti is a SEBI registered research analyst advisory focused on index options. We provide research-based trade calls, levels and support for disciplined traders.</p>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h4>
+          <!-- Changed <h4> to <h3> for correct heading hierarchy -->
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Quick Links</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #64748b;">
-            <li><a class="footer-link" href="#services">Services</a></li>
-            <li><a class="footer-link" href="#pricing">Pricing</a></li>
-            <li><a class="footer-link" href="#faq">FAQ</a></li>
-            <li><a class="footer-link" href="#disclaimer">Disclaimer</a></li>
+            <li><a class="footer-link" href="index.html#services">Services</a></li>
+            <li><a class="footer-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="index.html#faq">FAQ</a></li>
+            <li><a class="footer-link" href="Disclaimer.html">Disclaimer</a></li>
           </ul>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h4>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Contact Us</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #64748b;">
             <li><i class="fa-solid fa-phone" style="color:#15803d;margin-right:8px;width:14px;"></i> +91 91379 32216</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--coral);margin-right:8px;width:14px;"></i> support@niiveshneeti.com</li>
@@ -462,7 +464,7 @@
           </ul>
         </div>
         <div>
-          <h4 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h4>
+          <h3 style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dark); margin-bottom: 14px;">Legal &amp; Policy</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
             <li><a class="footer-link" href="Disclaimer.html" rel="noopener noreferrer">Disclaimer</a></li>
             <li><a class="footer-link" href="https://niiveshneeti.com/Disclosure_niiveshneeti1.pdf" rel="noopener noreferrer">Disclosure</a></li>
@@ -470,9 +472,9 @@
             <li><a class="footer-link" href="Terms_and_Condition.html" rel="noopener noreferrer">Terms &amp; Condition</a></li>
             <li><a class="footer-link" href="Privacy_Policy.html" rel="noopener noreferrer">Privacy Policy</a></li>
             <li><a class="footer-link" href="Grievance_Redressal.html" rel="noopener noreferrer">Grievance Redressal</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/about_us" rel="noopener noreferrer">About Us</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/contact" rel="noopener noreferrer">Contact</a></li>
-            <li><a class="footer-link" href="https://niiveshneeti.com/Complaints.html" rel="noopener noreferrer">Complaints</a></li>
+            <li><a class="footer-link" href="about_us.html" rel="noopener noreferrer">About Us</a></li>
+            <li><a class="footer-link" href="contact.html" rel="noopener noreferrer">Contact</a></li>
+            <li><a class="footer-link" href="Complaints.html" rel="noopener noreferrer">Complaints</a></li>
           </ul>
         </div>
       </div>
@@ -497,7 +499,8 @@
         </div>
       </div>
 
-      <div style="text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+      <!-- Updated text color to var(--text-muted) for WCAG compliance -->
+      <div style="text-align: center; font-size: 12px; color: var(--text-muted); border-top: 1px solid #f1f5f9; padding-top: 20px;">
         NiiveshNeeti &copy;2026 All Rights Reserved.
       </div>
     </div>
